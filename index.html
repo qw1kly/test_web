@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Game</title>
-    <script src="scripts.js"></script>
     <script>src="https://telegram.org/js/telegram-web-app.js"</script>
 </head>
 <body>
@@ -17,7 +16,9 @@
         let play = document.getElementById("clicktoplay"); 
 
         play.addEventListener("click", () => {
-            document.getElementById("clicktoplay").value = "Игра идет";
+            name = tg.initDataUnsafe.user.first_name
+            data = {name: name};
+            tg.sendData(JSON.stringify(data));
         });
          
     </script>
