@@ -10,5 +10,15 @@
             Играть!
         </button>
     </div>
+    <script>src="https://telegram.org/js/telegram-web-app.js"</script>
+    <script>
+        let tg = window.Telegram.WebApp;
+        let play = document.getElementById("clicktoplay"); 
+
+        play.addEventListener("click", () => {
+            document.getElementById("clicktoplay").value = "-1"
+        });
+         
+    </script>
 </body>
 </html>
