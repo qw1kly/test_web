@@ -17,7 +17,6 @@
         let play = document.getElementById("clicktoplay"); 
 
         play.addEventListener("click", () => {
-            tg.close();
             name = tg.initDataUnsafe.user.first_name
             data = {name: name};
             tg.sendData(JSON.stringify(data));
