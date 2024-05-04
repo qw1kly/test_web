@@ -18,8 +18,8 @@
 
         play.addEventListener("click", () => {
             let name = tg.initDataUnsafe.user.first_name;
-            let data = {name: name};
-            tg.sendData(JSON.stringify(data));
+            
+            tg.sendData(name);
             
         });
          
