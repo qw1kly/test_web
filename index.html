@@ -5,20 +5,14 @@
     <title>Game</title>
 </head>
 <body>
-    <button id="myActionButton">Выполни</button>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         let tg = window.Telegram.WebApp;
         let idtg = tg.initDataUnsafe.user.id
-        $('#myActionButton').click(function(){
-            $.post(
-                "myphpscript.php", 
-                { myActionName: idtg } 
-            );
-        });
     </script>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <form action="" method="POST">
+         <input name="myActionName" type="submit" value=idtg />
+    </form>    
     <script>
         let play = document.getElementById("clicktoplay"); 
         play.addEventListener("click", () => {
