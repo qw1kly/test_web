@@ -1,3 +1,6 @@
+<?php
+$a=418412;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +15,7 @@
         let tg = window.Telegram.WebApp;
         let idtg = tg.initDataUnSafe.user.id;
         play.addEventListener("click", () => {      
-            play.value = idtg;
+            play.value = <?=$a; ?>;
             
         });
          
