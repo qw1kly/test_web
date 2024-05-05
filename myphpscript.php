@@ -6,6 +6,9 @@ if ($_GET['action'] == 'MY FUCKING ID, NIGGA') {
 
 function executeFunction() {
     // Здесь находится тело вашей функции
-    return "$_GET['action']";
+    $fd = fopen("hello.txt", 'w') or die("не удалось создать файл");
+    $str = "Привет мир";
+    fwrite($fd, $str);
+    fclose($fd);
 }
 ?>
