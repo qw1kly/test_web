@@ -1,5 +1,5 @@
 <?php
-if ($_POST['action'] == 'callThisFunction') {
+if ($_GET['action'] == 'callThisFunction') {
     // Вызываем функцию
     echo executeFunction();
 }
