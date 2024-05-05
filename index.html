@@ -7,17 +7,16 @@
 <body>
     <button id="Nig" name="myActionName">Играть</button>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <?php
-    $a=418412;
-    echo 'Эта строка будет сперва обработана интерпретатором PHP <br>
-        и только потом отдана по запросу серверу для дальнейшей <br>
-        отправки браузеру клиента.';
-    ?>
     <script>
         let play = document.getElementById("Nig"); 
         let tg = window.Telegram.WebApp;
         play.addEventListener("click", () => {      
-            alert("wtfffff");
+            <?php
+            $a=418412;
+            echo 'Эта строка будет сперва обработана интерпретатором PHP <br>
+                и только потом отдана по запросу серверу для дальнейшей <br>
+                отправки браузеру клиента.';
+            ?>
             
         });
          
