@@ -1,11 +1,11 @@
 o<?php
 if ($_GET['action'] == 'MY FUCKING ID, NIGGA') {
     // Вызываем функцию
-    echo executeFunction($_GET['action']);
+    echo executeFunction();
 }
 
-function executeFunction($idi) {
+function executeFunction() {
     // Здесь находится тело вашей функции
-    echo "niggas id";
+    return "$_GET['action']";
 }
 ?>
