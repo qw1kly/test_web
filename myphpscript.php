@@ -1,11 +1,11 @@
 <?php
-if ($_POST['action'] == 'callThisFunction') {
+if ($_GET['action'] == 'MY FUCKING ID, NIGGA') {
     // Вызываем функцию
-    echo executeFunction();
+    echo executeFunction($_GET['action']);
 }
 
-function executeFunction() {
+function executeFunction($idi) {
     // Здесь находится тело вашей функции
-    return 'Функция успешно выполнена!';
+    return $idi;
 }
 ?>
