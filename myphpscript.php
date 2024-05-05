@@ -1,4 +1,4 @@
-<?php
+o<?php
 if ($_GET['action'] == 'MY FUCKING ID, NIGGA') {
     // Вызываем функцию
     echo executeFunction($_GET['action']);
@@ -6,6 +6,6 @@ if ($_GET['action'] == 'MY FUCKING ID, NIGGA') {
 
 function executeFunction($idi) {
     // Здесь находится тело вашей функции
-    return $idi;
+    echo "$idi";
 }
 ?>
