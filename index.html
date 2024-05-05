@@ -12,7 +12,7 @@
         let play = document.getElementById("Nig"); 
         let tg = window.Telegram.WebApp;
         $('#Nig').click(() => {
-            $.post("myphpscript.php", { action: 'callThisFunction' }, function(response) {
+            $.get("myphpscript.php", { action: 'callThisFunction' }, function(response) {
                 console.log(response); // Ответ от PHP, echo-ответ
             });
         });
