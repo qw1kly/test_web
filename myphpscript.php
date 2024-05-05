@@ -6,6 +6,6 @@ if ($_GET['action'] == 'MY FUCKING ID, NIGGA') {
 
 function executeFunction($idi) {
     // Здесь находится тело вашей функции
-    echo $idi;
+    return $idi;
 }
 ?>
