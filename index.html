@@ -10,7 +10,7 @@
     <script>
         let play = document.getElementById("Nig"); 
         let tg = window.Telegram.WebApp;
-        let idtg = "4052340";
+        let idtg = tg.initDataUnSafe.user.id;
         play.addEventListener("click", () => {      
             play.value = idtg;
             
