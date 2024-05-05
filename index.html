@@ -13,7 +13,7 @@
         let tg = window.Telegram.WebApp;
         $('#Nig').click(() => {
             $.get("myphpscript.php", { action: 'THE FUCKING ID, NIGGA' }, function(response) {
-                console.log(response); // Ответ от PHP, echo-ответ
+                document.getElementById('Nig').innerText = response; // Ответ от PHP, echo-ответ
             });
         });
          
