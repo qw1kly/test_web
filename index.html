@@ -11,18 +11,19 @@
         </button>
     </div>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-
+    <?php
+    $login = !empty($_GET['login']) ? $_GET['login'] : 'логин не передан!';
+    ?>
     <script>
         let tg = window.Telegram.WebApp;
         let play = document.getElementById("clicktoplay"); 
 
         play.addEventListener("click", () => {
-            let name = "CLICK";
-            
-            tg.sendData(name);
+            play.value = "SSSSSSS"
             
         });
          
     </script>
+    <p>Переданный логин: <?= $login ?></p>
 </body>
 </html>
