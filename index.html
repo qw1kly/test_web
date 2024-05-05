@@ -5,25 +5,27 @@
     <title>Game</title>
 </head>
 <body>
-    <div id="cont">
-        <button id="clicktoplay" name="click">
-            Играть!
-        </button>
-    </div>
+    <button id="myActionButton">Выполни</button>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <?php
-    $login = !empty($_GET['login']) ? $_GET['login'] : 'логин не передан!';
-    ?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         let tg = window.Telegram.WebApp;
+        let idtg = tg.initDataUnsafe.user.id
+        $('#myActionButton').click(function(){
+            $.post(
+                "myphpscript.php", 
+                { myActionName: idtg } 
+            );
+        });
+    </script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
         let play = document.getElementById("clicktoplay"); 
-
         play.addEventListener("click", () => {
             play.value = "1"
             
         });
          
     </script>
-    <p>Переданный логин: <?= $login ?></p>
 </body>
 </html>
