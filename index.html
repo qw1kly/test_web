@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <title>Game</title>
     <style>
-
+        body{
+        width: 428px;
+        }
         #abs0{
         position: relative;
-        width: 1920px;
-        height: 1080px;
+        width: 428px;
+        height: 926px;
 
         background: #000000;
         }
 
         #abs{
         position: absolute;
-        width: 1920px;
+        width: 428px;
         height: 926px;
         left: 0px;
         top: 0px;
@@ -24,7 +26,7 @@
 
         #abs1{
         position: absolute;
-        width: 1920px;
+        width: 428px;
         height: 817px;
         left: 0px;
         top: 180px;
@@ -36,10 +38,10 @@
 
         #abs2{
         position: absolute;
-        width: 1880px;
+        width: 388px;
         height: 70px;
         left: 20px;
-        top: 700px;
+        top: 842px;
 
         background: #272A31;
         border-radius: 15px;
@@ -51,6 +53,13 @@
         <div id="abs">
             <div id="abs1">
                 <div id="abs2">
+
+                    <div id="playgame">
+                        <button id="Nig" name="myActionName">Играть</button>
+                    </div>
+                    <div>
+                        <a id="nigga">{{money}}</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -80,4 +89,3 @@
     </script>
 </body>
 </html>
-
