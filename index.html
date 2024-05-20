@@ -1,22 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="rus">
 <head>
     <meta charset="UTF-8">
     <title>Game</title>
+    <style>
+
+        #abs0{
+        position: relative;
+        width: 428px;
+        height: 926px;
+
+        background: #000000;
+        }
+
+        #abs{
+        position: absolute;
+        width: 428px;
+        height: 926px;
+        left: 0px;
+        top: 0px;
+        background: #000000;
+        }
+
+        #abs1{
+        position: absolute;
+        width: 428px;
+        height: 817px;
+        left: 0px;
+        top: 180px;
+
+        background: #1C1F26;
+        box-shadow: 0px 0px 82.3536px #00B8C2, 0px 0px 47.0592px #00B8C2, 0px 0px 27.4512px #00B8C2, 0px 0px 13.7256px #00B8C2, 0px 0px 3.9216px #00B8C2, 0px 0px 1.9608px #00B8C2;
+        border-radius: 55px;
+        }
+
+        #abs2{
+        position: absolute;
+        width: 388px;
+        height: 70px;
+        left: 20px;
+        top: 842px;
+
+        background: #272A31;
+        border-radius: 15px;
+        }
+    </style>
 </head>
 <body>
-    <button id="Nig" name="myActionName">Играть</button>
+    <div id="abs0">
+        <div id="abs">
+            <div id="abs1">
+                <div id="abs2">
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        let play = document.getElementById("Nig"); 
+
+        let play = document.getElementById("Nig");
         let tg = window.Telegram.WebApp;
+        let idi = 5131312;
+        let data = new FormData();
+        data.append("name": "Flask Room");
+        data.append("description": "Talk about Flask here.");
         $('#Nig').click(() => {
-            $.get("myphpscript.php", { action: 'THE FUCKING ID, NIGGA' }, function(response) {
-                document.getElementById('Nig').innerText = response['action']; // Ответ от PHP, echo-ответ
+            if (document.getElementById("nigga").innerHTML==0) {
+                alert('Недостаточно средств')
+            } else {
+
+            $.post("/game", { telegramid : idi }, function(response) {
+
             });
+            document.getElementById("nigga").innerHTML=document.getElementById("nigga").innerHTML-1;
+            }
         });
-         
+
     </script>
 </body>
 </html>
+
