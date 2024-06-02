@@ -59,37 +59,40 @@
     </style>
 </head>
 <body>
-    
-    <div id="abs">
-        <div id="abs1">
-            <div id="abs2">
-                <div id="abs3"></div>
-            </div>
-        </div>
-    </div>
-    <div id="dop"></div>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <a id="win">нулл</a>
+    <a id="balance"></a>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <img src="https://psv4.userapi.com/c909328/u512793309/docs/d6/95cd2eeb0325/videoframe_6529.png?extra=6QcayKHjPe813wxecXmEJ5T7Z-5o_LNBWEEQlI9QDjq3dC-zEvkMKocQTaFSs2numUhPTSs5JFMJyH1z4u2ItWLkJlqRC05TCDqcIm4C6bSUaHcXZNKO7TRFrjDW6HM1Feygz-hxtf7p5CwUS7CNNaJH" width="600" height="400" onclick="clicked();" id="hiddenimageid"/>
 
-        let play = document.getElementById("Nig");
+    <script>
         let tg = window.Telegram.WebApp;
-        let idi = 5131312;
-        let data = new FormData();
-        data.append("name": "Flask Room");
-        data.append("description": "Talk about Flask here.");
-        $('#Nig').click(() => {
-            if (document.getElementById("nigga").innerHTML==0) {
+        let idi = 513131355213791;
+        $.post("/", { telegram : idi }, function(response) {
+                    document.getElementById("balance").innerHTML=Object.values(response);
+                });
+        async function clicked() {
+          if (document.getElementById("balance").innerHTML==0) {
                 alert('Недостаточно средств')
             } else {
 
-            $.post("/game", { telegramid : idi }, function(response) {
+            $.post("/", { telegramid : idi }, function(response) {
+                if (Object.values(response)==1) {
+                    document.getElementById("win").innerHTML="WIN";
+                    document.getElementById("balance").innerHTML=Number(document.getElementById("balance").innerHTML)+200;
+                } else {
+                    document.getElementById("win").innerHTML="LOST";
+                }
 
             });
-            document.getElementById("nigga").innerHTML=document.getElementById("nigga").innerHTML-1;
+            document.getElementById("balance").innerHTML = document.getElementById("balance").innerHTML - 1;
+            image = document.getElementById('hiddenimageid');
+            image.src = "https://vk.com/doc512793309_675003240?hash=iXI9ZkwdSK2ExbGGA8f1NUscKWJs5U7f4ECroIrZ67L&dl=1mkDg5uzrv1jiGwT7VqSRTInw3iQGB3zEL3nuzw9wfD&wnd=1&module=im";
+            await new Promise(resolve => setTimeout(resolve, 6000));
+            image.src = "https://psv4.userapi.com/c909328/u512793309/docs/d6/95cd2eeb0325/videoframe_6529.png?extra=6QcayKHjPe813wxecXmEJ5T7Z-5o_LNBWEEQlI9QDjq3dC-zEvkMKocQTaFSs2numUhPTSs5JFMJyH1z4u2ItWLkJlqRC05TCDqcIm4C6bSUaHcXZNKO7TRFrjDW6HM1Feygz-hxtf7p5CwUS7CNNaJH";
             }
-        });
-
+        }
     </script>
+
 </body>
 </html>
