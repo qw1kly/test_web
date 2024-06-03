@@ -2,6 +2,8 @@
 <html lang="rus">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
     <title>Game</title>
     <style>
         body{
@@ -13,40 +15,6 @@
     </style>
 </head>
 <body>
-    <a id="win">нулл</a>
-    <a id="balance">100</a>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <img src="https://psv4.userapi.com/c909328/u512793309/docs/d6/95cd2eeb0325/videoframe_6529.png?extra=6QcayKHjPe813wxecXmEJ5T7Z-5o_LNBWEEQlI9QDjq3dC-zEvkMKocQTaFSs2numUhPTSs5JFMJyH1z4u2ItWLkJlqRC05TCDqcIm4C6bSUaHcXZNKO7TRFrjDW6HM1Feygz-hxtf7p5CwUS7CNNaJH" width="600" height="400" onclick="clicked();" id="hiddenimageid"/>
-
-    <script>
-        let tg = window.Telegram.WebApp;
-        let idi = 513131355213791;
-        $.post("/", { telegram : idi }, function(response) {
-                    document.getElementById("balance").innerHTML=Object.values(response);
-                });
-        async function clicked() {
-          if (document.getElementById("balance").innerHTML==0) {
-                alert('Недостаточно средств')
-            } else {
-
-            $.post("/", { telegramid : idi }, function(response) {
-                if (Object.values(response)==1) {
-                    document.getElementById("win").innerHTML="WIN";
-                    document.getElementById("balance").innerHTML=Number(document.getElementById("balance").innerHTML)+200;
-                } else {
-                    document.getElementById("win").innerHTML="LOST";
-                }
-
-            });
-            document.getElementById("balance").innerHTML = document.getElementById("balance").innerHTML - 1;
-            image = document.getElementById('hiddenimageid');
-            image.src = "https://vk.com/doc512793309_675003240?hash=iXI9ZkwdSK2ExbGGA8f1NUscKWJs5U7f4ECroIrZ67L&dl=1mkDg5uzrv1jiGwT7VqSRTInw3iQGB3zEL3nuzw9wfD&wnd=1&module=im";
-            await new Promise(resolve => setTimeout(resolve, 6000));
-            image.src = "https://psv4.userapi.com/c909328/u512793309/docs/d6/95cd2eeb0325/videoframe_6529.png?extra=6QcayKHjPe813wxecXmEJ5T7Z-5o_LNBWEEQlI9QDjq3dC-zEvkMKocQTaFSs2numUhPTSs5JFMJyH1z4u2ItWLkJlqRC05TCDqcIm4C6bSUaHcXZNKO7TRFrjDW6HM1Feygz-hxtf7p5CwUS7CNNaJH";
-            }
-        }
-    </script>
 
 </body>
 </html>
