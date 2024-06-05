@@ -6,6 +6,34 @@
 
     <title>Game</title>
     <style>
+       
+        .clicks{
+            box-sizing: border-box;
+            
+            position: absolute;
+            width: 65px;
+            height: 30px;
+            left: 267px;
+            top: 124px;
+            
+            background: rgba(255, 255, 255, 0.13);
+            border: 1px solid rgba(255, 255, 255, 0.01);
+            backdrop-filter: blur(0.3px);
+            border-radius: 16px;
+        }
+        .wallet{
+            box-sizing: border-box;
+            position: absolute;
+            width: 77px;
+            height: 30px;
+            left: 335px;
+            top: 124px;
+            background: rgba(255, 255, 255, 0.13);
+            border: 1px solid rgba(255, 255, 255, 0.01);
+            backdrop-filter: blur(0.3px);
+            border-radius: 16px;
+
+        }
         .logo{
             position: absolute;
             width: 269px;
@@ -32,5 +60,13 @@
 </head>
 <body>
     <a class="logo">Make a wish</a>
+    <div class="head">
+        <div class="clicks">
+            <a>144</a>
+        </div>
+        <div class="wallet">
+            <a>12.3 $</a>
+        </div>
+    </div>
 </body>
 </html>
