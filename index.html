@@ -360,8 +360,8 @@
     </style>
 </head>
 <body>
-    
-    <button class="playact">PLAY</button>
+    <a id="test"> fuck youuuuuu </a>
+    <button class="playact" onclick="Myfunc()">PLAY</button>
     <div class="playbut1"></div>
     <div class="playbut2"></div>
     <div class="playbut3"></div>
@@ -398,5 +398,10 @@
         </div>
     </div>
     <a class="level">Level 1</a>
+    <script>
+        function Myfunc() {
+            getElementById("test").innerHTML = "CHANGED";
+        }
+    </script>
 </body>
 </html>
