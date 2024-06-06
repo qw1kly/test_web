@@ -1,3 +1,3 @@
 function Myfunc() {
-            document.getElementById("test").innerHTML = "CHANGED";
+            document.getElementById("inv").style.display="none";
             }
