@@ -1,6 +1,6 @@
 function Myfunc() {
             var image = document.getElementById("gifanim");
-            image.src = "https://sun1-13.userapi.com/c825102/u607470817/docs/d1/13bc9e9189d3/video.mp4?extra=BgnLL_vwkXmmooXql_vHUmaAbzCSwU9bd0sRZZisLwOgpHP3uTSIxO9k5ALbsUvuvrakdn143zJerCwEzPFnwIRrBOoVuJB4N2sq0yROiNblMC2znGchpw3aaV2r_hjlycV_-lnEylUKwhzw5SczRLlu";
+            image.src = "https://cdn.discordapp.com/attachments/880912408779034664/1248721765719478482/Animated_AgAD6SIAAowfuEo.gif?ex=6664b245&is=666360c5&hm=1955878597eebb0282ce4208c50b42618f6d70643a3980da9a3e4f3aadb39b27&";
             document.getElementById("inv").style.display="none";
             
 }
