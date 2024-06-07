@@ -1,4 +1,4 @@
 function Myfunc() {
             document.getElementById("inv").style.display="none";
-            document.getElementByClassName("basket").src = "https://vk.com/doc607470817_676427640?hash=GrqKIKUGzub53p2X6R1RTrJvatEZFP4MvFuK8m3nM7g&dl=OOXOhziPZOw243RKmZMghU38tzEDUGpGoIQQNBMQjj0&wnd=1&module=im";
+            document.getElementByClassName("basket").src = "https://sun1-13.userapi.com/c825102/u607470817/docs/d1/13bc9e9189d3/video.mp4?extra=BgnLL_vwkXmmooXql_vHUmaAbzCSwU9bd0sRZZisLwOgpHP3uTSIxO9k5ALbsUvuvrakdn143zJerCwEzPFnwIRrBOoVuJB4N2sq0yROiNblMC2znGchpw3aaV2r_hjlycV_-lnEylUKwhzw5SczRLlu";
             }
