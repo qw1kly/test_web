@@ -16,10 +16,10 @@ async function Mywallet() {
             document.getElementByClassName("walletbar").style.background = "#a2b9bc";
 }
 
-async function Mygame() {
+async function Myleader() {
             document.getElementByClassName("leaderboard").style.background = "#a2b9bc";
 }
 
-async function Mygame() {
+async function Myprofile() {
             document.getElementByClassName("profile").style.background = "#a2b9bc";
 }
