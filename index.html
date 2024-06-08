@@ -369,45 +369,43 @@
             pointer-events: none;
         }
         .gameonbar{
-            
+            pointer-events: none;
             position: absolute;
             width: 73px;
             height: 63px;
             left: 9px;
             top: 692px;
-            
-            background: #121212;
+            background: #98b4a6;
             border-radius: 16px;
         }
         .walletbar{
-            
+            pointer-events: none;
             position: absolute;
             width: 73px;
             height: 63px;
             left: 109px;
             top: 692px;
             
-            background: #121212;
             border-radius: 16px;
 
         }
         .leaderboard{
-            
+            pointer-events: none;
             position: absolute;
             width: 80px;
             height: 63px;
             left: 189px;
             top: 692px;
-            background: #121212;
             border-radius: 16px;
         }
         .profile{
+            pointer-events: none;
             position: absolute;
             width: 65px;
             height: 63px;
             left: 295px;
             top: 692px;
-            background: #98b4a6;
+            
             border-radius: 16px;
         }
         .gametext{
@@ -424,15 +422,65 @@
         }
         .leadertext{
             position: absolute;
-            left: 15px;
+            left: 0px;
             top: 35px;
             color: #FFFFFF;
         }
         .profiletext{
             position: absolute;
-            left: 15px;
+            left: 10px;
             top: 35px;
             color: #FFFFFF;
+        }
+        .gamesite{
+            position: absolute;
+            background:none;
+            border:none;
+            margin:0;
+            padding:0;
+            width: 73px;
+            height: 63px;
+            left: 9px;
+            top: 692px;
+            color: #000000;
+        }
+        .walletsite{
+            position: absolute;
+            background:none;
+            border:none;
+            margin:0;
+            padding:0;
+            width: 73px;
+            height: 63px;
+            left: 109px;
+            top: 692px;
+            color: #000000;
+        }
+        
+        .leadersite{
+            position: absolute;
+            background:none;
+            border:none;
+            margin:0;
+            padding:0;
+            width: 73px;
+            height: 63px;
+            left: 189px;
+            top: 692px;
+            color: #000000;
+        }
+        
+        .profilesite{
+            position: absolute;
+            background:none;
+            border:none;
+            margin:0;
+            padding:0;
+            width: 73px;
+            height: 63px;
+            left: 295px;
+            top: 692px;
+            color: #000000;
         }
     </style>
 </head>
@@ -449,6 +497,10 @@
     <div class="profile">
         <a class="profiletext">Profile</a>
     </div>
+    <button class="gamesite" onclick="Mygame()">clickme</button>
+    <button class="walletsite" onclick="Mywallet()">clickme</button>
+    <button class="leadersite" onclick="Myleader()">clickme</button>
+    <button class="profilesite" onclick="Myprofile()">clickme</button>
     <button class="butplay" onclick="Myfunc()">clickme</button>
     <img src="https://sun9-3.userapi.com/impg/dGj2Sqwrk6HtZ7QVi_AIGgPeEgOoVh8FspnO2A/5pnid22eJPs.jpg?size=270x259&quality=96&sign=3453ed207415c63665457c10ddc78d63&type=album" class="basket" id="gifanim" />
     
