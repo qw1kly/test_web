@@ -9,7 +9,7 @@ async function Myfunc() {
             
 }
 async function Mygame() {
-            document.getElementByClassName("gameonbar").style.background = "#a2b9bc";
+            document.getElementByClassName("gameonbar").style.background = "#A2B9BC";
 }
 
 async function Mywallet() {
