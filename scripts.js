@@ -8,3 +8,18 @@ async function Myfunc() {
             document.getElementById("inv").style.display="block";
             
 }
+async function Mygame() {
+            document.getElementByClassName("gameonbar").style.background = "#a2b9bc";
+}
+
+async function Mywallet() {
+            document.getElementByClassName("wallet").style.background = "#a2b9bc";
+}
+
+async function Mygame() {
+            document.getElementByClassName("leaderboard").style.background = "#a2b9bc";
+}
+
+async function Mygame() {
+            document.getElementByClassName("profile").style.background = "#a2b9bc";
+}
