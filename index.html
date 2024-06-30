@@ -3,25 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1, shrink-to-fit=no, user-scalable=no">
-    <script src="scripts.js" type="text/javascript"></script>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Rubik+Mono+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <title>Game</title>
+
     <style>
+        .barwitha{
+        position: absolute;
+        width: 360px;
+        height: 76px;
+        left: 0px;
+        top: 667px;
+
+        background: rgba(18, 18, 18, 0.1);
+        box-shadow: inset 3.01333px -3.01333px 3.01333px rgba(15, 15, 15, 0.4), inset -3.01333px 3.01333px 3.01333px rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(15.0667px);
+        /* Note: backdrop-filter has minimal browser support */
+        border-radius: 16px;
+        }
+        .ticketsvg{
+        position:absolute;
+        width: 21px;
+        left: 253px;
+        top: 15px;
+        }
+        .tonmoney{
+        position: absolute;
+        left: 329px;
+        width: 30px;
+        top: 11px;
+        }
         .level{
-                position: absolute;
-                width: 254px;
-                height: 62px;
-                left: 58px;
-                top: 60px;
+            position: absolute;
+            width: 254px;
+            height: 62px;
+            left: 58px;
+            top: 60px;
 
-                font-family: "Rubik One";
-                font-style: normal;
-                font-weight: 400;
-                font-size: 64px;
-                line-height: 79px;
-                text-align: center;
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 64px;
+            line-height: 79px;
+            text-align: center;
 
-                color: #FFFFFF;
+            color: #FFFFFF;
         }
 
         .dhead{
@@ -36,7 +69,7 @@
             height: 18px;
             top: 5px;
             left: 10px;
-            font-family: 'Rubik';
+            font-family: 'Inter';
             font-style: normal;
             font-weight: 700;
             font-size: 20px;
@@ -49,12 +82,98 @@
             height: 18px;
             top: 5px;
             left: 10px;
-            font-family: 'Rubik';
+            font-family: 'Inter';
             font-style: normal;
             font-weight: 700;
             font-size: 20px;
             line-height: 19px;
             color: #FFFFFF;
+        }
+        #abs{position: absolute;
+        width: 336px;
+        height: 151px;
+        left: 13px;
+        top: 150px;
+        }
+
+
+        /* Rectangle 28 */
+        #abs1{
+        box-sizing: border-box;
+
+        position: absolute;
+        width: 336px;
+        height: 151px;
+        left: 13px;
+        top: 150px;
+
+        mix-blend-mode: hard-light;
+        border: 7.81354px solid #0094FF;
+        filter: blur(9.10578px);
+        border-radius: 16px;
+        }
+
+        /* Rectangle 28 */
+        #abs2{
+        box-sizing: border-box;
+
+        position: absolute;
+        width: 336px;
+        height: 151px;
+        left: 13px;
+        top: 150px;
+
+        mix-blend-mode: hard-light;
+        border: 10.2177px solid #0094FF;
+        filter: blur(3.03526px);
+        border-radius: 16px;
+        }
+
+        /* Rectangle 28 */
+        #abs3{
+        box-sizing: border-box;
+
+        position: absolute;
+        width: 336px;
+        height: 151px;
+        left: 13px;
+        top: 150px;
+
+        mix-blend-mode: hard-light;
+        border: 7.81354px solid rgba(0, 179, 255, 0.2);
+        box-shadow: inset -0.781354px 1.56271px 0.781354px rgba(255, 255, 255, 0.5);
+        filter: drop-shadow(0px 6.07052px 7.89168px #0066FF) drop-shadow(0px 7.81354px 6.01042px rgba(0, 13, 21, 0.7));
+        border-radius: 16px;
+        }
+
+        /* Rectangle 28 */
+        #abs4{
+        box-sizing: border-box;
+
+        position: absolute;
+        width: 336px;
+        height: 151px;
+        left: 13px;
+        top: 150px;
+
+        border: 4.80833px solid #82D9FF;
+        filter: blur(0.601042px);
+        border-radius: 16px;
+        }
+
+        /* Rectangle 28 */
+        #abs5{
+        box-sizing: border-box;
+
+        position: absolute;
+        width: 336px;
+        height: 151px;
+        left: 13px;
+        top: 150px;
+
+        border: 2.40417px solid #FFFFFF;
+        filter: blur(0.400694px);
+        border-radius: 16px;
         }
         .clicks{
             box-sizing: border-box;
@@ -83,22 +202,7 @@
             border-radius: 16px;
 
         }
-        .logo{
-            position: absolute;
-            width: 269px;
-            height: 41px;
-            left: -55px;
-            top: 10px;
 
-            font-family: 'Rubik';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 28px;
-            line-height: 28px;
-            text-align: center;
-
-            color: #FFFFFF;
-        }
         body{
             position: relative;
             width: 358px;
@@ -116,7 +220,7 @@
             filter: blur(0.601042px);
             border-radius: 16px;
         }
-        .square1{    
+        .square1{
             box-sizing: border-box;
             position: absolute;
             width: 336px;
@@ -165,45 +269,45 @@
             border-radius: 16px;
         }
         .ellip{
-            
+
             position: absolute;
             width: 356px;
             height: 171px;
             left: 6px;
             top: 140px;
-            
+
             mix-blend-mode: hard-light;
         }
-        
+
         .rules{
             position: absolute;
             width: 250px;
             height: 69px;
             left: 39px;
             top: 158px;
-            
-            font-family: 'Rubik';
+
+            font-family: 'Inter';
             font-style: normal;
             font-weight: 700;
             font-size: 18px;
             line-height: 28px;
-            
+
             color: #FFFFFF;
         }
-        
+
         .rulesun{
             position: absolute;
             width: 250px;
             height: 69px;
             left: 39px;
             top: 178px;
-            
-            font-family: 'Rubik';
+
+            font-family: 'Inter';
             font-style: normal;
             font-weight: 700;
             font-size: 15px;
             line-height: 28px;
-            
+
             color: #FFFFFF;
         }
         .prizes{
@@ -212,13 +316,13 @@
             height: 40px;
             left: 38px;
             top: 215px;
-            
-            font-family: 'Rubik';
+
+            font-family: 'Inter';
             font-style: normal;
             font-weight: 700;
             font-size: 26px;
             line-height: 31px;
-            
+
             color: #FFFFFF;
         }
         .jackpot{
@@ -230,16 +334,16 @@
             height: 69px;
             left: 38px;
             top: 255px;
-            
-            font-family: 'Rubik';
+
+            font-family: 'Inter';
             font-style: italic;
             font-weight: 300;
             font-size: 15px;
             line-height: 24px;
-            
+
             color: #FFFFFF;
         }
-        .basket{            
+        .basket{
             position: absolute;
             width: 270px;
             height: 259px;
@@ -249,68 +353,68 @@
         }
         .playbut1{
             /* Rectangle */
-            
+
             position: absolute;
             width: 240px;
             height: 90px;
             left: 63px;
             top: 583px;
-            
+
             border-radius: 9.375px;
         }
         .playbut2{
-            
+
             position: absolute;
             width: 216px;
             height: 54px;
             left: 75px;
             top: 601px;
-            
+
             background: rgba(18, 141, 255, 0.2);
             mix-blend-mode: hard-light;
             filter: blur(7.03125px);
         }
         .playbut3{
             box-sizing: border-box;
-            
+
             position: absolute;
             width: 180px;
             height: 45px;
             left: 93px;
             top: 605.5px;
-            
+
             mix-blend-mode: hard-light;
             border: 3.04688px solid #0094FF;
             filter: blur(7.03125px);
             border-radius: 22.5px;
         }
         .playbut4{
-            
+
             /* Rectangle 33 */
-            
+
             box-sizing: border-box;
-            
+
             position: absolute;
             width: 180px;
             height: 45px;
             left: 93px;
             top: 605.5px;
-            
+
             mix-blend-mode: hard-light;
             border: 3.98438px solid #0094FF;
             filter: blur(2.34375px);
             border-radius: 22.5px;
         }
         .playbut5{
-        
+
             box-sizing: border-box;
-            
+
             position: absolute;
             width: 180px;
             height: 45px;
             left: 93px;
             top: 605.5px;
-            
+
             mix-blend-mode: hard-light;
             border: 3.04688px solid rgba(0, 179, 255, 0.2);
             box-shadow: inset -0.304688px 0.609375px 0.304688px rgba(255, 255, 255, 0.5);
@@ -319,49 +423,49 @@
         }
         .playbut6{
             box-sizing: border-box;
-            
+
             position: absolute;
             width: 180px;
             height: 45px;
             left: 93px;
             top: 605.5px;
-            
+
             border: 1.875px solid #82D9FF;
             filter: blur(0.234375px);
             border-radius: 22.5px;
         }
         .playbut7{
-            
+
             /* Rectangle 33 */
-            
+
             box-sizing: border-box;
-            
+
             position: absolute;
             width: 180px;
             height: 45px;
             left: 93px;
             top: 605.5px;
-            
+
             border: 0.9375px solid #FFFFFF;
             filter: blur(0.15625px);
             border-radius: 22.5px;
         }
-        
+
         .playact{
             position: absolute;
             width: 180px;
             height: 38px;
             left: 96px;
             top: 609px;
-            
-            font-family: 'Rubik';
+
+            font-family: 'Inter';
             font-style: normal;
             font-weight: 700;
             font-size: 32px;
             line-height: 38px;
             /* identical to box height */
             text-align: center;
-            
+
             color: #FFFFFF;
         }
         .butplay{
@@ -382,142 +486,159 @@
         .gameonbar{
             pointer-events: none;
             position: absolute;
-            width: 73px;
-            height: 63px;
-            left: 9px;
-            top: 692px;
-            background: #121212;
+            width: 63px;
+            height: 53px;
+            left: 14px;
+            top: 7px;
+            background: #222222;
             border-radius: 16px;
         }
         .walletbar{
+
             pointer-events: none;
             position: absolute;
-            width: 73px;
-            height: 63px;
-            left: 99px;
-            top: 692px;
-            
+            width: 63px;
+            height: 53px;
+            left: 107px;
+            top: 7px;
+
             border-radius: 16px;
 
         }
         .leaderboard{
             pointer-events: none;
             position: absolute;
-            width: 80px;
-            height: 63px;
-            left: 189px;
-            top: 692px;
+            width: 63px;
+            height: 53px;
+            left: 199px;
+            top: 7px;
             border-radius: 16px;
+
+
         }
         .profile{
             pointer-events: none;
             position: absolute;
-            width: 65px;
-            height: 63px;
-            left: 295px;
-            top: 692px;
-            
+            width: 63px;
+            height: 53px;
+            left: 285px;
+            top: 7px;
             border-radius: 16px;
+
         }
         .gametext{
             position: absolute;
-            left: 15px;
+            width: 67px;
+            height: 20px;
+            left: -2px;
             top: 35px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 15px;
+            line-height: 18px;
+            text-align: center;
+
             color: #FFFFFF;
+        }
+        .icongame{
+            position: absolute;
+            top: 673px;
+            left: 25px;
+        }
+        .iconwallet{
+            position: absolute;
+            top: 673px;
+            left: 118px;
+        }
+        .iconrating{
+            position: absolute;
+            top: 673px;
+            left: 211px;
+        }
+        .iconprofile{
+            position: absolute;
+            top: 673px;
+            left: 298px;
         }
         .wallettext{
             position: absolute;
-            left: 15px;
+            width: 67px;
+            height: 20px;
+            left: -2.5px;
             top: 35px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 15px;
+            line-height: 18px;
+            text-align: center;
+
             color: #FFFFFF;
         }
         .leadertext{
             position: absolute;
-            left: 0px;
+            width: 67px;
+            height: 20px;
+            left: -2px;
             top: 35px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 15px;
+            line-height: 18px;
+            text-align: center;
+
             color: #FFFFFF;
         }
         .profiletext{
             position: absolute;
-            left: 10px;
+            width: 67px;
+            height: 20px;
+            left: -1px;
             top: 35px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 15px;
+            line-height: 18px;
+            text-align: center;
+
             color: #FFFFFF;
         }
-        .gamesite{
+
+        .webtonn{
             position: absolute;
-            background:none;
-            border:none;
-            margin:0;
-            padding:0;
-            width: 73px;
-            height: 63px;
-            left: 9px;
-            top: 692px;
-            color: #000000;
-        }
-        .walletsite{
-            position: absolute;
-            background:none;
-            border:none;
-            margin:0;
-            padding:0;
-            width: 73px;
-            height: 63px;
-            left: 99px;
-            top: 692px;
-            color: #000000;
-        }
-        
-        .leadersite{
-            position: absolute;
-            background:none;
-            border:none;
-            margin:0;
-            padding:0;
-            width: 73px;
-            height: 63px;
-            left: 189px;
-            top: 692px;
-            color: #000000;
-        }
-        
-        .profilesite{
-            position: absolute;
-            background:none;
-            border:none;
-            margin:0;
-            padding:0;
-            width: 65px;
-            height: 63px;
-            left: 295px;
-            top: 692px;
-            color: #000000;
+            width: 100px;
+            left: 0px;
+            top:-10px;
         }
     </style>
 </head>
 <body>
-    
+
     <img src="https://sun9-3.userapi.com/impg/dGj2Sqwrk6HtZ7QVi_AIGgPeEgOoVh8FspnO2A/5pnid22eJPs.jpg?size=270x259&quality=96&sign=3453ed207415c63665457c10ddc78d63&type=album" class="basket" id="gifanim" />
-    
-    <button class="butplay" onclick="Myfunc()">clickme</button>
+    <a id="win">нулл</a>
+    <button class="butplay" onclick="clicked()">clickme</button>
     <div id="inv" class="maininvisible">
-        <div class="gameonbar">    
+        <div class="barwitha">
+        <div class="gameonbar">
             <a class="gametext">Game</a>
         </div>
         <div class="walletbar">
             <a class="wallettext">Wallet</a>
         </div>
         <div class="leaderboard">
-            <a class="leadertext">Leaderboard</a>
+            <a class="leadertext">Rating</a>
         </div>
         <div class="profile">
             <a class="profiletext">Profile</a>
         </div>
-        <button class="gamesite" onclick="Mygame()">clickme</button>
-        <button class="walletsite" onclick="Mywallet()">clickme</button>
-        <button class="leadersite" onclick="Myleader()">clickme</button>
-        <button class="profilesite" onclick="Myprofile()">clickme</button>    
-        
+        </div>
         <a class="playact">PLAY</a>
         <div class="playbut1"></div>
         <div class="playbut2"></div>
@@ -529,7 +650,7 @@
         <a class="cic">Выигрывает тот кто не проигрывает</a>
         <div class="prizes">
             <a class="priz">
-                Приз:
+                Prize:
             </a>
             <a class="jackpot">
                 200$
@@ -537,23 +658,76 @@
         </div>
         <a class="rules">Правила игры:</a>
         <a class="rulesun">Попади мячом в корзину</a>
-        <div class="square1"></div>
-        <div class="square2"></div>
-        <div class="square3"></div>
-        <div class="square4"></div>
-        <div class="square5"></div>
-        <div class="ellip"></div>
+
+        <div id="abs">
+        </div>
+        <div id="abs1">
+        </div>
+        <div id="abs2">
+        </div>
+        <div id="abs3">
+        </div>
+
+        <div id="abs4">
+        </div>
+        <div id="abs5">
+        </div>
         <a class="level">Level 1</a>
     </div>
-    <a class="logo">Make a wish</a>
+
     <div class="dhead">
         <div class="clicks">
-            <a class="clicksbal">144</a>
+            <a class="clicksbal" id="clicki">0</a>
             <img>
         </div>
         <div class="wallet">
-            <a class="walletbal">12.3</a>
+            <a class="walletbal">0</a>
         </div>
     </div>
-</body>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        let tg = window.Telegram.WebApp;
+        let idi = 51999343782948910;
+
+        $.post("/", { telegram : idi }, function(response) {
+                    document.getElementById("clicki").innerHTML=Object.values(response);
+                });
+        async function clicked() {
+          if (document.getElementById("clicki").innerHTML==0) {
+                alert('Недостаточно средств')
+            } else {
+
+            $.post("/", { telegramid : idi }, function(response) {
+
+                if (Object.values(response)==1) {
+                    document.getElementById("clicki").innerHTML=Number(document.getElementById("clicki").innerHTML)+200;
+                } else {
+                    document.getElementById("win").innerHTML="LOST";
+                }
+                var image = document.getElementById("gifanim");
+                image.src = "https://cdn.discordapp.com/attachments/880912408779034664/1256741333897314374/Animated_AgAD6SIAAowfuEo_1.gif?ex=6681df13&is=66808d93&hm=2ebe4ff1e400fa8235c0c5457f7e40553c05f8b52337af12d16557bcb5a8baea&";
+                document.getElementById("inv").style.display="none";
+                document.getElementById("icongame1").style.display="none";
+                document.getElementById("iconprofile1").style.display="none";
+                document.getElementById("iconrating1").style.display="none";
+                document.getElementById("iconwallet1").style.display="none";
+                async function clickedback() {
+                await new Promise(resolve => setTimeout(resolve, 3000));
+                var image = document.getElementById("gifanim");
+                image.src = "https://sun9-3.userapi.com/impg/dGj2Sqwrk6HtZ7QVi_AIGgPeEgOoVh8FspnO2A/5pnid22eJPs.jpg?size=270x259&quality=96&sign=3453ed207415c63665457c10ddc78d63&type=album";
+                document.getElementById("inv").style.display="block";
+                document.getElementById("icongame1").style.display="block";
+                document.getElementById("iconprofile1").style.display="block";
+                document.getElementById("iconrating1").style.display="block";
+                document.getElementById("iconwallet1").style.display="block";
+                }
+                clickedback()
+            });
+            document.getElementById("clicki").innerHTML = document.getElementById("clicki").innerHTML - 1;
+
+            }
+        }
+    </script>
+    </body>
 </html>
