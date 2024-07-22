@@ -636,7 +636,7 @@
     </style>
 </head>
 <body>
-
+    <button onclick="sendMoney()">Отправить ноткоин</button>
     <img src="https://sun9-3.userapi.com/impg/dGj2Sqwrk6HtZ7QVi_AIGgPeEgOoVh8FspnO2A/5pnid22eJPs.jpg?size=270x259&quality=96&sign=3453ed207415c63665457c10ddc78d63&type=album" class="basket" id="gifanim" />
     <a id="win">нулл</a>
 
@@ -711,6 +711,7 @@
         manifestUrl: 'https://vk.com/doc607470817_677857157?hash=atNIMny5rgZm2kCLyHGNoO0qSPyPXrz3uM1Pwiz48JX&dl=FvKkC7fbez7mngusPAzUqkQvaJLPZKj2GJ7gHWeGsnc',
         buttonRootId: 'ton-connect'
     });
+        async function sendMoney() {
     const transaction = {
     messages: [
         {
@@ -719,6 +720,7 @@
         }
     ]
 }
+        }
 
     const result = await tonConnectUI.sendTransaction(transaction)
     </script>
