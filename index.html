@@ -710,11 +710,11 @@
         let tg = window.Telegram.WebApp;
         tg.expand();
         tg.disableVerticalSwipes();
-        document.getElementById("wallba").innerHTML = window.innerWidth;
+        let actwidth = window.innerWidth;
         let myNodeList = document.querySelectorAll("div");
         for (let i = 0; i < myNodeList.length; i++) {
           let item = myNodeList[i];
-          item.style.width += "150px"
+          item.style.width = actwidth-18+"px";
         }
 
     </script>
