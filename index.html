@@ -45,7 +45,7 @@
         }
         .level{
             position: absolute;
-            width: 354px;
+            width: 254px;
             height: 62px;
             left: 58px;
             top: 60px;
@@ -712,12 +712,18 @@
         tg.disableVerticalSwipes();
         let actwidth = window.innerWidth;
         let myNodeList = document.querySelectorAll("div");
+        let myNodeList2 = document.querySelectorAll("a");
+
         for (let i = 0; i < myNodeList.length; i++) {
           let item = myNodeList[i];
           let roks = item.offsetWidth;
           item.style.width = roks+actwidth-376+"px";
         }
-
+        for (let i = 0; i < myNodeList2.length; i++) {
+          let item = myNodeList2[i];
+          let roks = item.offsetWidth;
+          item.style.width = roks+actwidth-376+"px";
+        }
     </script>
     <script>
     const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
