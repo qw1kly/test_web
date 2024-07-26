@@ -711,7 +711,11 @@
         tg.expand();
         tg.disableVerticalSwipes();
         document.getElementById("wallba").innerHTML = window.innerWidth;
-        document.getElementById("wallba").innerHTML = document.querySelectorAll("div");
+        let myNodeList = document.querySelectorAll("div");
+        for (let i = 0; i < myNodeList.length; i++) {
+          let item = myNodeList[i];
+          item.style.width += "150px"
+        }
 
     </script>
     <script>
