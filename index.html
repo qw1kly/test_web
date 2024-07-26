@@ -710,7 +710,7 @@
         let tg = window.Telegram.WebApp;
         tg.expand();
         tg.disableVerticalSwipes();
-        document.getElementById("wallba").innerHTML = WebApp.viewportHeight;
+        document.body.style.width = window.innerWidth;
         
     </script>
     <script>
@@ -737,5 +737,6 @@
         console.log(connectedWallet);
     }
     </script>
+    
 </body>
 </html>
