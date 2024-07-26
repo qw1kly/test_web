@@ -695,11 +695,11 @@
     </div>
 
     <div class="dhead">
-        <div class="clicks">
+        <div class="clicks" id="divclicks">
             <a class="clicksbal" id="clicki">0</a>
             <img>
         </div>
-        <div class="wallet">
+        <div class="wallet" id="divwallet">
             <a class="walletbal" id="wallba">0</a>
         </div>
     </div>
@@ -738,6 +738,8 @@
           let roks = item.offsetWidth;
           item.style.width = roks+actwidth-380+"px";
         }
+        document.getElementById("divwallet").style.width = "77px";
+        document.getElementById("divclicks").style.width = "65px";
     </script>
     <script>
     const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
