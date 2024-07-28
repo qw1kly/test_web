@@ -12,7 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Rubik+Mono+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
+        <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
+
     <title>Game</title>
 
     <style>
@@ -315,7 +316,7 @@
         }
         .prizes{
             position: absolute;
-            width: 180px;
+            width: 150px;
             height: 40px;
             left: 38px;
             top: 215px;
@@ -631,14 +632,12 @@
         .maininvisible{
             pointer-events: auto;
         }
-        #ton-connect{
-            width: 358px;
-        }
+
 
     </style>
 </head>
 <body>
-    <button onclick="sendMoney()">Отправить ноткоин</button>
+
     <img src="https://sun9-3.userapi.com/impg/dGj2Sqwrk6HtZ7QVi_AIGgPeEgOoVh8FspnO2A/5pnid22eJPs.jpg?size=270x259&quality=96&sign=3453ed207415c63665457c10ddc78d63&type=album" class="basket" id="gifanim" />
     <a id="win">нулл</a>
 
@@ -695,19 +694,48 @@
     </div>
 
     <div class="dhead">
-        <div class="clicks" id="divclicks">
+        <div class="clicks">
             <a class="clicksbal" id="clicki">0</a>
             <img>
         </div>
-        <div class="wallet" id="divwallet">
+        <div class="wallet">
             <a class="walletbal" id="wallba">0</a>
         </div>
     </div>
-    <div id="ton-connect"></div>
-
+    <button onclick="sendMoney()">Send</button>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
+<div id="ton-connect"></div>
+<script>
+    const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
+        manifestUrl: 'https://vk.com/doc607470817_677857157?hash=atNIMny5rgZm2kCLyHGNoO0qSPyPXrz3uM1Pwiz48JX&dl=FvKkC7fbez7mngusPAzUqkQvaJLPZKj2GJ7gHWeGsnc',
+        buttonRootId: 'ton-connect'
+    });
+    async function sendMoney() {
+    const transaction = {
+    messages: [
+        {
+            address: "", // destination address
+            amount: "20000000" //Toncoin in nanotons
+        }
+    ]
+}
+            const result = await tonConnectUI.sendTransaction(transaction)
+            document.getElementById("wallba").innerHTML = result;
+            
+        }
+    </script>
+    <script>
+    async function connectToWallet() {
+        const connectedWallet = await tonConnectUI.connectWallet();
+        // Do something with connectedWallet if needed
+        console.log(connectedWallet);
+    }
+    </script>
     <script>
         let tg = window.Telegram.WebApp;
         tg.expand();
@@ -742,29 +770,47 @@
         document.getElementById("divclicks").style.width = "65px";
     </script>
     <script>
-    const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
-        manifestUrl: 'https://vk.com/doc607470817_677857157?hash=atNIMny5rgZm2kCLyHGNoO0qSPyPXrz3uM1Pwiz48JX&dl=FvKkC7fbez7mngusPAzUqkQvaJLPZKj2GJ7gHWeGsnc',
-        buttonRootId: 'ton-connect'
-    });
-    async function sendMoney() {
-    const transaction = {
-    messages: [
-        {
-            address: "", // destination address
-            amount: "20000000" //Toncoin in nanotons
-        }
-    ]
-}
-            const result = await tonConnectUI.sendTransaction(transaction)
+
+        let tg = window.Telegram.WebApp;
+        let idi = 5199934378;
+        $.post("/", { telegram : idi }, function(response) {
+                    document.getElementById("clicki").innerHTML=Object.values(response);
+                });
+        async function clicked() {
+          if (document.getElementById("clicki").innerHTML==1) {
+                alert('Недостаточно средств')
+            } else {
+
+            $.post("/", { telegramid : idi }, function(response) {
+
+                if (Object.values(response)==1) {
+                    document.getElementById("clicki").innerHTML=Number(document.getElementById("clicki").innerHTML)+200;
+                } else {
+                    document.getElementById("win").innerHTML="LOST";
+                }
+                var image = document.getElementById("gifanim");
+                image.src = "https://cdn.discordapp.com/attachments/1261295027947044956/1261297407006740510/Pre-comp-3.gif?ex=6692723f&is=669120bf&hm=bd50fd720e3872f8e9cfb988a659e9165ddae5bb2f46e630d4abdbc96932ae95&";
+                document.getElementById("inv").style.display="none";
+                document.getElementById("icongame1").style.display="none";
+                document.getElementById("iconprofile1").style.display="none";
+                document.getElementById("iconrating1").style.display="none";
+                document.getElementById("iconwallet1").style.display="none";
+                async function clickedback() {
+                await new Promise(resolve => setTimeout(resolve, 3000));
+                var image = document.getElementById("gifanim");
+                image.src = "https://sun9-3.userapi.com/impg/dGj2Sqwrk6HtZ7QVi_AIGgPeEgOoVh8FspnO2A/5pnid22eJPs.jpg?size=270x259&quality=96&sign=3453ed207415c63665457c10ddc78d63&type=album";
+                document.getElementById("inv").style.display="block";
+                document.getElementById("icongame1").style.display="block";
+                document.getElementById("iconprofile1").style.display="block";
+                document.getElementById("iconrating1").style.display="block";
+                document.getElementById("iconwallet1").style.display="block";
+                }
+                clickedback()
+            });
+            document.getElementById("clicki").innerHTML = document.getElementById("clicki").innerHTML - 1;
+
+            }
         }
     </script>
-    <script>
-    async function connectToWallet() {
-        const connectedWallet = await tonConnectUI.connectWallet();
-        // Do something with connectedWallet if needed
-        console.log(connectedWallet);
-    }
-    </script>
-    
 </body>
 </html>
