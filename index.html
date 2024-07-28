@@ -17,7 +17,11 @@
     <title>Game</title>
 
     <style>
-
+        #sendton{
+            position: absolute;
+            left: 50px;
+            top: 30px;
+        }
         .barwitha{
         pointer-events: none;
         position: absolute;
@@ -702,7 +706,7 @@
             <a class="walletbal" id="wallba">0</a>
         </div>
     </div>
-    <button onclick="sendMoney()">Send</button>
+    <button onclick="sendMoney()" id="sendton">Send</button>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
