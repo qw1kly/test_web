@@ -728,8 +728,13 @@
         }
     ]
 }
+            try {
             const result = await tonConnectUI.sendTransaction(transaction)
-            document.getElementById("wallba").innerHTML = result;
+        } catch (e) {
+            alert("error")
+        }
+
+        }
             
         }
     </script>
