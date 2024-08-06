@@ -1,73 +1,42 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Chat</title>
-    <style>
-        .body{
-            background: #000000;
-        }
-        .kokl{
-            position: absolute;
-            width: 270px;
-            height: 259px;
-            left:10px;
-        }
-        .kokl1{
-            position: absolute;
-             width: 270px;
-            height: 259px;
-            left: 259px;
-        }
-        .kokl2{
-            position: absolute;
-             width: 270px;
-            height: 259px;
-            left: 600px;
-        }
-        .kokl3{
-            position: absolute;
-             width: 270px;
-            height: 259px;
-            left: 900px;
-        }
-        .kokl4{
-            position: absolute;
-            width: 270px;
-            height: 259px;
-            top: 300px;
-        }
-        .kokl5{
-            position: absolute;
-            width: 270px;
-            height: 259px;
-            top:300px;
-            left: 300px;
-        }
-        .kokl6{
-            position: absolute;
-            width: 270px;
-            height: 259px;
-            top: 300px;
-            left: 600px;
-        }
-        .kokl7{
-            position: absolute;
-             width: 270px;
-            height: 259px;
-            top: 300px;
-            left: 900px;
-        }
-    </style>
-    </head>
-    <body>
-        <img class="kokl" src="https://cdn.discordapp.com/attachments/1197637835222696090/1269687871531515914/-.gif?ex=66b0f87a&is=66afa6fa&hm=207a33c896213d871e1b0f8dc4098f836779587f69b9da03a2a866b1cf19baa2&" />
-        <img class="kokl1" src="https://cdn.discordapp.com/attachments/1197637835222696090/1269687875331686513/-1.gif?ex=66b0f87b&is=66afa6fb&hm=5750f16611169b93a5b0ba95e458b16d96fa670d5cd69d8c99f93ea2736da24a&" />
-        <img class="kokl2" src="https://cdn.discordapp.com/attachments/1197637835222696090/1269687874916192346/-2.gif?ex=66b0f87b&is=66afa6fb&hm=0cc9e0d1451ef2b3c9c3a071fe9e7b3049c8f167d527254093cf70f009ccc77f&" />
-        <img class="kokl3" src="https://cdn.discordapp.com/attachments/1197637835222696090/1269687874492698624/-3.gif?ex=66b0f87a&is=66afa6fa&hm=e8c5ef18e12f434f0fa0bf63a2a7961442890fa53a3c0d8022a6eca8b6d1cb01&" />
-        <img class="kokl4" src="https://cdn.discordapp.com/attachments/1197637835222696090/1269687874077593601/-.gif?ex=66b0f87a&is=66afa6fa&hm=265f27cb48dfbb9d4b41ee6df7f28d986d05d12c2771e9f1d512ddce2d141eb4&" />
-        <img class="kokl5" src="https://cdn.discordapp.com/attachments/1197637835222696090/1269687873607569470/-1.gif?ex=66b0f87a&is=66afa6fa&hm=34c5a48bcce43df30a14a6a4189af2d81c2b10a26ca197667c016d7071eb0dc9&" />
-        <img class="kokl6" src="https://cdn.discordapp.com/attachments/1197637835222696090/1269687872668176465/-2.gif?ex=66b0f87a&is=66afa6fa&hm=a7b25139da7d111bc71733140e874786cfda50d163297fe25c7a00352c1d584e&" />
-        <img class="kokl7" src="https://cdn.discordapp.com/attachments/1197637835222696090/1269687872068517940/-3.gif?ex=66b0f87a&is=66afa6fa&hm=54acfa7da75d8eaadf073286fe6106e0d906e6e47ecd38a56e0e91031f4cbf48&" />
 
-    </body>
+<!DOCTYPE html>
+<html lang="rus">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
+</head>
+
+<body>
+    <a id="statys">NOne</a>
+<div id="ton-connect"></div>
+<script>
+    let tg = window.Telegram.WebApp;
+    let idi = 999;
+    const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
+        manifestUrl: 'https://vk.com/doc607470817_677857157?hash=atNIMny5rgZm2kCLyHGNoO0qSPyPXrz3uM1Pwiz48JX&dl=FvKkC7fbez7mngusPAzUqkQvaJLPZKj2GJ7gHWeGsnc',
+        buttonRootId: 'ton-connect'
+    });
+    async function sendMoney() {
+    const transaction = {
+    messages: [
+        {
+            address: "UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC", // destination address
+            amount: "20" //Toncoin in nanotons
+        }
+    ]
+}
+            const result = await tonConnectUI.sendTransaction(transaction)
+            document.getElementById("statys").innerHTML = result;
+            
+        }
+    </script>
+    <script>
+    async function connectToWallet() {
+        const connectedWallet = await tonConnectUI.connectWallet();
+        // Do something with connectedWallet if needed
+        console.log(connectedWallet);
+    }
+    </script>
+</body>
 </html>
+
