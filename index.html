@@ -797,7 +797,6 @@
 
 <form action="" onsubmit="Sendtofindwinner()">
 <input autocomplete="off" type="text" id="hidemytext" class="checklead" onclick="hidefunc()" onblur="document.getElementById('lupaid').style.display='block';" onfocus="document.getElementById('lupaid').style.display='none';" placeholder="   Search"/>
-<input type="submit" onclick="Sendtofindwinner()" style="position:absolute;left:250px" />
 </form>
 <a class='leadt'>LEADERBOARD</a>
     <div class="barwitha">
@@ -854,7 +853,8 @@
             document.getElementById("winner4").style.display="none";
             document.getElementById("winner5").style.display="none";
             $.post("/rating", { selectwinner : document.getElementById("hidemytext").value }, function(response) {
-
+                document.getElementById("hidemytext").value="";
+                document.getElementById("hidemytext").blur();
 
         });
 
