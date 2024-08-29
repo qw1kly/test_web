@@ -26,7 +26,7 @@ const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
             const result = await tonConnectUI.sendTransaction(transaction)
         const bocCellBytes = await TonWeb.boc.Cell.oneFromBoc(TonWeb.utils.base64ToBytes(result.boc)).hash();
         const hashBase64 = TonWeb.utils.bytesToBase64(bocCellBytes);
-        document.getElementById("rob").innerHTML = hashBase64
+        document.getElementById("rob").innerHTML = result.boc
 
         }
         // var c = document.querySelector('.go3974562317 go3032365164');
