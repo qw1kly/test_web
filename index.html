@@ -40,10 +40,13 @@ const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
                     notify: true,
                     payload: ''
                 }
+            }
+        }
             const result = await tonConnectUI.sendTransaction(transferMessage)
+                document.getElementById("rob").innerHTML = result..transactionHash
+
         const bocCellBytes = await TonWeb.boc.Cell.oneFromBoc(TonWeb.utils.base64ToBytes(result.boc)).hash();
         const hashBase64 = TonWeb.utils.bytesToBase64(bocCellBytes);
-        document.getElementById("rob").innerHTML = result.boc
 
         }
         // var c = document.querySelector('.go3974562317 go3032365164');
