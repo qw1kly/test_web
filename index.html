@@ -31,7 +31,7 @@ const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
             payload: {
                 abi: {
                     type: 'Contract',
-                    value: abi // ABI контракта USDT
+                    value: JSON.stringify(abi) // ABI контракта USDT
                 },
                 method: 'transfer',
                 params: {
