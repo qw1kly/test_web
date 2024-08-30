@@ -43,14 +43,723 @@ const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
                 "events": []
             };
 
-        const transferMessage = {
-                messages: [
-                    {
-                        address: "0:412410771DA82CBA306A55FA9E0D43C9D245E38133CB58F1457DFB8D5CD8892F", // destination address
-                        amount: "20000000" //Toncoin in nanotons
-                    }
-                ]
+        ABI (Application Binary Interface) контракта — это набор правил, которые определяют, как функции контракта могут быть вызваны извне. ABI контракта обычно представляет собой JSON-объект, который описывает функции, их параметры и типы данных.
+
+Для того чтобы найти ABI контракта USDT в сети TON, вам нужно обратиться к источнику, который предоставляет этот контракт. Это может быть официальный сайт TON, документация поставщика услуг, который выпустил USDT, или другие источники, связанные с экосистемой TON.
+
+К сожалению, я не могу предоставить вам конкретный ABI контракта USDT в сети TON, так как эта информация может меняться и зависит от того, кто и как развернул этот контракт. Однако, я могу показать вам пример того, как может выглядеть ABI контракта в общем виде:
+
+Пример ABI контракта (общий вид):
+{
+  "ABI version": 2,
+  "header": ["time", "expire"],
+  "functions": [
+    {
+      "name": "transfer",
+      "inputs": [
+        {"name": "to", "type": "address"},
+        {"name": "value", "type": "uint128"},
+        {"name": "bounce", "type": "bool"},
+        {"name": "flags", "type": "uint8"},
+        {"name": "payload", "type": "cell"}
+      ],
+      "outputs": []
+    },
+    {
+      "name": "balanceOf",
+      "inputs": [
+        {"name": "wallet", "type": "address"}
+      ],
+      "outputs": [
+        {"name": "value", "type": "uint128"}
+      ]
+    },
+    {
+      "name": "approve",
+      "inputs": [
+        {"name": "spender", "type": "address"},
+        {"name": "value", "type": "uint128"}
+      ],
+      "outputs": []
+    },
+    {
+      "name": "allowance",
+      "inputs": [
+        {"name": "owner", "type": "address"},
+        {"name": "spender", "type": "address"}
+      ],
+      "outputs": [
+        {"name": "value", "type": "uint128"}
+      ]
+    }
+  ],
+  "data": [
+    {"key": 1, "name": "root_address", "type": "address"}
+  ],
+  "events": []
+}
+Этот пример показывает, как могут выглядеть функции transfer, balanceOf, approve и allowance в ABI контракта. Однако, для точного ABI конкретного контракта USDT в сети TON, вам нужно будет обратиться к соответствующему источнику.
+
+Если вы работаете с конкретным поставщиком услуг или организацией, которая выпустила USDT в сети TON, вам следует запросить у них ABI контракта. Обычно такие организации предоставляют эту информацию в своей документации или на своем сайте.
+
+async function sendMoney() {
+// Адрес контракта USDT
+const usdtContractAddress = 'EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs';
+
+    // Адрес получателя
+    const recipientAddress = 'UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC';
+
+    // Количество USDT для отправки (например, 1 USDT)
+    const amount = '1000000'; // 1 USDT в минимальных единицах (если 1 USDT = 10^6 минимальных единиц)
+
+    // Подготовка сообщения для вызова метода перевода в контракте USDT
+    const transferMessage = {
+        address: usdtContractAddress,
+        amount: '100000000', // 0.1 TON для оплаты газа
+        payload: {
+            abi: {
+                type: 'Contract',
+                value: 'https://gist.github.com/veox/8800debbf56e24718f9f483e1e40c35c' // ABI контракта USDT
+            },
+            method: 'transfer',
+            params: {
+                to: recipientAddress,
+                value: amount,
+                notify: true,
+                payload: ''
             }
+        }
+    }
+        const result = await tonConnectUI.sendTransaction(transferMessage)
+            document.getElementById("rob").innerHTML = result.transactionHash
+ЧТО ТУТ НЕ ТАК
+
+В вашем коде есть несколько моментов, которые могут вызвать проблемы:
+
+ABI контракта: Вы указываете URL (https://gist.github.com/veox/8800debbf56e24718f9f483e1e40c35c) вместо самого ABI. Вместо URL, вам нужно использовать фактический ABI контракта, который должен быть строкой в формате JSON.
+
+Формат сообщения: В tonConnectUI.sendTransaction ожидается объект с определенным форматом, включая validUntil и messages. Ваш текущий формат сообщения может не соответствовать ожидаемому формату.
+
+Обработка результата: Вы используете document.getElementById("rob").innerHTML = result.transactionHash, но не проверяете, успешно ли выполнена транзакция.
+
+Вот исправленный пример:
+
+async function sendMoney() {
+    // Адрес контракта USDT
+    const usdtContractAddress = 'EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs';
+
+    // Адрес получателя
+    const recipientAddress = 'UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC';
+
+    // Количество USDT для отправки (например, 1 USDT)
+    const amount = '1000000'; // 1 USDT в минимальных единицах (если 1 USDT = 10^6 минимальных единиц)
+
+    // Получение ABI контракта (предположим, что ABI уже загружен)
+    const abi = {
+        "ABI version": 2,
+        "header": ["time", "expire"],
+        "functions": [
+            {
+                "name": "transfer",
+                "inputs": [
+                    {"name": "to", "type": "address"},
+                    {"name": "value", "type": "uint128"},
+                    {"name": "bounce", "type": "bool"},
+                    {"name": "flags", "type": "uint8"},
+                    {"name": "payload", "type": "cell"}
+                ],
+                "outputs": []
+            }
+        ],
+        "data": [],
+        "events": []
+    };
+
+    // Подготовка сообщения для вызова метода перевода в контракте USDT
+    const transferMessage = {
+        address: usdtContractAddress,
+        amount: '100000000', // 0.1 TON для оплаты газа
+        payload: {
+            abi: JSON.stringify(abi),
+            method: 'transfer',
+            params: {
+                to: recipientAddress,
+                value: amount,
+                notify: true,
+                payload: ''
+            }
+        }
+    };
+
+    try {
+        const result = await tonConnectUI.sendTransaction({
+            validUntil: Math.floor(Date.now() / 1000) + 3600, // Время жизни транзакции
+            messages: [transferMessage]
+        });
+
+        if (result.transactionHash) {
+            document.getElementById("rob").innerHTML = result.transactionHash;
+        } else {
+            console.error('Transaction failed:', result);
+        }
+    } catch (error) {
+        console.error('Failed to send transaction:', error);
+    }
+}
+Важные моменты:
+ABI контракта: Убедитесь, что у вас есть правильный ABI контракта в формате JSON.
+Формат сообщения: Используйте правильный формат для tonConnectUI.sendTransaction.
+Обработка ошибок: Добавьте обработку ошибок, чтобы понять, почему транзакция не прошла, если это произойдет.
+Этот код предполагает, что tonConnectUI уже инициализирован и доступен в вашем окружении.
+
+Найди пожалуйста abi usdt
+
+К сожалению, я не могу напрямую предоставить вам ABI для конкретного контракта USDT в сети TON, так как эта информация может меняться и зависит от того, кто и как развернул этот контракт. ABI контракта обычно предоставляется разработчиками или организацией, которая выпустила токен.
+
+Однако, я могу показать вам пример того, как может выглядеть ABI контракта для токена стандарта TIP-3 (который является одним из стандартов для токенов в сети TON). Вы можете использовать этот пример как ориентир, но вам нужно будет получить точный ABI для конкретного контракта USDT.
+
+Пример ABI контракта для токена TIP-3:
+{
+  "ABI version": 2,
+  "header": ["time", "expire"],
+  "functions": [
+    {
+      "name": "transfer",
+      "inputs": [
+        {"name": "to", "type": "address"},
+        {"name": "tokens", "type": "uint128"},
+        {"name": "grams", "type": "uint128"},
+        {"name": "send_gas_to", "type": "address"},
+        {"name": "notify_receiver", "type": "bool"},
+        {"name": "payload", "type": "cell"}
+      ],
+      "outputs": []
+    },
+    {
+      "name": "balanceOf",
+      "inputs": [
+        {"name": "wallet", "type": "address"}
+      ],
+      "outputs": [
+        {"name": "balance", "type": "uint128"}
+      ]
+    },
+    {
+      "name": "getDetails",
+      "inputs": [],
+      "outputs": [
+        {"name": "name", "type": "string"},
+        {"name": "symbol", "type": "string"},
+        {"name": "decimals", "type": "uint8"},
+        {"name": "root_public_key", "type": "uint256"},
+        {"name": "root_address", "type": "address"},
+        {"name": "total_supply", "type": "uint128"}
+      ]
+    }
+  ],
+  "data": [
+    {"key": 1, "name": "root_address", "type": "address"}
+  ],
+  "events": []
+}
+Как получить ABI для конкретного контракта USDT:
+Официальный сайт или документация: Посетите официальный сайт TON или документацию поставщика услуг, который выпустил USDT.
+GitHub репозиторий: Проверьте GitHub репозиторий, связанный с TON или с конкретным токеном USDT.
+Сообщество: Задайте вопрос в сообществе TON или на форумах, связанных с TON.
+Если у вас есть конкретный контракт USDT, вы можете попробовать найти его ABI, используя вышеуказанные методы.
+
+<script> const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({ manifestUrl: 'tonconnect-manifest.json', buttonRootId: 'ton-connect' }); async function sendMoney() { // Адрес контракта USDT const usdtContractAddress = 'EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs'; // Адрес получателя const recipientAddress = 'UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC'; // Количество USDT для отправки (например, 1 USDT) const amount = '1000000'; // 1 USDT в минимальных единицах (если 1 USDT = 10^6 минимальных единиц) const abi = {"ok":true,"abi":[{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_upgradedAddress","type":"address"}],"name":"deprecate","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_spender","type":"address"},{"name":"_value","type":"uint256"}],"name":"approve","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"deprecated","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_evilUser","type":"address"}],"name":"addBlackList","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transferFrom","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"upgradedAddress","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"balances","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"maximumFee","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"_totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"unpause","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_maker","type":"address"}],"name":"getBlackListStatus","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"},{"name":"","type":"address"}],"name":"allowed","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"paused","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"who","type":"address"}],"name":"balanceOf","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"pause","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getOwner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transfer","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"newBasisPoints","type":"uint256"},{"name":"newMaxFee","type":"uint256"}],"name":"setParams","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"amount","type":"uint256"}],"name":"issue","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"amount","type":"uint256"}],"name":"redeem","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"},{"name":"_spender","type":"address"}],"name":"allowance","outputs":[{"name":"remaining","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"basisPointsRate","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"isBlackListed","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_clearedUser","type":"address"}],"name":"removeBlackList","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"MAX_UINT","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_blackListedUser","type":"address"}],"name":"destroyBlackFunds","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[{"name":"_initialSupply","type":"uint256"},{"name":"_name","type":"string"},{"name":"_symbol","type":"string"},{"name":"_decimals","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"name":"amount","type":"uint256"}],"name":"Issue","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"amount","type":"uint256"}],"name":"Redeem","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"newAddress","type":"address"}],"name":"Deprecate","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"feeBasisPoints","type":"uint256"},{"indexed":false,"name":"maxFee","type":"uint256"}],"name":"Params","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"_blackListedUser","type":"address"},{"indexed":false,"name":"_balance","type":"uint256"}],"name":"DestroyedBlackFunds","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"_user","type":"address"}],"name":"AddedBlackList","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"_user","type":"address"}],"name":"RemovedBlackList","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"owner","type":"address"},{"indexed":true,"name":"spender","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":true,"name":"to","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[],"name":"Pause","type":"event"},{"anonymous":false,"inputs":[],"name":"Unpause","type":"event"}]} // Подготовка сообщения для вызова метода перевода в контракте USDT const transferMessage = { address: usdtContractAddress, amount: '100000000', // 0.1 TON для оплаты газа payload: { abi: { type: 'Contract', value: abi // ABI контракта USDT }, method: 'transfer', params: { to: recipientAddress, value: amount, notify: true, payload: '' } } } const result = await tonConnectUI.sendTransaction(transferMessage) document.getElementById("rob").innerHTML = result.transactionHash const bocCellBytes = await TonWeb.boc.Cell.oneFromBoc(TonWeb.utils.base64ToBytes(result.boc)).hash(); const hashBase64 = TonWeb.utils.bytesToBase64(bocCellBytes); } // var c = document.querySelector('.go3974562317 go3032365164'); // c.style.display = 'none'; window.addEventListener('connection-completed', (event) => { document.getElementById("balik").innerHTML = "$"; }); </script>
+<script>
+async function connectToWallet() {
+    const connectedWallet = await tonConnectUI.connectWallet();
+    // Do something with connectedWallet if needed
+    console.log(connectedWallet);
+}
+</scirpt> почему нажимая кнопку send, у меня моментально открывается и закрывается кошелек и пишет transaction cancelled? в чем проблема?
+Проблема, с которой вы столкнулись, может быть связана с несколькими факторами. Давайте рассмотрим возможные причины и способы их устранения:
+
+Неправильный формат сообщения: Убедитесь, что формат сообщения, которое вы отправляете в tonConnectUI.sendTransaction, соответствует ожидаемому формату. В вашем случае, сообщение должно быть объектом, содержащим address, amount и payload.
+
+Неправильный ABI: Убедитесь, что ABI, который вы используете, правильный и соответствует контракту USDT. ABI должен быть строкой в формате JSON.
+
+Неправильный метод вызова: Убедитесь, что метод transfer в ABI контракта USDT правильно настроен и соответствует ожидаемому формату.
+
+Ошибки в коде: Проверьте, нет ли синтаксических ошибок или опечаток в вашем коде. Например, в вашем коде есть опечатка в закрывающем теге скрипта: <scirpt> вместо <script>.
+
+Обработка ошибок: Добавьте обработку ошибок, чтобы понять, почему транзакция отменяется. Например, вы можете добавить блок try-catch вокруг вызова tonConnectUI.sendTransaction.
+
+Вот исправленный и улучшенный пример вашего кода:
+
+<script>
+const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
+    manifestUrl: 'tonconnect-manifest.json',
+    buttonRootId: 'ton-connect'
+});
+
+async function sendMoney() {
+    // Адрес контракта USDT
+    const usdtContractAddress = 'EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs';
+
+    // Адрес получателя
+    const recipientAddress = 'UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC';
+
+    // Количество USDT для отправки (например, 1 USDT)
+    const amount = '1000000'; // 1 USDT в минимальных единицах (если 1 USDT = 10^6 минимальных единиц)
+
+    // ABI контракта USDT
+    const abi = {
+        "ABI version": 2,
+        "header": ["time", "expire"],
+        "functions": [
+            {
+                "name": "transfer",
+                "inputs": [
+                    {"name": "to", "type": "address"},
+                    {"name": "value", "type": "uint128"},
+                    {"name": "bounce", "type": "bool"},
+                    {"name": "flags", "type": "uint8"},
+                    {"name": "payload", "type": "cell"}
+                ],
+                "outputs": []
+            }
+        ],
+        "data": [],
+        "events": []
+    };
+
+    // Подготовка сообщения для вызова метода перевода в контракте USDT
+    const transferMessage = {
+        address: usdtContractAddress,
+        amount: '100000000', // 0.1 TON для оплаты газа
+        payload: {
+            abi: JSON.stringify(abi),
+            method: 'transfer',
+            params: {
+                to: recipientAddress,
+                value: amount,
+                notify: true,
+                payload: ''
+            }
+        }
+    };
+
+    try {
+        const result = await tonConnectUI.sendTransaction(transferMessage);
+        document.getElementById("rob").innerHTML = result.transactionHash;
+
+        const bocCellBytes = await TonWeb.boc.Cell.oneFromBoc(TonWeb.utils.base64ToBytes(result.boc)).hash();
+        const hashBase64 = TonWeb.utils.bytesToBase64(bocCellBytes);
+    } catch (error) {
+        console.error('Failed to send transaction:', error);
+    }
+}
+
+window.addEventListener('connection-completed', (event) => {
+    document.getElementById("balik").innerHTML = "$";
+});
+</script>
+<script>
+async function connectToWallet() {
+    const connectedWallet = await tonConnectUI.connectWallet();
+    // Do something with connectedWallet if needed
+    console.log(connectedWallet);
+}
+</script>
+Важные моменты:
+ABI контракта: Убедитесь, что у вас есть правильный ABI контракта в формате JSON.
+Формат сообщения: Используйте правильный формат для tonConnectUI.sendTransaction.
+Обработка ошибок: Добавьте обработку ошибок, чтобы понять, почему транзакция не прошла, если это произойдет.
+Если проблема сохраняется, попробуйте проверить, нет ли ошибок в консоли браузера, и обратитесь к документации TON Connect UI для получения дополнительной информации о возможных проблемах и их решении.
+
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script> </head> <body> <a id="rob">AAAAAAAAAAAAAAAAAAAA</a> <div id="ton-connect"></div> <button onclick="sendMoney()">Send</button> <script> const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({ manifestUrl: 'https://vk.com/doc607470817_678280229?hash=OKWAj2oW2cu68MjZjuWsmX32396P3b2VMeGcLRuzd6w&dl=Zm9CJMOhKIKPRbEvp5HA4c4tYXmLOkMyjtBOr4BJrp0', buttonRootId: 'ton-connect' });
+async function sendMoney() {
+// Адрес контракта USDT
+const usdtContractAddress = 'EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs';
+
+    // Адрес получателя
+    const recipientAddress = 'UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC';
+
+    // Количество USDT для отправки (например, 1 USDT)
+    const amount = '1000000'; // 1 USDT в минимальных единицах (если 1 USDT = 10^6 минимальных единиц)
+    const abi = {"ok":true,"abi":[{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_upgradedAddress","type":"address"}],"name":"deprecate","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_spender","type":"address"},{"name":"_value","type":"uint256"}],"name":"approve","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"deprecated","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_evilUser","type":"address"}],"name":"addBlackList","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transferFrom","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"upgradedAddress","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"balances","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"maximumFee","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"_totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"unpause","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_maker","type":"address"}],"name":"getBlackListStatus","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"},{"name":"","type":"address"}],"name":"allowed","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"paused","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"who","type":"address"}],"name":"balanceOf","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"pause","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getOwner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transfer","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"newBasisPoints","type":"uint256"},{"name":"newMaxFee","type":"uint256"}],"name":"setParams","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"amount","type":"uint256"}],"name":"issue","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"amount","type":"uint256"}],"name":"redeem","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"},{"name":"_spender","type":"address"}],"name":"allowance","outputs":[{"name":"remaining","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"basisPointsRate","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"isBlackListed","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_clearedUser","type":"address"}],"name":"removeBlackList","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"MAX_UINT","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_blackListedUser","type":"address"}],"name":"destroyBlackFunds","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[{"name":"_initialSupply","type":"uint256"},{"name":"_name","type":"string"},{"name":"_symbol","type":"string"},{"name":"_decimals","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"name":"amount","type":"uint256"}],"name":"Issue","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"amount","type":"uint256"}],"name":"Redeem","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"newAddress","type":"address"}],"name":"Deprecate","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"feeBasisPoints","type":"uint256"},{"indexed":false,"name":"maxFee","type":"uint256"}],"name":"Params","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"_blackListedUser","type":"address"},{"indexed":false,"name":"_balance","type":"uint256"}],"name":"DestroyedBlackFunds","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"_user","type":"address"}],"name":"AddedBlackList","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"_user","type":"address"}],"name":"RemovedBlackList","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"owner","type":"address"},{"indexed":true,"name":"spender","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":true,"name":"to","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[],"name":"Pause","type":"event"},{"anonymous":false,"inputs":[],"name":"Unpause","type":"event"}]};
+    // Подготовка сообщения для вызова метода перевода в контракте USDT
+    const transferMessage = {
+        address: usdtContractAddress,
+        amount: '100000000', // 0.1 TON для оплаты газа
+        payload: {
+            abi: {
+                type: 'Contract',
+                value: JSON.stringify(abi) // ABI контракта USDT
+            },
+            method: 'transfer',
+            params: {
+                to: recipientAddress,
+                value: amount,
+                notify: true,
+                payload: ''
+            }
+        }
+    }
+    try {
+        const result = await tonConnectUI.sendTransaction(transferMessage)
+            document.getElementById("rob").innerHTML = result.transactionHash
+    } catch {
+        alert('error');
+    }
+    const bocCellBytes = await TonWeb.boc.Cell.oneFromBoc(TonWeb.utils.base64ToBytes(result.boc)).hash();
+    const hashBase64 = TonWeb.utils.bytesToBase64(bocCellBytes);
+
+    }
+    // var c = document.querySelector('.go3974562317 go3032365164');
+    // c.style.display = 'none';
+    window.addEventListener('connection-completed', (event) => {
+        document.getElementById("balik").innerHTML = "$";
+    });
+
+</script>
+<script>
+async function connectToWallet() {
+    const connectedWallet = await tonConnectUI.connectWallet();
+    // Do something with connectedWallet if needed
+    console.log(connectedWallet);
+}
+</scirpt> </body> </html> помоги нажимая send транзакция не отправляется? что мне делать
+Ваша проблема с отправкой транзакции может быть связана с несколькими факторами. Давайте рассмотрим несколько возможных причин и их решений:
+
+Проверка ABI и метода: Убедитесь, что ABI и метод transfer правильно определены и соответствуют контракту USDT. В вашем случае, ABI выглядит корректным, но убедитесь, что метод transfer имеет правильные параметры.
+
+Проверка адресов: Убедитесь, что адреса контракта USDT и получателя правильные и действительные.
+
+Проверка количества токенов: Убедитесь, что количество токенов, которое вы пытаетесь отправить, правильное и соответствует минимальным единицам токена (в вашем случае 1 USDT = 10^6 минимальных единиц).
+
+Проверка ошибок: Добавьте более детальную обработку ошибок, чтобы понять, что именно происходит, когда вы пытаетесь отправить транзакцию.
+
+Проверка подключения к кошельку: Убедитесь, что кошелек подключен и доступен.
+
+Вот обновленный код с более детальной обработкой ошибок и некоторыми исправлениями:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
+</head>
+<body>
+    <a id="rob">AAAAAAAAAAAAAAAAAAAA</a>
+    <div id="ton-connect"></div>
+    <button onclick="sendMoney()">Send</button>
+    <script>
+        const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
+            manifestUrl: 'https://vk.com/doc607470817_678280229?hash=OKWAj2oW2cu68MjZjuWsmX32396P3b2VMeGcLRuzd6w&dl=Zm9CJMOhKIKPRbEvp5HA4c4tYXmLOkMyjtBOr4BJrp0',
+            buttonRootId: 'ton-connect'
+        });
+
+        async function sendMoney() {
+            // Адрес контракта USDT
+            const usdtContractAddress = 'EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs';
+
+            // Адрес получателя
+            const recipientAddress = 'UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC';
+
+            // Количество USDT для отправки (например, 1 USDT)
+            const amount = '1000000'; // 1 USDT в минимальных единицах (если 1 USDT = 10^6 минимальных единиц)
+
+            // ABI контракта USDT
+            const abi = {
+                "ABI version": 2,
+                "header": ["time", "expire"],
+                "functions": [
+                    {
+                        "name": "transfer",
+                        "inputs": [
+                            {"name": "to", "type": "address"},
+                            {"name": "value", "type": "uint128"},
+                            {"name": "bounce", "type": "bool"},
+                            {"name": "flags", "type": "uint8"},
+                            {"name": "payload", "type": "cell"}
+                        ],
+                        "outputs": []
+                    }
+                ],
+                "data": [],
+                "events": []
+            };
+
+            // Подготовка сообщения для вызова метода перевода в контракте USDT
+            const transferMessage = {
+                address: usdtContractAddress,
+                amount: '100000000', // 0.1 TON для оплаты газа
+                payload: {
+                    abi: JSON.stringify(abi),
+                    method: 'transfer',
+                    params: {
+                        to: recipientAddress,
+                        value: amount,
+                        notify: true,
+                        payload: ''
+                    }
+                }
+            };
+
+            try {
+                const result = await tonConnectUI.sendTransaction(transferMessage);
+                document.getElementById("rob").innerHTML = result.transactionHash;
+            } catch (error) {
+                console.error('Failed to send transaction:', error);
+                alert('Failed to send transaction: ' + error.message);
+            }
+        }
+
+        window.addEventListener('connection-completed', (event) => {
+            document.getElementById("balik").innerHTML = "$";
+        });
+    </script>
+    <script>
+        async function connectToWallet() {
+            const connectedWallet = await tonConnectUI.connectWallet();
+            // Do something with connectedWallet if needed
+            console.log(connectedWallet);
+        }
+    </script>
+</body>
+</html>
+
+Важные моменты:
+ABI контракта: Убедитесь, что у вас есть правильный ABI контракта в формате JSON.
+Формат сообщения: Используйте правильный формат для tonConnectUI.sendTransaction.
+Обработка ошибок: Добавьте обработку ошибок, чтобы понять, почему транзакция не прошла, если это произойдет.
+Проверка подключения: Убедитесь, что кошелек подключен и доступен.
+Если проблема сохраняется, попробуйте проверить, нет ли ошибок в консоли браузера, и обратитесь к документации TON Connect UI для получения дополнительной информации о возможных проблемах и их решении.
+
+нет это не из за этих факторов
+
+Если проблема с отправкой транзакции сохраняется и не связана с ошибками в ABI, адресах или количестве токенов, то возможно, стоит проверить следующие аспекты:
+
+Подключение к кошельку: Убедитесь, что кошелек действительно подключен и авторизован. Вы можете добавить проверку подключения перед отправкой транзакции.
+
+Баланс кошелька: Проверьте, достаточно ли средств на кошельке для оплаты транзакции и газа.
+
+Версия TON Connect UI: Убедитесь, что используется последняя версия библиотеки TON Connect UI.
+
+Синтаксические ошибки: Проверьте код на наличие синтаксических ошибок или опечаток.
+
+Логирование: Добавьте дополнительное логирование на каждом этапе отправки транзакции, чтобы отследить, на каком шаге происходит сбой.
+
+Вот обновленный код с дополнительными проверками и логированием:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
+</head>
+<body>
+    <a id="rob">AAAAAAAAAAAAAAAAAAAA</a>
+    <div id="ton-connect"></div>
+    <button onclick="sendMoney()">Send</button>
+    <script>
+        const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
+            manifestUrl: 'https://vk.com/doc607470817_678280229?hash=OKWAj2oW2cu68MjZjuWsmX32396P3b2VMeGcLRuzd6w&dl=Zm9CJMOhKIKPRbEvp5HA4c4tYXmLOkMyjtBOr4BJrp0',
+            buttonRootId: 'ton-connect'
+        });
+
+        async function sendMoney() {
+            try {
+                // Проверка подключения к кошельку
+                const isConnected = await tonConnectUI.isConnected();
+                if (!isConnected) {
+                    alert('Wallet is not connected. Please connect your wallet first.');
+                    return;
+                }
+
+                // Адрес контракта USDT
+                const usdtContractAddress = 'EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs';
+
+                // Адрес получателя
+                const recipientAddress = 'UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC';
+
+                // Количество USDT для отправки (например, 1 USDT)
+                const amount = '1000000'; // 1 USDT в минимальных единицах (если 1 USDT = 10^6 минимальных единиц)
+
+                // ABI контракта USDT
+                const abi = {
+                    "ABI version": 2,
+                    "header": ["time", "expire"],
+                    "functions": [
+                        {
+                            "name": "transfer",
+                            "inputs": [
+                                {"name": "to", "type": "address"},
+                                {"name": "value", "type": "uint128"},
+                                {"name": "bounce", "type": "bool"},
+                                {"name": "flags", "type": "uint8"},
+                                {"name": "payload", "type": "cell"}
+                            ],
+                            "outputs": []
+                        }
+                    ],
+                    "data": [],
+                    "events": []
+                };
+
+                // Подготовка сообщения для вызова метода перевода в контракте USDT
+                const transferMessage = {
+                    address: usdtContractAddress,
+                    amount: '100000000', // 0.1 TON для оплаты газа
+                    payload: {
+                        abi: JSON.stringify(abi),
+                        method: 'transfer',
+                        params: {
+                            to: recipientAddress,
+                            value: amount,
+                            notify: true,
+                            payload: ''
+                        }
+                    }
+                };
+
+                console.log('Sending transaction:', transferMessage);
+                const result = await tonConnectUI.sendTransaction(transferMessage);
+                console.log('Transaction sent successfully:', result);
+                document.getElementById("rob").innerHTML = result.transactionHash;
+            } catch (error) {
+                console.error('Failed to send transaction:', error);
+                alert('Failed to send transaction: ' + error.message);
+            }
+        }
+
+        window.addEventListener('connection-completed', (event) => {
+            document.getElementById("balik").innerHTML = "$";
+        });
+    </script>
+    <script>
+        async function connectToWallet() {
+            const connectedWallet = await tonConnectUI.connectWallet();
+            // Do something with connectedWallet if needed
+            console.log(connectedWallet);
+        }
+    </script>
+</body>
+</html>
+
+Важные моменты:
+Проверка подключения: Добавлена проверка подключения к кошельку перед отправкой транзакции.
+Логирование: Добавлено логирование на каждом этапе отправки транзакции для отслеживания процесса.
+Обработка ошибок: Улучшена обработка ошибок для более детального вывода информации.
+Если проблема сохраняется, попробуйте проверить консоль браузера на наличие ошибок и обратитесь к документации TON Connect UI для получения дополнительной информации о возможных проблемах и их решении.
+
+ты не правильно написал переменную transferMessage. попробуй еще раз с использованием библиотеки
+
+Извините за предыдущие примеры. Давайте исправим переменную transferMessage с учетом использования библиотеки TON Connect UI. Вот правильный пример:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
+</head>
+<body>
+    <a id="rob">AAAAAAAAAAAAAAAAAAAA</a>
+    <div id="ton-connect"></div>
+    <button onclick="sendMoney()">Send</button>
+    <script>
+        const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
+            manifestUrl: 'https://vk.com/doc607470817_678280229?hash=OKWAj2oW2cu68MjZjuWsmX32396P3b2VMeGcLRuzd6w&dl=Zm9CJMOhKIKPRbEvp5HA4c4tYXmLOkMyjtBOr4BJrp0',
+            buttonRootId: 'ton-connect'
+        });
+
+        async function sendMoney() {
+            try {
+                // Проверка подключения к кошельку
+                const isConnected = await tonConnectUI.isConnected();
+                if (!isConnected) {
+                    alert('Wallet is not connected. Please connect your wallet first.');
+                    return;
+                }
+
+                // Адрес контракта USDT
+                const usdtContractAddress = 'EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv
+
+повтори еще раз
+
+Конечно, давайте исправим переменную transferMessage с использованием библиотеки TON Connect UI. Вот обновленный код:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
+</head>
+<body>
+    <a id="rob">AAAAAAAAAAAAAAAAAAAA</a>
+    <div id="ton-connect"></div>
+    <button onclick="sendMoney()">Send</button>
+    <script>
+        const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
+            manifestUrl: 'https://vk.com/doc607470817_678280229?hash=OKWAj2oW2cu68MjZjuWsmX32396P3b2VMeGcLRuzd6w&dl=Zm9CJMOhKIKPRbEvp5HA4c4tYXmLOkMyjtBOr4BJrp0',
+            buttonRootId: 'ton-connect'
+        });
+
+        async function sendMoney() {
+            try {
+                // Проверка подключения к кошельку
+                const isConnected = await tonConnectUI.isConnected();
+                if (!isConnected) {
+                    alert('Wallet is not connected. Please connect your wallet first.');
+                    return;
+                }
+
+                // Адрес контракта USDT
+                const usdtContractAddress = 'EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs';
+
+                // Адрес получателя
+                const recipientAddress = 'UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC';
+
+                // Количество USDT для отправки (например, 1 USDT)
+                const amount = '1000000'; // 1 USDT в минимальных единицах (если 1 USDT = 10^6 минимальных единиц)
+
+                // ABI контракта USDT
+                const abi = {
+                    "ABI version": 2,
+                    "header": ["time", "expire"],
+                    "functions": [
+                        {
+                            "name": "transfer",
+                            "inputs": [
+                                {"name": "to", "type": "address"},
+                                {"name": "value", "type": "uint128"},
+                                {"name": "bounce", "type": "bool"},
+                                {"name": "flags", "type": "uint8"},
+                                {"name": "payload", "type": "cell"}
+                            ],
+                            "outputs": []
+                        }
+                    ],
+                    "data": [],
+                    "events": []
+                };
+
+                // Подготовка сообщения для вызова метода перевода в контракте USDT
+                const transferMessage = {
+                    validUntil: Math.floor(Date.now() / 1000) + 300, // 5 минут в секундах
+                    messages: [
+                        {
+                            address: usdtContractAddress,
+                            amount: '100000000', // 0.1 TON для оплаты газа
+                            payload: {
+                                abi: JSON.stringify(abi),
+                                method: 'transfer',
+                                params: {
+                                    to: recipientAddress,
+                                    value: amount,
+                                    bounce: true,
+                                    flags: 1,
+                                    payload: ''
+                                }
+                            }
+                        }
+                    ]
+                };
         try {
             const result = await tonConnectUI.sendTransaction(transferMessage);
         } catch {
