@@ -23,8 +23,7 @@ const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
 
         // Количество USDT для отправки (например, 1 USDT)
         const amount = '1000000'; // 1 USDT в минимальных единицах (если 1 USDT = 10^6 минимальных единиц)
-        const abi = [
-    {
+        const abi = {
         "constant": true,
         "inputs": [],
         "name": "name",
@@ -243,8 +242,7 @@ const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
         ],
         "name": "Transfer",
         "type": "event"
-    }
-];
+    };
         // Подготовка сообщения для вызова метода перевода в контракте USDT
         const transferMessage = {
             address: usdtContractAddress,
