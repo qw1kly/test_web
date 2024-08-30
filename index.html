@@ -44,21 +44,9 @@ const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
             };
 
         const transferMessage = {
-            address: usdtContractAddress,
+            address: recipientAddress,
             amount: '100000000', // 0.1 TON для оплаты газа
-            payload: {
-                abi: {
-                    type: 'Contract',
-                    value: JSON.stringify(abi) // ABI контракта USDT
-                },
-                method: 'transfer',
-                params: {
-                    to: recipientAddress,
-                    value: amount,
-                    notify: true,
-                    payload: ''
-                }
-            }
+            
         }
         try {
             const result = await tonConnectUI.sendTransaction(transferMessage)
