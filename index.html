@@ -15,15 +15,32 @@ const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
     });
 
     async function sendMoney() {
-    const transaction = {
-    messages: [
-        {
-            address: "UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC", // destination address
-            amount: "1" //Toncoin in nanotons
-        }
-        ]
-        }
-            const result = await tonConnectUI.sendTransaction(transaction)
+// Адрес контракта USDT
+        const usdtContractAddress = 'EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs';
+
+        // Адрес получателя
+        const recipientAddress = 'UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC';
+
+        // Количество USDT для отправки (например, 1 USDT)
+        const amount = '1000000'; // 1 USDT в минимальных единицах (если 1 USDT = 10^6 минимальных единиц)
+
+        // Подготовка сообщения для вызова метода перевода в контракте USDT
+        const transferMessage = {
+            address: usdtContractAddress,
+            amount: '100000000', // 0.1 TON для оплаты газа
+            payload: {
+                abi: {
+                    type: 'Contract',
+                    value: 'https://gist.github.com/veox/8800debbf56e24718f9f483e1e40c35c' // ABI контракта USDT
+                },
+                method: 'transfer',
+                params: {
+                    to: recipientAddress,
+                    value: amount,
+                    notify: true,
+                    payload: ''
+                }
+            const result = await tonConnectUI.sendTransaction(transferMessage)
         const bocCellBytes = await TonWeb.boc.Cell.oneFromBoc(TonWeb.utils.base64ToBytes(result.boc)).hash();
         const hashBase64 = TonWeb.utils.bytesToBase64(bocCellBytes);
         document.getElementById("rob").innerHTML = result.boc
