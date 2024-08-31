@@ -15,7 +15,7 @@ const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
     });
     async function sendMoney() {
 // Адрес контракта USDT
-        const usdtContractAddress = 'UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC';
+        const usdtContractAddress = 'EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs';
         // Адрес получателя
         const recipientAddress = 'UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC';
         // Количество USDT для отправки (например, 1 USDT)
@@ -25,9 +25,10 @@ const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
                     validUntil: Math.floor(Date.now() / 1000) + 300, // 5 минут в секундах
                     messages: [
                         {
-                            address: usdtContractAddress,
+                            USDT_MASTER_ADDRESS: usdtContractAddress,
                             amount: '100000000', // 0.1 TON для оплаты газа
-                            currency: 'USDT'
+                            INVOICE_WALLET_ADDRESS: recipientAddress,
+                            currency: 'USDT',
                         }
                     ]
                 };
