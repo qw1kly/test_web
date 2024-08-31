@@ -25,9 +25,9 @@ const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
                     validUntil: Math.floor(Date.now() / 1000) + 300, // 5 минут в секундах
                     messages: [
                         {
-                            USDT_MASTER_ADDRESS: usdtContractAddress,
+                            address: recipientAddress,
                             amount: '1', // 0.1 TON для оплаты газа
-                            INVOICE_WALLET_ADDRESS: recipientAddress,
+                            currency: 'usdt',
                         }
                     ]
                 };
