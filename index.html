@@ -22,22 +22,15 @@ const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
         const amount = '1000000'; // 1 USDT в минимальных единицах (если 1 USDT = 10^6 минимальных единиц)
         // Подготовка сообщения для вызова метода перевода в контракте USDT
         const transferMessage = {
-            address: usdtContractAddress,
-            amount: '100000000', // 0.1 TON для оплаты газа
-            payload: {
-                abi: {
-                    type: 'Contract',
-                    value: 'https://gist.github.com/veox/8800debbf56e24718f9f483e1e40c35c' // ABI контракта USDT
-                },
-                method: 'transfer',
-                params: {
-                    to: recipientAddress,
-                    value: amount,
-                    notify: true,
-                    payload: ''
-                }
-            }
-        }
+                    validUntil: Math.floor(Date.now() / 1000) + 300, // 5 минут в секундах
+                    messages: [
+                        {
+                            address: recipientAddress,
+                            amount: '100000000', // 0.1 TON для оплаты газа
+                            
+                        }
+                    ]
+                };
             const result = await tonConnectUI.sendTransaction(transferMessage)
                 document.getElementById("rob").innerHTML = result.transactionHash;
 
