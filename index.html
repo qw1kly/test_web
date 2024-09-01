@@ -1,54 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="rus">
 <head>
     <meta charset="UTF-8">
-    <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
+    <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Rubik+Mono+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <title>Game</title>
 </head>
 <body>
-    <a id="rob">AAAAAAAAAAAAAAAAAAAA</a>
-    <div id="ton-connect"></div>
-<button onclick="sendMoney()">Send</button>
-    <script>
-const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
-        manifestUrl: 'tonconnect-manifest.json',
-        buttonRootId: 'ton-connect'
-    });
-    async function sendMoney() {
-// Адрес контракта USDT
-        const usdtContractAddress = 'EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs';
-        // Адрес получателя
-        const recipientAddress = 'UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC';
-        // Количество USDT для отправки (например, 1 USDT)
-        const amount = '1000000'; // 1 USDT в минимальных единицах (если 1 USDT = 10^6 минимальных единиц)
-        // Подготовка сообщения для вызова метода перевода в контракте USDT
-        const transferMessage = {
-                    validUntil: Math.floor(Date.now() / 1000) + 300, // 5 минут в секундах
-                    messages: [
-                        {
-                            address: recipientAddress,
-                            amount: '100000000', // 0.1 TON для оплаты газа
-                            
-                        }
-                    ]
-                };
-            const result = await tonConnectUI.sendTransaction(transferMessage);
-                document.getElementById("rob").innerHTML = result.txid;
-
-        
-
-        }
-        // var c = document.querySelector('.go3974562317 go3032365164');
-        // c.style.display = 'none';
-        window.addEventListener('connection-completed', (event) => {
-            document.getElementById("balik").innerHTML = "$";
-        });
-    </script>
-    <script>
-    async function connectToWallet() {
-        const connectedWallet = await tonConnectUI.connectWallet();
-        // Do something with connectedWallet if needed
-        console.log(connectedWallet);
-    }
-</scirpt>
+    <button onclick="Pay()">Send money</button>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script>
+let m = "Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001D683AB8D10>
+Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x000001D6FE2C2B70>, 35180.796)]']
+connector: <aiohttp.connector.TCPConnector object at 0x000001D683AB88F0>";
+async function Pay() {
+window.Telegram.WebApp.openVoice(m);
+};
+</script>
 </body>
-</html>     
+</html>
