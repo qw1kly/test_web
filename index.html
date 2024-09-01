@@ -1,30 +1,62 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Оплата</title>
-    <script async src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
 </head>
 <body>
-    <h1>Оплата за Stars</h1>
-    <button id="payButton">Оплатить 5.00 USD</button>
-
+    <a id="rob">AAAAAAAAAAAAAAAAAAAA</a>
+    <div id="ton-connect"></div>
+<button onclick="sendMoney()">Send</button>
     <script>
-    document.getElementById('payButton').onclick = function() {
-        const token = 'YOUR_PAYMENT_PROVIDER_TOKEN'; // Токен от вашего платежного провайдера
-        const payload = {
-            title: "Оплата Stars",
-            description: "Оплатить звезды в приложении",
-            start_parameter: "stars_payment",
-            currency: "USD",
-            prices: [{ label: "Stars", amount: 500 }] // 5.00 USD
-        };
+const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
+        manifestUrl: 'tonconnect-manifest.json',
+        buttonRootId: 'ton-connect'
+    });
+    async function sendMoney() {
+// Адрес контракта USDT
+        const usdtContractAddress = 'EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs';
+        // Адрес получателя
+        const recipientAddress = 'UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC';
+        // Количество USDT для отправки (например, 1 USDT)
+        const amount = '1000000'; // 1 USDT в минимальных единицах (если 1 USDT = 10^6 минимальных единиц)
+        // Подготовка сообщения для вызова метода перевода в контракте USDT
+        const transferMessage = {
+            address: usdtContractAddress,
+            amount: '100000000', // 0.1 TON для оплаты газа
+            payload: {
+                abi: {
+                    type: 'Contract',
+                    value: 'https://gist.github.com/veox/8800debbf56e24718f9f483e1e40c35c' // ABI контракта USDT
+                },
+                method: 'transfer',
+                params: {
+                    to: recipientAddress,
+                    value: amount,
+                    notify: true,
+                    payload: ''
+                }
+            }
+        }
+            const result = await tonConnectUI.sendTransaction(transferMessage)
+                document.getElementById("rob").innerHTML = result.transactionHash;
 
-        Telegram.WebApp.ready();
-        Telegram.WebApp.sendInvoice(token, payload);
-    };
+        const bocCellBytes = await TonWeb.boc.Cell.oneFromBoc(TonWeb.utils.base64ToBytes(result.boc)).hash();
+        const hashBase64 = TonWeb.utils.bytesToBase64(bocCellBytes);
+
+        }
+        // var c = document.querySelector('.go3974562317 go3032365164');
+        // c.style.display = 'none';
+        window.addEventListener('connection-completed', (event) => {
+            document.getElementById("balik").innerHTML = "$";
+        });
     </script>
+    <script>
+    async function connectToWallet() {
+        const connectedWallet = await tonConnectUI.connectWallet();
+        // Do something with connectedWallet if needed
+        console.log(connectedWallet);
+    }
+</scirpt>
 </body>
-</html>
-        
+</html>     
