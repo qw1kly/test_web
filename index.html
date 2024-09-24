@@ -20,7 +20,7 @@
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
 let tg = window.Telegram.WebApp;
-let idi =  tg.WebAppUser.id;
+let idi =  tg.initDataUnsafe;
 document.getElementById("robika").innerHTML = idi;
 let m = "https://t.me/$lk38vA7FqEqiCgAAwFP7OIyIbSo";
 async function Pay() {
