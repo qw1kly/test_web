@@ -12,15 +12,42 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Rubik+Mono+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
+
     <title>Game</title>
 </head>
 <body>
+    <div id="ton-connect"></div>
     <a id="robika">AZerrr</a>
     <button onclick="Pay()">Send money</button>
+    <button onclick="Sendton">SEND TON</button>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
 let tg = window.Telegram.WebApp;
 let idi =  tg.initDataUnsafe.user.id;
+const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
+    manifestUrl: 'https://vk.com/doc607470817_678280229?hash=mD68zpZFhax3Q020DngQZwfyz8vvWzfzSVPKlfgCL1g&dl=obFwEuSkZLFwAKkeoFjCZyh4kp5E3dnskAkv97PCWjs',
+    buttonRootId: 'ton-connect'
+});
+async function connectToWallet() {
+    const connectedWallet = await tonConnectUI.connectWallet();
+    // Do something with connectedWallet if needed
+    console.log(connectedWallet);
+}
+connectToWallet().catch(error => {
+    console.error("Error connecting to wallet:", error);
+});
+const transaction = {
+    messages: [
+        {
+            address: "UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC", // destination address
+            amount: "20000000" //Toncoin in nanotons
+        }
+    ]
+}
+async function Sendton() {
+const result = await tonConnectUI.sendTransaction(transaction)
+};
 let m = "https://t.me/$lk38vA7FqEqiCgAAwFP7OIyIbSo";
 async function Pay() {
 window.Telegram.WebApp.openInvoice(m);
