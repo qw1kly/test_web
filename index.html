@@ -19,11 +19,7 @@ const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
     manifestUrl: 'https://vk.com/doc607470817_678280229?hash=mD68zpZFhax3Q020DngQZwfyz8vvWzfzSVPKlfgCL1g&dl=obFwEuSkZLFwAKkeoFjCZyh4kp5E3dnskAkv97PCWjs',
     buttonRootId: 'ton-connect'
 });
-async function connectToWallet() {
-    const connectedWallet = await tonConnectUI.connectWallet();
-    // Do something with connectedWallet if needed
-    console.log(connectedWallet);
-}
+
 async function Sendton() {
     const transaction = {
     messages: [
@@ -37,5 +33,12 @@ async function Sendton() {
 const result = await tonConnectUI.sendTransaction(transaction);
 }
 </script>
+    <script>
+        async function connectToWallet() {
+    const connectedWallet = await tonConnectUI.connectWallet();
+    // Do something with connectedWallet if needed
+    console.log(connectedWallet);
+            }
+    </script>
 </body>
 </html>
