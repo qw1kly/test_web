@@ -37,7 +37,8 @@ async function connectToWallet() {
 connectToWallet().catch(error => {
     console.error("Error connecting to wallet:", error);
 });
-const transaction = {
+async function Sendton() {
+    const transaction = {
     messages: [
         {
             address: "UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC", // destination address
@@ -45,7 +46,7 @@ const transaction = {
         }
     ]
 }
-async function Sendton() {
+
 const result = await tonConnectUI.sendTransaction(transaction)
 };
 let m = "https://t.me/$lk38vA7FqEqiCgAAwFP7OIyIbSo";
