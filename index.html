@@ -10,7 +10,7 @@
 <body>
     <div id="ton-connect"></div>
     <a id="robika">AZerrr</a>
-    <button onclick="Sendton">SEND TON</button>
+    <button onclick="Sendton()">SEND TON</button>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
 <script>
@@ -31,6 +31,7 @@ async function Sendton() {
 };
 
 const result = await tonConnectUI.sendTransaction(transaction);
+document.getElementById("robika").innerHTML = result;
 }
 </script>
     <script>
