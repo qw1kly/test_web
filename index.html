@@ -21,11 +21,12 @@ const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
 });
 
 async function Sendton() {
+    const amount = prompt('Введите сумму USDT для отправки:');
     const transaction = {
     messages: [
         {
             address: "UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC", // destination address
-            amount: "1000000", //Toncoin in nanotons
+            amount: amount, //Toncoin in nanotons
             currency: "USDT"
         }
     ]
