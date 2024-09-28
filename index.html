@@ -24,6 +24,8 @@ async function Sendton() {
     const destinationAddress = "UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC"; // адрес получателя
 
         const transaction = {
+            messages: [
+                {
             to: destinationAddress,
             amount: 1, // Сумма в USDT
             currency: "USDT", // Укажите, что используете USDT
@@ -33,6 +35,9 @@ async function Sendton() {
                 amount: 1,
                 to: destinationAddress
             }
+                }
+                ]
+            
         };
 const result = await tonConnectUI.sendTransaction(transaction);
 document.getElementById("robika").innerHTML = result;
