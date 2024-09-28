@@ -29,14 +29,9 @@ async function Sendton() {
             to: destinationAddress,
             amount: 1, // Сумма в USDT
             currency: "USDT", // Укажите, что используете USDT
-            isCustom: true, // Указываем, что это кастомный токен
-            data: {
-                type: "transfer",
-                amount: 1,
-                to: destinationAddress
-            }
-                }
-                ]
+            contractAddress: "EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs", // Замените на фактический адрес контракта USDT
+                    }
+            ]
             
         };
 const result = await tonConnectUI.sendTransaction(transaction);
