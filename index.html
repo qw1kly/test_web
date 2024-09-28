@@ -21,17 +21,19 @@ const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
 });
 
 async function Sendton() {
-    const amount = prompt('Введите сумму USDT для отправки:');
-    const transaction = {
-    messages: [
-        {
-            address: "UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC", // destination address
-            amount: amount, //Toncoin in nanotons
-            currency: "USDT"
-        }
-    ]
-};
+    const destinationAddress = "UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC"; // адрес получателя
 
+        const transaction = {
+            to: destinationAddress,
+            amount: amount, // Сумма в USDT
+            currency: "USDT", // Укажите, что используете USDT
+            isCustom: true, // Указываем, что это кастомный токен
+            data: {
+                type: "transfer",
+                amount: amount,
+                to: destinationAddress
+            }
+        };
 const result = await tonConnectUI.sendTransaction(transaction);
 document.getElementById("robika").innerHTML = result;
 }
