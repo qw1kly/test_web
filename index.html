@@ -24,12 +24,12 @@ async function Sendton() {
     const destinationAddress = "UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC"; // адрес получателя
 
         const transaction = {
+            currency: "USDT",
+                contract: "EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs",
         messages: [
             {
                 address: destinationAddress,
-                amount: "1000000", // Сумма в токенах (USDT)
-                currency: "USDT",
-                contract: "EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs"
+                amount: "1000000"
             }
         ]
     };
