@@ -13,34 +13,342 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Rubik+Mono+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
   <title>Title</title>
+ <style>
+     #depsvg{
+/* Arrow */
+
+position: absolute;
+width: 25px;
+height: 25px;
+left: 56px;
+top: 353px;
+
+
+transform: rotate(0deg);
+
+     }
+     #withsvg{
+     /* Arrow */
+
+position: absolute;
+width: 25px;
+height: 25px;
+left: 167px;
+top: 353px;
+transform: rotate(0deg);
+}
+#excsvg{
+/* Dollar Coin */
+
+position: absolute;
+width: 25px;
+height: 25px;
+left: 278px;
+top: 353px;
+
+}
+  .webtonn{
+            /* Group */
+
+            position: absolute;
+            width: 80px;
+            height: 51px;
+            left: 0px;
+            top: 4px;
+
+
+        }
+        .webtonnw{
+        /* Group */
+
+            position: absolute;
+            width: 59px;
+            height: 54px;
+            left: 50px;
+            top: 4px;
+
+
+        }
+  body{
+   position: relative;
+   background: #000000;
+   width: 358px;
+   height: 700px;
+  }
+  .clicks{
+            box-sizing: border-box;
+            position: absolute;
+            width: 52px;
+            height: 25px;
+            left: 236px;
+            top: 17px;
+            background: rgba(255, 255, 255, 0.13);
+            border: 1px solid rgba(255, 255, 255, 0.01);
+            backdrop-filter: blur(0.3px);
+            border-radius: 16px;
+        }
+        .wallet{
+            box-sizing: border-box;
+            position: absolute;
+            width: 52px;
+            height: 25px;
+            left: 290px;
+            top: 17px;
+            background: rgba(255, 255, 255, 0.13);
+            border: 1px solid rgba(255, 255, 255, 0.01);
+            backdrop-filter: blur(0.3px);
+            border-radius: 16px;
+        }
+        .walletbal{
+            position: absolute;
+            width: 25px;
+            height: 18px;
+            left: 295px;
+            top: 21px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            color: #FFFFFF;
+        }
+        .clicksbal{
+            position: absolute;
+            width: 25px;
+            height: 18px;
+            left: 241px;
+            top: 21px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            color: #FFFFFF;
+        }
+  .ticketsvg{
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            left: 268px;
+            top: 20px;
+        }
+        .tonmoney{
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        left: 318px;
+        top: 17px;
+        }
+     /* Group */
+#abs{
+position: absolute;
+width: 326px;
+height: 54px;
+left: calc(50% - 326px/2);
+top: 268px;
+}
+
+
+/* Rectangle 52 */
+#abs1{
+box-sizing: border-box;
+
+position: absolute;
+width: 326px;
+height: 54px;
+mix-blend-mode: hard-light;
+border: 6.175px solid #0094FF;
+filter: blur(7.19625px);
+border-radius: 16px;
+}
+#abs2{
+box-sizing: border-box;
+
+position: absolute;
+width: 326px;
+height: 54px;
+mix-blend-mode: hard-light;
+border: 8.075px solid #0094FF;
+filter: blur(2.39875px);
+border-radius: 16px;
+}
+#abs3{
+box-sizing: border-box;
+
+position: absolute;
+width: 326px;
+height: 54px;
+mix-blend-mode: hard-light;
+border: 6.175px solid rgba(0, 179, 255, 0.2);
+box-shadow: inset 0.6175px -1.235px 0.6175px rgba(255, 255, 255, 0.5);
+filter: drop-shadow(0px 4.7975px 6.23675px #0066FF) drop-shadow(0px 6.175px 4.75px rgba(0, 13, 21, 0.7));
+border-radius: 16px;
+}
+#abs4{
+box-sizing: border-box;
+
+position: absolute;
+width: 326px;
+height: 54px;
+
+border: 3.8px solid #82D9FF;
+filter: blur(0.475px);
+border-radius: 16px;
+}
+
+/* Rectangle 52 */
+#abs5{
+box-sizing: border-box;
+
+position: absolute;
+width: 326px;
+height: 54px;
+border: 1.9px solid #FFFFFF;
+filter: blur(0.316667px);
+border-radius: 16px;
+}
+     #ellip{
+position: absolute;
+width: 37px;
+height: 37px;
+left: calc(50% - 37px/2 - 110.5px);
+top: 347px;
+background: #19191A;
+border-radius: 100px;
+}
+     #ellip1{
+     /* Ellipse 1 */
+
+position: absolute;
+width: 37px;
+height: 37px;
+left: calc(50% - 37px/2 + 0.5px);
+top: 347px;
+border-radius: 100px;
+background: #19191A;
+}
+     #ellip2{
+     /* Ellipse 3 */
+
+position: absolute;
+width: 37px;
+height: 37px;
+left: calc(50% - 37px/2 + 111.5px);
+top: 347px;
+
+background: #19191A;
+border-radius: 100px;
+     }
+     #elliptext{
+     /* Deposit */
+
+position: absolute;
+width: 71px;
+height: 14px;
+left: calc(50% - 71px/2 - 110.5px);
+top: 384px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 15px;
+text-align: center;
+
+color: #FFFFFF;
+
+}
+#elliptext1{
+     /* Withdrawal */
+
+position: absolute;
+width: 71px;
+height: 14px;
+left: calc(50% - 71px/2 + 0.5px);
+top: 384px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 15px;
+text-align: center;
+
+color: #FFFFFF;
+
+}
+     #elliptext2{
+/* Exchange */
+
+position: absolute;
+width: 71px;
+height: 14px;
+left: calc(50% - 71px/2 + 111.5px);
+top: 384px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 15px;
+text-align: center;
+
+color: #FFFFFF;
+     }
+
+ </style>
 </head>
 <body>
+<a id="elliptext">Deposit</a>
+<a id="elliptext1">Withdrawal</a>
+<a id="elliptext2">Exchange</a>
+
+<div id="ellip"></div>
+
+<div id="ellip1"></div>
+
+<div id="ellip2"></div>
+<div class="dhead">
+        <div class="clicks"></div>
+            <a class="clicksbal" id="clicki">0</a>
+
+        <div class="wallet"></div>
+            <a class="walletbal" id="wallba">0</a>
+
+    </div>
+<div id="abs">
+<div id="abs1"></div>
+<div id="abs2"></div>
+<div id="abs3"></div>
+<div id="abs4"></div>
+<div id="abs5"></div>
+</div>
 <div id="ton-connect"></div>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
 <script>
-const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
+ const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
     manifestUrl: 'https://vk.com/doc607470817_678280229?hash=mD68zpZFhax3Q020DngQZwfyz8vvWzfzSVPKlfgCL1g&dl=obFwEuSkZLFwAKkeoFjCZyh4kp5E3dnskAkv97PCWjs',
     buttonRootId: 'ton-connect'
 });
-tonConnectUI.uiOptions = {
-        uiPreferences: {
-            theme: THEME.DARK,
-            borderRadius: 's',
-            colorsSet: {
-                [THEME.DARK]: {
-                    connectButton: {
-                        background: '#29CC6A'
-                    }
-                },
-                [THEME.LIGHT]: {
-                    text: {
-                        primary: '#FF0000'
-                    }
-                }
-            }
+const unsubscribeModal = tonConnectUI.onModalStateChange(
+    (state, WalletsModalState) => {
+        if (state.status == 'closed') {
+          console.log("aaaa");
+        } else {
+         let items = document.querySelectorAll('[data-tc-wallet-item="true"]');
+         console.log(items);
+         items[1].style.display = "none";
+         items[2].style.display = "none";
+         items[3].style.display = "none";
         }
-    };
+    }
+);
+const unsubscribe = tonConnectUI.onStatusChange(
+    walletAndwalletInfo => {
+        document.getElementById("elliptext").innerHTML = walletAndwalletInfo.connected;
+    }
+);
 async function connectToWallet() {
     const connectedWallet = await tonConnectUI.connectWallet();
     console.log(connectedWallet);
