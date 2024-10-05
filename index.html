@@ -346,7 +346,7 @@ const unsubscribeModal = tonConnectUI.onModalStateChange(
 );
 const unsubscribe = tonConnectUI.onStatusChange(
     walletAndwalletInfo => {
-        document.getElementById("elliptext").innerHTML = walletAndwalletInfo.connected;
+        document.getElementById("elliptext").innerHTML = tonConnectUI.connected;
     }
 );
 async function connectToWallet() {
