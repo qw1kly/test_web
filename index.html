@@ -671,6 +671,7 @@ const unsubscribeModal = tonConnectUI.onModalStateChange(
         } else {
          let items = document.querySelectorAll('[data-tc-wallet-item="true"]');
          console.log(items);
+          items[0].style.display = "none";
          items[1].style.display = "none";
          items[2].style.display = "none";
          items[3].style.display = "none";
