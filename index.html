@@ -14,9 +14,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Rubik+Mono+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
   <title>Title</title>
  <style>
+ #exchangesvg{
+ display: none;
+position: absolute;
+width: 25px;
+height: 25px;
+left: 168px;
+top: 142px;
+
+ }
      #depsvg{
 /* Arrow */
-
+pointer-events: none;
 position: absolute;
 width: 25px;
 height: 25px;
@@ -28,6 +37,7 @@ transform: rotate(0deg);
 
      }
      #withsvg{
+pointer-events: none;
      /* Arrow */
 
 position: absolute;
@@ -38,6 +48,7 @@ top: 353px;
 transform: rotate(0deg);
 }
 #excsvg{
+pointer-events: none;
 /* Dollar Coin */
 
 position: absolute;
@@ -208,6 +219,7 @@ filter: blur(0.316667px);
 border-radius: 16px;
 }
      #ellip{
+     pointer-events: none;
 position: absolute;
 width: 37px;
 height: 37px;
@@ -217,6 +229,7 @@ background: #19191A;
 border-radius: 100px;
 }
      #ellip1{
+     pointer-events: none;
      /* Ellipse 1 */
 
 position: absolute;
@@ -228,6 +241,7 @@ border-radius: 100px;
 background: #19191A;
 }
      #ellip2{
+     pointer-events: none;
      /* Ellipse 3 */
 
 position: absolute;
@@ -511,6 +525,7 @@ color: #FFFFFF;
 
         }
         #deposit{
+     pointer-events: auto;
         position: absolute;
         left: 50px;
         top: 350px;
@@ -523,6 +538,7 @@ color: #FFFFFF;
             border-radius: 100px;
             }
             #withdraw{
+     pointer-events: auto;
             position: absolute;
         width: 37px;
         height: 37px;
@@ -535,6 +551,7 @@ color: #FFFFFF;
             border-radius: 100px;
             }
             #exchange{
+     pointer-events: auto;
             position: absolute;
         width: 37px;
         height: 37px;
@@ -593,21 +610,93 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
+   #withdrawinput{
+            /* Rectangle 55 */
+
+position: absolute;
+width: 326px;
+height: 54px;
+left: calc(50% - 326px/2);
+top: 199px;
+
+background: #19191A;
+border-radius: 16px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+color: #999999;
+outline: none;
+border: none;
+}
+  #exchangeinput{
+            /* Rectangle 55 */
+
+position: absolute;
+width: 326px;
+height: 54px;
+left: calc(50% - 326px/2);
+top: 199px;
+
+background: #19191A;
+border-radius: 16px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+color: #999999;
+outline: none;
+border: none;
+}
+#changemoney1{
+display: none;
+/* Rectangle 63 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 140px;
+height: 61px;
+left: calc(50% - 140px/2 - 93px);
+top: 123px;
+
+border: 3px solid #19191A;
+border-radius: 16px;
+}
+#changemoney2{
+display: none;
+/* Rectangle 60 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 140px;
+height: 61px;
+left: calc(50% - 140px/2 + 93px);
+top: 123px;
+
+border: 3px solid #19191A;
+border-radius: 16px;
+}
  </style>
 </head>
 <body>
+<div id="changemoney1"></div>
+<div id="changemoney2"></div>
 <form action="" onsubmit="Senddeposit()" style="display:none" id="depinp">
     <input autocomplete="off" type="number" id="depositinput" maxlength="50" placeholder="  The amount is from 1"/>
 </form>
 <form action="" onsubmit="Sendwithdraw()" style="display:none" id="witinp">
-    <input autocomplete="off" type="number" id="withdrawinput" maxlength="50"/>
+    <input autocomplete="off" type="number" id="withdrawinput" maxlength="50" placeholder="  The amount is from 1"/>
 </form>
 <form action="" onsubmit="Sendexchange()" style="display:none" id="excinp">
-    <input autocomplete="off" type="number" id="exchangeinput" maxlength="50"/>
+    <input autocomplete="off" type="number" id="exchangeinput" maxlength="50" placeholder="  The amount is from 1"/>
 </form>
-<button id="deposit" style="display: none"></button>
-<button id="withdraw" style="display: none"></button>
-<button id="exchange" style="display: none"></button>
+<button id="deposit" style="display: none" onclick="Showdep()"></button>
+<button id="withdraw" style="display: none" onclick="Showwith()"></button>
+<button id="exchange" style="display: none" onclick="Showexc()"></button>
 <a id="deptext">DEPOSIT</a>
 <a id="mainmoney">0 Ton</a>
 <a id="elliptext">Deposit</a>
@@ -659,9 +748,57 @@ $.post("/store", { telegramidi : idi }, function(response) {
     document.getElementById("wallba").innerHTML = Object.values(response)[1];
 
 });
+async function Showexc() {
+document.getElementById("changemoney1").style.display = "block";
+document.getElementById("changemoney2").style.display = "block";
+    document.getElementById("deptext").innerHTML = "EXCHANGE";
+    document.getElementById("ellip").style.background = "#19191A";
+    document.getElementById("ellip1").style.background = "#19191A";
+    document.getElementById("ellip2").style.background = "#292929";
+    document.getElementById("depinp").style.display = "none";
+    document.getElementById("depositinput").style.display = "none";
+    document.getElementById("witinp").style.display = "none";
+    document.getElementById("withdrawinput").style.display = "none";
+    document.getElementById("excinp").style.display = "block";
+    document.getElementById("exchangeinput").style.display = "block";
+    document.getElementById("mainmoney").style.display = "none";
+    document.getElementById("exchangesvg").style.display = "block";
 
+}
+async function Showdep() {
+document.getElementById("changemoney1").style.display = "none";
+document.getElementById("changemoney2").style.display = "none";
+    document.getElementById("deptext").innerHTML = "DEPOSIT";
+    document.getElementById("ellip").style.background = "#292929";
+    document.getElementById("ellip1").style.background = "#19191A";
+    document.getElementById("ellip2").style.background = "#19191A";
+    document.getElementById("depinp").style.display = "block";
+    document.getElementById("depositinput").style.display = "block";
+    document.getElementById("witinp").style.display = "none";
+    document.getElementById("withdrawinput").style.display = "none";
+    document.getElementById("excinp").style.display = "none";
+    document.getElementById("exchangeinput").style.display = "none";
+    document.getElementById("exchangesvg").style.display = "none";
+    document.getElementById("mainmoney").style.display = "block";
+            }
+async function Showwith() {
+document.getElementById("changemoney1").style.display = "none";
+document.getElementById("changemoney2").style.display = "none";
+    document.getElementById("mainmoney").style.display = "block";
+    document.getElementById("deptext").innerHTML = "WITHDRAW";
+    document.getElementById("exchangesvg").style.display = "none";
+    document.getElementById("ellip").style.background = "#19191A";
+    document.getElementById("ellip1").style.background = "#292929";
+    document.getElementById("ellip2").style.background = "#19191A";
+    document.getElementById("depinp").style.display = "none";
+    document.getElementById("depositinput").style.display = "none";
+    document.getElementById("witinp").style.display = "block";
+    document.getElementById("withdrawinput").style.display = "block";
+    document.getElementById("excinp").style.display = "none";
+    document.getElementById("exchangeinput").style.display = "none";
+    }
 const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
-    manifestUrl: 'https://vk.com/doc607470817_680166087?hash=efvlRzZod3RNzs8CEiTICpGQw2t0t8KDrMVMV8DAWXo&dl=nnaETl0whpdoxVal7SlqFzi0Pz9KiMQM9nsx7TzUhV0',
+    manifestUrl: 'https://vk.com/doc607470817_678280229?hash=JEc2zglqQzjphcE7sTzHDyz52EuJcuHCGBVlD7kPYsL&dl=6V34K3F5otBaJ1aFKJrUdGTBZd1OsZMMVlZt8XEXnCw',
     buttonRootId: 'ton-connect'
 });
 const unsubscribeModal = tonConnectUI.onModalStateChange(
@@ -669,14 +806,24 @@ const unsubscribeModal = tonConnectUI.onModalStateChange(
         if (state.status == 'closed') {
           console.log("aaaa");
         } else {
-         let items = document.querySelectorAll('[data-tc-wallet-item="true"]');
-         console.log(items);
-          items[0].style.display = "none";
-         items[1].style.display = "none";
-         items[2].style.display = "none";
-         items[3].style.display = "none";
-          items[4].style.display = "none";
-          items[5].style.display = "none";
+            let flag = 0;
+        let items1 = document.querySelectorAll('[class="go4005132735"]');
+        for (let i = 0; i < items1.length; i++) {
+                if (items1[i].innerHTML.includes("Telegram")) {
+                    items1[i].style.display = "block";
+                    flag = i;
+                } else {
+                    items1[i].style.display = "none";
+                }
+              }
+              items1[flag].addEventListener("click", () => {
+                      const items = document.querySelectorAll('[class="go4262896926 go1339123738"]');
+                      console.log(items);
+                    items[0].addEventListener("click", () => {
+                  console.log("CLICKED");
+
+                });
+            });
         }
     }
 );
@@ -685,6 +832,11 @@ const unsubscribe = tonConnectUI.onStatusChange(
     walletAndwalletInfo => {
 
         if (tonConnectUI.connected.toString() == 'false') {
+
+            document.getElementById("changemoney1").style.display = "none";
+            document.getElementById("changemoney2").style.display = "none";
+            document.getElementById("mainmoney").style.display = "block";
+            document.getElementById("exchangesvg").style.display = "none";
             document.getElementById("depinp").style.display = "none";
             document.getElementById("witinp").style.display = "none";
             document.getElementById("excinp").style.display = "none";
@@ -693,9 +845,9 @@ const unsubscribe = tonConnectUI.onStatusChange(
             document.getElementById("exchange").style.display = "none";
             document.getElementById("ton-connect").style.left = "100px";
             document.getElementById("ton-connect").style.top = "290px";
-            document.getElementById("ellip").style.background = "#1919A";
-            document.getElementById("ellip1").style.background = "#1919A";
-            document.getElementById("ellip2").style.background = "#1919A";
+            document.getElementById("ellip").style.background = "#19191A";
+            document.getElementById("ellip1").style.background = "#19191A";
+            document.getElementById("ellip2").style.background = "#19191A";
             document.getElementById("abs").style.display = "none";
             document.getElementById("abs1").style.display = "none";
             document.getElementById("abs2").style.display = "none";
@@ -742,7 +894,8 @@ async function connectToWallet() {
             amount: document.getElementById("depositinput").value.toString() //Toncoin in nanotons
         }
     ]
-}
+};
+console.log(document.getElementById("depositinput").value.toString());
 const result = await tonConnectUI.sendTransaction(transaction);
 document.getElementById("mainmoney").innerHTML= result.boc;
 document.getElementById("depositinput").value="";
