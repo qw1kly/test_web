@@ -823,56 +823,7 @@ const unsubscribeModal = tonConnectUI.onModalStateChange(
         }
     }
 );
-
-const unsubscribe = tonConnectUI.onStatusChange(
-    walletAndwalletInfo => {
-
-        if (tonConnectUI.connected.toString() == 'false') {
-
-            document.getElementById("changemoney1").style.display = "none";
-            document.getElementById("changemoney2").style.display = "none";
-            document.getElementById("mainmoney").style.display = "block";
-            document.getElementById("exchangesvg").style.display = "none";
-            document.getElementById("depinp").style.display = "none";
-            document.getElementById("witinp").style.display = "none";
-            document.getElementById("excinp").style.display = "none";
-            document.getElementById("deposit").style.display = "none";
-            document.getElementById("withdraw").style.display = "none";
-            document.getElementById("exchange").style.display = "none";
-            document.getElementById("ton-connect").style.left = "100px";
-            document.getElementById("ton-connect").style.top = "290px";
-            document.getElementById("ellip").style.background = "#19191A";
-            document.getElementById("ellip1").style.background = "#19191A";
-            document.getElementById("ellip2").style.background = "#19191A";
-            document.getElementById("abs").style.display = "none";
-            document.getElementById("abs1").style.display = "none";
-            document.getElementById("abs2").style.display = "none";
-            document.getElementById("abs3").style.display = "none";
-            document.getElementById("abs4").style.display = "none";
-            document.getElementById("abs5").style.display = "none";
-            document.getElementById("deptext").style.display = "none";
-        }
-        if (tonConnectUI.connected.toString() == 'true') {
 document.getElementById("depinp").style.display = "block";
-            document.getElementById("deposit").style.display = "block";
-            document.getElementById("withdraw").style.display = "block";
-            document.getElementById("exchange").style.display = "block";
-            document.getElementById("ton-connect").style.top = "75px";
-            document.getElementById("ton-connect").style.left = "110px";
-            document.getElementById("ellip").style.background = "#292929";
-            document.querySelector('[data-tc-button="true"]').style.background = "#000000";
-            document.querySelector('[data-tc-text="true"]').style.color = "#999999";
-            document.getElementById("abs").style.display = "block";
-            document.getElementById("abs1").style.display = "block";
-            document.getElementById("abs2").style.display = "block";
-            document.getElementById("abs3").style.display = "block";
-            document.getElementById("abs4").style.display = "block";
-            document.getElementById("abs5").style.display = "block";
-            document.getElementById("deptext").style.display = "block";
-
-        }
-    }
-);
 async function connectToWallet() {
     const connectedWallet = await tonConnectUI.connectWallet();
     console.log(connectedWallet);
@@ -889,6 +840,7 @@ async function connectToWallet() {
 };
 console.log(document.getElementById("depositinput").value.toString());
 const result = await tonConnectUI.sendTransaction(transaction);
+      
 document.getElementById("depositinput").value="";
 document.getElementById("depositinput").blur();
 
