@@ -797,32 +797,7 @@ const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
     manifestUrl: 'https://vk.com/doc607470817_678280229?hash=JEc2zglqQzjphcE7sTzHDyz52EuJcuHCGBVlD7kPYsL&dl=6V34K3F5otBaJ1aFKJrUdGTBZd1OsZMMVlZt8XEXnCw',
     buttonRootId: 'ton-connect'
 });
-const unsubscribeModal = tonConnectUI.onModalStateChange(
-    (state, WalletsModalState) => {
-        if (state.status == 'closed') {
-          console.log("aaaa");
-        } else {
-            let flag = 0;
-        let items1 = document.querySelectorAll('[class="go4005132735"]');
-        for (let i = 0; i < items1.length; i++) {
-                if (items1[i].innerHTML.includes("Telegram")) {
-                    items1[i].style.display = "block";
-                    flag = i;
-                } else {
-                    items1[i].style.display = "none";
-                }
-              }
-              items1[flag].addEventListener("click", () => {
-                      const items = document.querySelectorAll('[class="go4262896926 go1339123738"]');
-                      console.log(items);
-                    items[0].addEventListener("click", () => {
-                  console.log("CLICKED");
 
-                });
-            });
-        }
-    }
-);
 document.getElementById("depinp").style.display = "block";
 async function connectToWallet() {
     const connectedWallet = await tonConnectUI.connectWallet();
