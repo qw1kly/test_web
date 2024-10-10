@@ -743,11 +743,7 @@ border-radius: 16px;
 
 <script>
 let idi = 1;
-$.post("/store", { telegramidi : idi }, function(response) {
-    document.getElementById("clicki").innerHTML = Object.values(response)[0];
-    document.getElementById("wallba").innerHTML = Object.values(response)[1];
 
-});
 async function Showexc() {
 document.getElementById("changemoney1").style.display = "block";
 document.getElementById("changemoney2").style.display = "block";
@@ -856,11 +852,7 @@ const unsubscribe = tonConnectUI.onStatusChange(
             document.getElementById("abs5").style.display = "none";
             document.getElementById("deptext").style.display = "none";
         }
-        if (tonConnectUI.connected.toString() == 'true') {
-            $.post("/store", { telegramidi : idi, adrr:tonConnectUI.account.address}, function(response) {
-
-            });
-            document.getElementById("depinp").style.display = "block";
+        
 
             document.getElementById("deposit").style.display = "block";
             document.getElementById("withdraw").style.display = "block";
