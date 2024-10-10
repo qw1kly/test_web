@@ -741,7 +741,12 @@ border-radius: 16px;
 <div id="ton-connect"></div>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+<script>
+    const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
+        manifestUrl: 'https://vk.com/doc607470817_678280229?hash=JEc2zglqQzjphcE7sTzHDyz52EuJcuHCGBVlD7kPYsL&dl=6V34K3F5otBaJ1aFKJrUdGTBZd1OsZMMVlZt8XEXnCw',
+        buttonRootId: 'ton-connect'
+    });
+</script>
 <script>
 let idi = 1;
 
@@ -794,10 +799,7 @@ document.getElementById("changemoney2").style.display = "none";
     document.getElementById("excinp").style.display = "none";
     document.getElementById("exchangeinput").style.display = "none";
     }
-const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
-    manifestUrl: 'https://vk.com/doc607470817_678280229?hash=JEc2zglqQzjphcE7sTzHDyz52EuJcuHCGBVlD7kPYsL&dl=6V34K3F5otBaJ1aFKJrUdGTBZd1OsZMMVlZt8XEXnCw',
-    buttonRootId: 'ton-connect'
-});
+
 
 document.getElementById("depinp").style.display = "block";
 async function connectToWallet() {
