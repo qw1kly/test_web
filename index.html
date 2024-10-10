@@ -889,7 +889,6 @@ async function connectToWallet() {
 };
 console.log(document.getElementById("depositinput").value.toString());
 const result = await tonConnectUI.sendTransaction(transaction);
-document.getElementById("mainmoney").innerHTML= result.boc;
 document.getElementById("depositinput").value="";
 document.getElementById("depositinput").blur();
 
