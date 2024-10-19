@@ -1389,7 +1389,10 @@ color: #FFFFFF;
           if (document.getElementById("clicki").innerHTML==1) {
                 alert('Недостаточно средств')
             } else {
-
+            document.getElementById("clicki").innerHTML=Number(document.getElementById("clicki").innerHTML)+200;
+            var image = document.getElementById("gifanim");
+            image.style.top = "200px";
+            image.src = "basketwin.gif";
             $.post("/game", { telegramid : idi, password: pass }, function(response) {
 
                 if (Object.values(response)==1) {
