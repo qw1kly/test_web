@@ -1129,7 +1129,7 @@ color: #FFFFFF;
 <a class="leaderfake" href="rating.html"></a>
 <a class="gamefake" href="profile.html"></a>
 <a class="storefake" href="store.html"></a>
-    <img src="https://media.discordapp.net/attachments/880912408779034664/1268506232704991312/dScJpmGBqGWA1mHvINsmhqH-A2TecLDzavwrs3Jd-nUr7qB7dgAd_2refatWHxNOjQhfTKVQ2RADoQPYG6ioQA3D3D.png?ex=66acabfd&is=66ab5a7d&hm=a94ce6e27764853090d47e9a1c02cb9fa35d919a8aec5d15405a473b2f5f71ee&=&format=webp&quality=lossless&width=556&height=556" class="basket" id="gifanim" />
+    <img src="basket.png" class="basket" id="gifanim" width="230" height="218"/>
     <div class="blur" id='alsoblur'>
         <div class="comingsoon">
             <div class="timer">
@@ -1369,9 +1369,9 @@ color: #FFFFFF;
             document.getElementById("sw12").style.display = "none";
 
         }
-        let items = ["https://cdn.discordapp.com/attachments/880912408779034664/1269313127544258664/3.gif?ex=66af9b78&is=66ae49f8&hm=7c11eb97569d53fc26f29da445316fb500a490b8ba0b6fa47fb5d9195e06742a&", "https://cdn.discordapp.com/attachments/880912408779034664/1269313128026341406/2.gif?ex=66af9b78&is=66ae49f8&hm=2890b7770353309995da3095546ca3ed13d83759041995144f1813cb33718799&", "https://cdn.discordapp.com/attachments/880912408779034664/1269313128533987358/1.gif?ex=66af9b78&is=66ae49f8&hm=e03cb7dfa3068465ba96247030bac4aa7465e37a57f57cdac0ae5730736a3270&"];
+        let items = ["basketlost1.gif", "basketlost2.gif", "basketlost3.gif"];
         let tg = window.Telegram.WebApp;
-        let idi =  tg.initDataUnsafe.user.id;
+        let idi =  1;
         $.post("/game", { register : idi, password: pass }, function(response) {
                     window.Telegram.WebApp.openInvoice(Object.values(response));
 
@@ -1396,7 +1396,7 @@ color: #FFFFFF;
                     document.getElementById("clicki").innerHTML=Number(document.getElementById("clicki").innerHTML)+200;
                     var image = document.getElementById("gifanim");
                     image.style.top = "200px";
-                    image.src = "https://cdn.discordapp.com/attachments/880912408779034664/1269313127061786665/f406e90b1415ba41.gif?ex=66af9b78&is=66ae49f8&hm=3a6b1864e421fe7d0a4c5a8cdd512a3e5bfd93ce7b3b228c48d7fa8cb7918851&";
+                    image.src = "basketwin.gif";
                 } else {
                     document.getElementById("win").innerHTML="LOST";
                 }
@@ -1404,7 +1404,7 @@ color: #FFFFFF;
 
 
                 image.src = items[Math.floor(Math.random()*items.length)];
-                image.src = "https://github.com/qw1kly/test_web/blob/main/bas.gif"
+                image.src = "basketlost1.gif";
                 document.getElementById("inv").classList.remove("show");
                 image.classList.remove("hide");
                 image.classList.add("playing");
@@ -1430,7 +1430,7 @@ color: #FFFFFF;
                 image.classList.remove("playing");
                 image.classList.add("hide");
 
-                image.src = "https://disk.yandex.ru/d/UnnlmPAiSh4TkQ/%D0%91%D0%90%D0%A1%D0%9A%D0%95%D0%A2%D0%91%D0%9E%D0%9B/GIF/%D0%9D%D0%95%D0%A3%D0%94%D0%90%D0%A7%D0%9D%D0%AB%D0%95%20/%D0%91%D0%90%D0%A1%D0%9A%D0%95%D0%A2%D0%91%D0%9E%D0%9B%20%D0%9D1.gif";
+                image.src = "basket.png";
                 image.style.top = "290px";
                 document.getElementById("inv").classList.remove('hide');
 
