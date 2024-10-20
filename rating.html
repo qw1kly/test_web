@@ -1008,7 +1008,7 @@ top: 324px;
             <a class="gametext" href="index.html">Game</a>
 
         <div class="walletbar"></div>
-            <a class="wallettext">Store</a>
+            <a class="wallettext">Wallet</a>
         <div class="leaderboard"></div>
             <a class="leadertext">Ranking</a>
 
@@ -1337,6 +1337,14 @@ top: 324px;
                 input.blur();
                 event.preventDefault();
         };
+        const availableScreenWidth = window.screen.availWidth;
+        document.getElementById("clicki").innerHTML = window.innerWidth;
+        document.body.style.left = ((document.documentElement.scrollWidth - 358) / 2) - 10 + 'px';
+        document.getElementById("clicki").innerHTML = ((window.innerWidth - 358) / 2) + 'px';
+        window.addEventListener('resize', (e) => {
+                document.body.style.left = "0px";
+
+        });
     </script>
     <div id="winner1">
     <a id="winner1txt"></a>
