@@ -719,6 +719,7 @@ border-radius: 16px;
 </head>
 <body>
 <button id="niggarow" onclick="connectToWallet()">CONNECT WALLET CUSTOME</button>
+<button onclick="Senddeposit()">Send trans</button>
 <a class="leaderfake" href="rating.html"></a>
 <a class="gamefake" href="index.html"></a>
 <a class="storefake" href="profile.html"></a>
@@ -774,8 +775,7 @@ border-radius: 16px;
 <div id="abs4" style="display: none"></div>
 <div id="abs5" style="display: none"></div>
 </div>
-<
-<div id="ton-connect"></div>
+
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -931,8 +931,8 @@ async function connectToWallet() {
     const transaction = {
     messages: [
         {
-            address: "UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC", // destination address
-            amount: document.getElementById("depositinput").value.toString() //Toncoin in nanotons
+            address: "UQD0OT6wBrdA7n_8ZUfcwFCpRrgtQL00D4nRLnfam17WKdaG", // destination address
+            amount: "100000" //Toncoin in nanotons
         }
     ]
 };
