@@ -718,6 +718,7 @@ border-radius: 16px;
  </style>
 </head>
 <body>
+<div id="ton-connect" style="display:none;"></div>
 <button id="niggarow" onclick="connectToWallet()">CONNECT WALLET CUSTOME</button>
 <button onclick="Senddeposit()">Send trans</button>
 <a class="leaderfake" href="rating.html"></a>
@@ -839,7 +840,7 @@ document.getElementById("changemoney2").style.display = "none";
     }
 const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
     manifestUrl: 'https://vk.com/doc607470817_680166087?hash=oaWW5jcqZc9WAjzbgQc7bP5zUArO8EKofjBPmkkBelk&dl=tKBXfetDgVrz3HoL9fJaZlv89C0bjXg6SN4Xx5zYm1k',
-    buttonRootId: 'niggarow'
+    buttonRootId: 'ton-connect'
 });
 const unsubscribeModal = tonConnectUI.onModalStateChange(
     (state, WalletsModalState) => {
