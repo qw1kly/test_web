@@ -2722,6 +2722,8 @@ pointer-events: auto;
         let tg = window.Telegram.WebApp;
         let idi =  tg.initDataUnsafe.user.id;
         let pass = localStorage.getItem("pass");
+        tg.setBackgroundColor("#000000");
+        tg.expand();
         $.post("/profile", { friends : idi }, function(response) {
                 let data = Object.values(response);
                 let coount = 0;
