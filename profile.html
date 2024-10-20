@@ -2703,7 +2703,7 @@ pointer-events: auto;
             <a class="gametext" href="index.html">Game</a>
 
         <div class="walletbar"></div>
-            <a class="wallettext" href="store.html">Store</a>
+            <a class="wallettext" href="store.html">Wallet</a>
         <div class="leaderboard"></div>
             <a class="leadertext" href="rating.html">Ranking</a>
 
@@ -3006,6 +3006,14 @@ pointer-events: auto;
             document.getElementById("listofrules").style.display = "none";
             document.getElementById("friendsbig").style.display = "block";
         }
+        const availableScreenWidth = window.screen.availWidth;
+        document.getElementById("clicki").innerHTML = window.innerWidth;
+        document.body.style.left = ((document.documentElement.scrollWidth - 358) / 2) - 10 + 'px';
+        document.getElementById("clicki").innerHTML = ((window.innerWidth - 358) / 2) + 'px';
+        window.addEventListener('resize', (e) => {
+                document.body.style.left = "0px";
+
+        });
 
     </script>
     <div id="listofrules" style="display:none;">
