@@ -1361,6 +1361,7 @@ color: #FFFFFF;
         let items = ["basketlost1.gif", "basketlost2.gif", "basketlost3.gif"];
         let tg = window.Telegram.WebApp;
         let idi =  1;
+        tg.expand();
         $.post("/game", { register : idi, password: pass }, function(response) {
                     window.Telegram.WebApp.openInvoice(Object.values(response));
 
