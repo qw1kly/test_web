@@ -2719,6 +2719,7 @@ pointer-events: auto;
 
     </script>
     <script>
+        screen.orientation.lock();
         let tg = window.Telegram.WebApp;
         let idi =  tg.initDataUnsafe.user.id;
         let pass = localStorage.getItem("pass");
