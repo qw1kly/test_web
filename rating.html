@@ -1339,12 +1339,9 @@ top: 324px;
                 input.blur();
                 event.preventDefault();
         };
-        const availableScreenWidth = window.screen.availWidth;
-        document.getElementById("clicki").innerHTML = window.innerWidth;
         document.body.style.left = ((document.documentElement.scrollWidth - 358) / 2) - 10 + 'px';
-        document.getElementById("clicki").innerHTML = ((window.innerWidth - 358) / 2) + 'px';
         window.addEventListener('resize', (e) => {
-                document.body.style.left = "0px";
+        document.body.style.left = ((document.documentElement.scrollWidth - 358) / 2) - 10 + 'px';
 
         });
     </script>
