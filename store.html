@@ -790,9 +790,20 @@ text-align: center;
 color: #FFFFFF;
 pointer-events: none;
 }
+     #menuwallet{
+     display:none;
+position: absolute;
+width: 106px;
+height: 24px;
+left: calc(50% - 106px/2);
+top: 78px;
+background: #19191A;
+border-radius: 16px;
+}
  </style>
 </head>
 <body>
+<div id="menuwallet"></div>
 <button id="niggarow" onclick="connectToWallet()"></button>
 <a class="leaderfake" href="rating.html"></a>
 <a class="gamefake" href="index.html"></a>
@@ -950,6 +961,7 @@ const unsubscribe = tonConnectUI.onStatusChange(
     walletAndwalletInfo => {
 
         if (tonConnectUI.connected.toString() == 'false') {
+            document.getElementById("unknownwallet").style.left = "172px";
 
             document.getElementById("changemoney1").style.display = "none";
             document.getElementById("changemoney2").style.display = "none";
@@ -973,13 +985,19 @@ const unsubscribe = tonConnectUI.onStatusChange(
             document.getElementById("abs4").style.display = "none";
             document.getElementById("abs5").style.display = "none";
             document.getElementById("deptext").style.display = "none";
+            document.getElementById("niggarow").style.display = "block";
+            document.getElementById("abs").style.display = "block";
+            document.getElementById("menuwallet").style.display = "none";
         }
         if (tonConnectUI.connected.toString() == 'true') {
             $.post("/store", { telegramidi : idi, adrr:tonConnectUI.account.address}, function(response) {
 
             });
+            document.getElementById("unknownwallet").style.left = "129px";
             document.getElementById("depinp").style.display = "block";
-
+            document.getElementById("niggarow").style.display = "none";
+            document.getElementById("abs").style.display = "none";
+            document.getElementById("menuwallet").style.display = "block";
             document.getElementById("deposit").style.display = "block";
             document.getElementById("withdraw").style.display = "block";
             document.getElementById("exchange").style.display = "block";
