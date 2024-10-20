@@ -1362,7 +1362,7 @@ color: #FFFFFF;
         let idi =  tg.initDataUnsafe.user.id;
         tg.expand();
         console.log(tg.themeParams);
-        tg.setBottomBarColor("#000000")
+        tg.setBackgroundColor("#000000");
         $.post("/game", { register : idi, password: pass }, function(response) {
                     window.Telegram.WebApp.openInvoice(Object.values(response));
 
