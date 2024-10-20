@@ -74,19 +74,7 @@
 
 
         }
-        #inv{
-          opacity: 1;
-          transition: opacity 0.6s linear;
-        }
-        #inv.hide{
-        opacity: 0;
-        }
-        #inv.show{
-        opacity: 1;
-        transition: opacity 3.6s linear;
-
-        }
-
+       
         .walletbal{
             position: absolute;
             width: 25px;
@@ -1390,7 +1378,35 @@ color: #FFFFFF;
           if (document.getElementById("clicki").innerHTML==1) {
                 alert('Недостаточно средств')
             } else {
+            document.getElementById("clicki").innerHTML=Number(document.getElementById("clicki").innerHTML)+200;
+            var image = document.getElementById("gifanim");
+            image.src = "basketwin.gif";
+            document.getElementById("icongame1").style.display="none";
+            document.getElementById("iconprofile1").style.display="none";
+            document.getElementById("iconrating1").style.display="none";
+            document.getElementById("iconwallet1").style.display="none";
+            document.getElementById("switch2k").style.display="none";
+            document.getElementById("switch1k").style.display="none";
+            document.getElementById("play_But").style.display="none";
+            document.getElementById("sw2").style.display="none";
+            document.getElementById("inv").style.display="none";
 
+                async function clickedback() {
+                await new Promise(resolve => setTimeout(resolve, 12000));
+                    
+                var image = document.getElementById("gifanim");
+                image.src = "basket.png";
+                document.getElementById("inv").style.display="block";
+                document.getElementById("icongame1").style.display="block";
+                document.getElementById("iconprofile1").style.display="block";
+                document.getElementById("iconrating1").style.display="block";
+                document.getElementById("iconwallet1").style.display="block";
+                document.getElementById("switch2k").style.display="block";
+                document.getElementById("switch1k").style.display="block";
+                document.getElementById("play_But").style.display="block";
+                document.getElementById("sw2").style.display="block";
+                }
+                clickedback()
             $.post("/game", { telegramid : idi, password: pass }, function(response) {
 
                 if (Object.values(response)==1) {
