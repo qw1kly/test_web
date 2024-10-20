@@ -1223,7 +1223,7 @@ color: #FFFFFF;
     <script>
         const availableScreenWidth = window.screen.availWidth;
         document.getElementById("clicki").innerHTML = window.innerWidth;
-        document.body.style.left = ((window.innerWidth - 358) / 2) + 'px';
+        document.body.style.left = ((document.documentElement.scrollWidth - 358) / 2) + 'px';
         document.getElementById("clicki").innerHTML = ((window.innerWidth - 358) / 2) + 'px';
         window.addEventListener('resize', (e) => {
                 document.body.style.left = "0px";
