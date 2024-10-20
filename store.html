@@ -800,9 +800,28 @@ top: 78px;
 background: #19191A;
 border-radius: 16px;
 }
+     #addressblow{
+     /* UQCY...X7At */
+display: none;
+position: absolute;
+width: 71px;
+height: 14px;
+left: calc(50% - 71px/2 + 1.5px);
+top: 83px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+}
  </style>
 </head>
 <body>
+<a id="addressblow"></a>
 <div id="menuwallet"></div>
 <button id="niggarow" onclick="connectToWallet()"></button>
 <a class="leaderfake" href="rating.html"></a>
@@ -988,11 +1007,18 @@ const unsubscribe = tonConnectUI.onStatusChange(
             document.getElementById("niggarow").style.display = "block";
             document.getElementById("abs").style.display = "block";
             document.getElementById("menuwallet").style.display = "none";
+            document.getElementById("textwalletconnect").style.display = "block";
+            document.getElementById("addressblow").style.display = "none";
+
         }
         if (tonConnectUI.connected.toString() == 'true') {
             $.post("/store", { telegramidi : idi, adrr:tonConnectUI.account.address}, function(response) {
 
             });
+            document.getElementById("addressblow").style.display = "block";
+           
+            document.getElementById("addressblow").innerHTML = tonConnectUI.account.address[0:4]+'...'+tonConnectUI.account.address[-4:-1];
+            document.getElementById("textwalletconnect").style.display = "none";
             document.getElementById("unknownwallet").style.left = "129px";
             document.getElementById("depinp").style.display = "block";
             document.getElementById("niggarow").style.display = "none";
