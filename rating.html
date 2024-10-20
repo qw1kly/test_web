@@ -1046,6 +1046,8 @@ top: 324px;
         let tg = window.Telegram.WebApp;
         let idi =  tg.initDataUnsafe.user.id;
         let nm = '';
+        tg.setBackgroundColor("#000000");
+        tg.expand();
         async function changeColor() {
             document.getElementById("messageText").style.color = "white";
         };
