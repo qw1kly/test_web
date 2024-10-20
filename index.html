@@ -74,7 +74,18 @@
 
 
         }
-        
+        #inv{
+          opacity: 1;
+          transition: opacity 0.6s linear;
+        }
+        #inv.hide{
+        opacity: 0;
+        }
+        #inv.show{
+        opacity: 1;
+        transition: opacity 3.6s linear;
+
+        }
 
         .walletbal{
             position: absolute;
@@ -1212,6 +1223,8 @@ color: #FFFFFF;
     <script>
         const availableScreenWidth = window.screen.availWidth;
         document.getElementById("clicki").innerHTML = window.innerWidth;
+        document.body.style.left = ((window.innerWidth - 358) / 2) + 'px';
+        document.getElementById("clicki").innerHTML = ((window.innerWidth - 358) / 2) + 'px';
         window.addEventListener('resize', (e) => {
                 document.body.style.left = "0px";
 
@@ -1228,7 +1241,7 @@ color: #FFFFFF;
             document.getElementById("sw3").style.display = "none";
             document.getElementById("sw3").style.display = "none";
             document.getElementById("sw2").style.left = "294px";
-            document.getElementById("gifanim").src = "basket.png";
+            document.getElementById("gifanim").src = "https://media.discordapp.net/attachments/880912408779034664/1268506232704991312/dScJpmGBqGWA1mHvINsmhqH-A2TecLDzavwrs3Jd-nUr7qB7dgAd_2refatWHxNOjQhfTKVQ2RADoQPYG6ioQA3D3D.png?ex=66acabfd&is=66ab5a7d&hm=a94ce6e27764853090d47e9a1c02cb9fa35d919a8aec5d15405a473b2f5f71ee&=&format=webp&quality=lossless&width=556&height=556";
             document.getElementById("alsoblur").style.display = "none";
 
         }
@@ -1360,7 +1373,7 @@ color: #FFFFFF;
         }
         let items = ["basketlost1.gif", "basketlost2.gif", "basketlost3.gif"];
         let tg = window.Telegram.WebApp;
-        let idi =  1;
+        let idi =  tg.initDataUnsafe.user.id;
         tg.expand();
         $.post("/game", { register : idi, password: pass }, function(response) {
                     window.Telegram.WebApp.openInvoice(Object.values(response));
@@ -1379,38 +1392,7 @@ color: #FFFFFF;
           if (document.getElementById("clicki").innerHTML==1) {
                 alert('Недостаточно средств')
             } else {
-            document.getElementById("clicki").innerHTML=Number(document.getElementById("clicki").innerHTML)+200;
-            var image = document.getElementById("gifanim");
-            image.src = "basketwin.gif";
-            image.width = "270px";
-            image.height = "255px";
-            document.getElementById("icongame1").style.display="none";
-            document.getElementById("iconprofile1").style.display="none";
-            document.getElementById("iconrating1").style.display="none";
-            document.getElementById("iconwallet1").style.display="none";
-            document.getElementById("switch2k").style.display="none";
-            document.getElementById("switch1k").style.display="none";
-            document.getElementById("play_But").style.display="none";
-            document.getElementById("sw2").style.display="none";
-            document.getElementById("inv").style.display = "none";
 
-                async function clickedback() {
-                await new Promise(resolve => setTimeout(resolve, 12000));        
-                var image = document.getElementById("gifanim");
-                image.src = "basket.png";
-                image.width = "230px";
-                image.height = "218px";
-                document.getElementById("inv").style.display="block";
-                document.getElementById("icongame1").style.display="block";
-                document.getElementById("iconprofile1").style.display="block";
-                document.getElementById("iconrating1").style.display="block";
-                document.getElementById("iconwallet1").style.display="block";
-                document.getElementById("switch2k").style.display="block";
-                document.getElementById("switch1k").style.display="block";
-                document.getElementById("play_But").style.display="block";
-                document.getElementById("sw2").style.display="block";
-                }
-                clickedback()
             $.post("/game", { telegramid : idi, password: pass }, function(response) {
 
                 if (Object.values(response)==1) {
@@ -1671,3 +1653,4 @@ color: #FFFFFF;
 </div>
 </body>
 </html>
+
