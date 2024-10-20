@@ -1017,7 +1017,7 @@ const unsubscribe = tonConnectUI.onStatusChange(
             });
             document.getElementById("addressblow").style.display = "block";
            
-            document.getElementById("addressblow").innerHTML = tonConnectUI.account.address[0:4]+'...'+tonConnectUI.account.address[-4:-1];
+            document.getElementById("addressblow").innerHTML = tonConnectUI.account.address.slice(0, 4)+'...'+tonConnectUI.account.address.slice(-4, -1);
             document.getElementById("textwalletconnect").style.display = "none";
             document.getElementById("unknownwallet").style.left = "129px";
             document.getElementById("depinp").style.display = "block";
