@@ -891,6 +891,8 @@ color: #FFFFFF;
 <script>
 let tg = window.Telegram.WebApp;
 let idi =  tg.initDataUnsafe.user.id;
+tg.setBackgroundColor("#000000");
+tg.expand();
 $.post("/store", { telegramidi : idi }, function(response) {
     document.getElementById("clicki").innerHTML = Object.values(response)[0];
     document.getElementById("wallba").innerHTML = Object.values(response)[1];
