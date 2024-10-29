@@ -1105,9 +1105,21 @@ color: #FFFFFF;
         left: 113px;
         top: 638px;
         }
+        #hideneoniphone{
+            display:none;
+            position: absolute;
+            left: 90px;
+            top: 550px;
+            width: 170px;
+            height: 60px;
+            background: #000000;
+            z-index:1;
+        }
     </style>
 </head>
 <body>
+    <div id="hideneoniphone"></div>
+
 <a class="leaderfake" href="rating.html"></a>
 <a class="gamefake" href="profile.html"></a>
 <a class="storefake" href="store.html"></a>
@@ -1373,6 +1385,7 @@ color: #FFFFFF;
                 alert('Недостаточно средств')
             } else {
             document.getElementById("clicki").innerHTML=Number(document.getElementById("clicki").innerHTML)+200;
+              document.getElementById("hideneoniphone").style.display = "block";
             var image = document.getElementById("gifanim");
             image.src = "basketwin.gif";
             document.getElementById("icongame1").style.display="none";
@@ -1390,6 +1403,8 @@ color: #FFFFFF;
                     
                 var image = document.getElementById("gifanim");
                 image.src = "basket.png";
+              document.getElementById("hideneoniphone").style.display = "none";
+
                 document.getElementById("inv").style.display="block";
                 document.getElementById("icongame1").style.display="block";
                 document.getElementById("iconprofile1").style.display="block";
