@@ -826,9 +826,32 @@ color: #FFFFFF;
         left: 290px;
         top: 353px;
      }
+   #history{
+      pointer-events: auto;
+        position: absolute;
+        left: 290px;
+        top: 350px;
+        width: 37px;
+        height: 37px;
+        background:none;
+            border:none;
+            margin:0;
+            padding:0;
+            border-radius: 100px;
+     }
+   #blockofhistory{
+        display: none;
+        position:absolute;
+        left: calc(50% - 326px/2);
+        top:50px;
+        width: 326px;
+        height: 200px;
+     }
  </style>
 </head>
 <body>
+  
+<div id="blockofhistory">
 <a id="addressblow"></a>
 <div id="menuwallet"></div>
 <button id="niggarow" onclick="connectToWallet()"></button>
@@ -849,6 +872,8 @@ color: #FFFFFF;
 <button id="deposit" style="display: none" onclick="Showdep()"></button>
 <button id="withdraw" style="display: none" onclick="Showwith()"></button>
 <button id="exchange" style="display: none" onclick="Showexc()"></button>
+  <button id="history" style="display: none" onclick="Showhistory()"></button>
+
 <a id="deptext">DEPOSIT</a>
 <a id="mainmoney">0 Ton</a>
 <a id="elliptext">Deposit</a>
@@ -906,12 +931,32 @@ $.post("/store", { telegramidi : idi }, function(response) {
     document.getElementById("wallba").innerHTML = Object.values(response)[1];
 
 });
+  async function Showhistory() {
+    document.getElementById("blockofhistory").style.display = "block";
+    document.getElementById("ellip").style.background = "#19191A";
+    document.getElementById("ellip1").style.background = "#19191A";
+    document.getElementById("ellip2").style.background = "#19191A";
+    document.getElementById("ellip3").style.background = "#292929";
+    document.getElementById("deptext").innerHTML = "HISTORY";
+    document.getElementById("depinp").style.display = "none";
+    document.getElementById("depositinput").style.display = "none";
+    document.getElementById("witinp").style.display = "none";
+    document.getElementById("withdrawinput").style.display = "none";
+    document.getElementById("excinp").style.display = "none";
+    document.getElementById("exchangeinput").style.display = "none";
+    document.getElementById("mainmoney").style.display = "none";
+    document.getElementById("exchangesvg").style.display = "none";
+    document.getElementById("changemoney1").style.display = "none";
+    document.getElementById("changemoney2").style.display = "none";
+}
 async function Showexc() {
 document.getElementById("changemoney1").style.display = "block";
 document.getElementById("changemoney2").style.display = "block";
     document.getElementById("deptext").innerHTML = "EXCHANGE";
     document.getElementById("ellip").style.background = "#19191A";
     document.getElementById("ellip1").style.background = "#19191A";
+      document.getElementById("ellip3").style.background = "#19191A";
+
     document.getElementById("ellip2").style.background = "#292929";
     document.getElementById("depinp").style.display = "none";
     document.getElementById("depositinput").style.display = "none";
@@ -929,6 +974,8 @@ document.getElementById("changemoney2").style.display = "none";
     document.getElementById("deptext").innerHTML = "DEPOSIT";
     document.getElementById("ellip").style.background = "#292929";
     document.getElementById("ellip1").style.background = "#19191A";
+  document.getElementById("ellip3").style.background = "#19191A";
+
     document.getElementById("ellip2").style.background = "#19191A";
     document.getElementById("depinp").style.display = "block";
     document.getElementById("depositinput").style.display = "block";
@@ -947,6 +994,8 @@ document.getElementById("changemoney2").style.display = "none";
     document.getElementById("exchangesvg").style.display = "none";
     document.getElementById("ellip").style.background = "#19191A";
     document.getElementById("ellip1").style.background = "#292929";
+  document.getElementById("ellip3").style.background = "#19191A";
+
     document.getElementById("ellip2").style.background = "#19191A";
     document.getElementById("depinp").style.display = "none";
     document.getElementById("depositinput").style.display = "none";
