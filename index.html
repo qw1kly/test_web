@@ -14,8 +14,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Rubik+Mono+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <title>Game</title>
-
-
 </head>
 <body>
 <div id="insteadofall">
@@ -364,10 +362,107 @@
 </svg>
 </div>
 </div>
-<div id="nowRating"></div>
+<div id="nowRating" style="display:none;">
+<div id="winner1">
+    <a id="winner1txt"></a>
+    <a id="winner1txt2"></a></div>
+    <img src="winner1.png" width='28' height='31'
+id='hidemedal1' style="position:absolute; left: 18px; top: 381px"/>
+    <div id="winner2">
+
+    <a id="winner2txt"></a>
+    <a id="winner2txt2"></a></div>
+
+
+    <img src="winner2.png" width='28' height='31'
+id='hidemedal2' style="position:absolute; left: 18px; top: 425px"/>
+
+    <div id="winner3">
+
+    <a id="winner3txt"></a>
+    <a id="winner3txt2"></a></div>
+
+
+    <img src="winner3.png" width='28' height='31'
+id='hidemedal3' style="position:absolute; left: 18px; top: 469px"/>
+
+    <div id="winner4">
+
+    <a id="winner4txt"></a>
+    <a id="winner4txt2"></a>
+    <a id="winner4text">4</a>
+    </div>
+    <div id="winner5">
+    <a id="winner5txt"></a>
+    <a id="winner5txt2"></a>
+    <a id="winner5text">5</a>
+    </div>
+    <div class="lupa" id="lupaid">
+    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect width="25" height="25" transform="matrix(-1 0 0 1 25 0)" fill="url(#pattern0_430_340)"/>
+<defs>
+<pattern id="pattern0_430_340" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_430_340" transform="scale(0.01)"/>
+</pattern>
+<image id="image0_430_340" width="100" height="100" xlink:href="data:image/png;base64,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"/>
+</defs>
+</svg>
+
+</div>
+    <div class='senddata'>
+        <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect width="23" height="23" fill="url(#pattern0_430_406)"/>
+<defs>
+<pattern id="pattern0_430_406" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_430_406" transform="scale(0.01)"/>
+</pattern>
+<image id="image0_430_406" width="100" height="100" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAADgklEQVR4nO2dO2hUQRiF/6iFIopWKkQDImT/f7Ox8/1orGx9gIiWWgoWCtpZ2QgmoGJjIdjYWiqKGKzSqoUaW4mgbgofMeHI3Fw3ySIhIdmd/86cD067zMzZuefeeYoQQgghhBBCCCGEEJIau7BRDGfFcFUUp6UX62IXKV8UR8QwLgbM0bgobsgAtsQuXl7UsE0M39vMmKtfonggAxiMXdQ8UFxfwIx2PRXFcRH0xC52uigeLcGQGSneiuECc6YTGB4v2ZBZhUfdkDTQ25GyZcnyDPnXY36Xv7MndnWqz0oYMt+cETGcEsHq2FWrJittyKwx70VxSQaxPnYVq0WnDGnPmTq2x65qNei8IfNzRrE3dpV90y1DmDOODbFWr/nAnPFkiLXUZM74MgRlj5ksylPDPskWT4bYPHMy/Z7xaoi1jPmYV854N8TacsawQ5KmOoag1JQonkgN+yVJqmcI5mhUajgvR7FGkqHahqCVM2EtwG5sksqTgiGWUs6kZQhKTRc5U8cBqRxpGoLq5kz6hqDUWDVyJh9DUGqiyBlFn7gkP0PQljMHxRX5GgKfOTPzmhi7QeAqZxrYHM+QOk44aAg4U1MUtyLlDHrE8MxBI8CdFH/izM/0Ya0ohkXxNXojmFu97v78TAg1g4nimCjOFc9Tw+1ytcircszoh4PGQUR9EsPlYj+NG8JmngZ2iuFQ8a8JE0iKm2J4WK6Qf1OOKyFhTYjivvSjXypDeFtR1IseF14rrehxQ2WPGyl73E8HjbvcnLnnq8csl0YSxr3Mb/6/4dy4sDeTuMq4O/8rDumlId2h4fyRZTiZRm9ouG/oxeTHCxGsEtek0NC2qNfeu9KPDfEamh+G6M6HYRjT4tAJ4g+dhH986Hbh1IbYjwBD7oOL6BHFcwcVhjtFGX4PrseuuLlTxAmqMA8SvwHgKB8iT+FykQO8LXLIddXJNJcBmQtxoZwTjXEpqQ+N+smHfDNkmtsRfKjJDTvxTQC3tPnRaLXyIc0MmeK2aB9qVj8fUughyqM1vBgxwsNn4pswyeOZfDyymjzAzEOGKI/48xHqmms+LAYeE+sMHqTsDB417gwexu8MXlfhDF7oksSVR+/EcJFXHnUCxbUlmMFLwTqOYasovi1gAq/N6zqKw6L43GbEl+JiyWAYiUDYAWQ4I4orvHqVEEIIIYQQQgghhBDJnr+ydii/xrX1WAAAAABJRU5ErkJggg=="/>
+</defs>
+</svg>
+
+    </div>
+<div id="notfoundsvg" style="display: none">
+    <img src="notfound.png" width="22" height="22"/>
+</div>
+<a id="ver">Get into the top 5</a>
+<div id="fakewinner">
+
+
+    <a id="fakewinnertxt"></a>
+    <a id="fakewinnertxt2"></a>
+    <a id="fakewinnertext"></a>
+    </div>
+<div class="roza"></div>
+
+<form action="" onsubmit="Sendtofindwinner()">
+<input autocomplete="off" type="text" id="hidemytext" class="checklead" onblur="if (document.getElementById('hidemytext').value == '') {document.getElementById('lupaid').style.display='block';}" onfocus="document.getElementById('lupaid').style.display='none'; document.getElementById('hidemytext').style.color='white';" placeholder="       Search"/>
+</form>
+<a class='leadt'>LEADERBOARD</a>
+
+    <div id="topfive"></div>
+    <form id="laca" class="chatbox" action="" onsubmit="sendMessage(event)">
+    <input autocomplete="off" type="text" id="messageText" class="inputmessage" maxlength="50" placeholder="  Message" onfocus="changeColor()"/>
+    <button class="butplay" id="playdisplay">cli</button>
+    </form>
+
+
+
+    <div id="absss">
+    <div id="abs1s"></div>
+    <div id="abs2s"></div>
+    <div id="abs3s"></div>
+    <div id="abs4s"></div>
+    <div id="abs5s"></div>
+</div>
+    <a id="notfound">Пользователя с таким никнеймом не найдено</a>
+</div>
 <div id="nowProfile"></div>
 <script>
-    let pass = localStorage.getItem("pass");
+        let tg = window.Telegram.WebApp;
+        let idi =  10;
+        let pass = localStorage.getItem("pass");
+        tg.expand();
+        tg.setBackgroundColor("#000000");
         async function level1() {
             document.getElementById("levelof12").innerHTML = "Level 1";
             document.getElementById("switch3k").style.display = "none";
@@ -506,10 +601,7 @@
 
         }
         let items = ["basketlost1.gif", "basketlost2.gif", "basketlost3.gif"];
-        let tg = window.Telegram.WebApp;
-        let idi =  tg.initDataUnsafe.user.id;
-        tg.expand();
-        tg.setBackgroundColor("#000000");
+
 
         $.post("/game", { register : idi, password: pass }, function(response) {
                     window.Telegram.WebApp.openInvoice(Object.values(response));
@@ -596,9 +688,9 @@
             document.getElementById("nowRating").style.display = "none";
             document.getElementById("nowWallet").style.display = "block";
             document.getElementById("walletbar").style.background = "#222222";
-            document.getElementById("gameonbar").style.background = "#000000"
-            document.getElementById("leaderboard").style.background = "#000000"
-            document.getElementById("profile").style.background = "#000000"
+            document.getElementById("gameonbar").style.background = "#000000";
+            document.getElementById("leaderboard").style.background = "#000000";
+            document.getElementById("profile").style.background = "#000000";
         }
         async function showGAME() {
             document.getElementById("nowGame").style.display = "block";
@@ -606,14 +698,22 @@
             document.getElementById("nowRating").style.display = "none";
             document.getElementById("nowWallet").style.display = "none";
             document.getElementById("walletbar").style.background = "#000000";
-            document.getElementById("gameonbar").style.background = "#222222"
-            document.getElementById("leaderboard").style.background = "#000000"
-            document.getElementById("profile").style.background = "#000000"
+            document.getElementById("gameonbar").style.background = "#222222";
+            document.getElementById("leaderboard").style.background = "#000000";
+            document.getElementById("profile").style.background = "#000000";
         }
-</script>
-<script>
-let tg = window.Telegram.WebApp;
-let idi =  tg.initDataUnsafe.user.id;
+        async function showRATING() {
+            document.getElementById("nowGame").style.display = "none";
+            document.getElementById("nowProfile").style.display = "none";
+            document.getElementById("nowRating").style.display = "block";
+            document.getElementById("nowWallet").style.display = "none";
+            document.getElementById("walletbar").style.background = "#000000";
+            document.getElementById("gameonbar").style.background = "#000000";
+            document.getElementById("leaderboard").style.background = "#222222";
+            document.getElementById("profile").style.background = "#000000";
+
+        }
+
 async function Showhistory() {
     document.getElementById("blockofhistory").style.display = "block";
     document.getElementById("ellip").style.background = "#19191A";
@@ -809,8 +909,301 @@ document.getElementById("depositinput").value="";
 document.getElementById("depositinput").blur();
 
 };
+    let nm = '';
+        async function changeColor() {
+            document.getElementById("messageText").style.color = "white";
+        };
+        $.post("/rating", { telegramidi : idi, password: pass }, function(response) {
+            if (Object.values(response)==0) {
+                document.getElementById('messageText').setAttribute('disabled', 'disabled');
+                document.getElementById('playdisplay').style.display = "none";
+                document.getElementById("ver").style.display = "block";
+            } else {
+                document.getElementById('messageText').removeAttribute("disabled");
+                document.getElementById('playdisplay').style.display = "block";
+                document.getElementById("ver").style.display = "none";
+            }
+        });
+        $.post("/rating", { actname : idi }, function(response) {
+            nm = Object.values(response);
+        });
+        async function Sendtofindwinner() {
+            event.preventDefault();
+            document.getElementById("hidemytext").blur();
+            document.getElementById("winner1").style.display="none";
+            document.getElementById("winner2").style.display="none";
+            document.getElementById("winner3").style.display="none";
+            document.getElementById("winner4").style.display="none";
+            document.getElementById("winner5").style.display="none";
+            document.getElementById("hidemedal1").style.display="none";
+            document.getElementById("hidemedal2").style.display="none";
+            document.getElementById("hidemedal3").style.display="none";
+            $.post("/rating", { selectwinner : document.getElementById("hidemytext").value }, function(response) {
+                document.getElementById("hidemytext").value="";
+                document.getElementById("hidemytext").blur();
+                if (Object.values(response)=='0') {
+                    document.getElementById("notfound").style.display = "block";
+                    document.getElementById("notfoundsvg").style.display = "block";
+
+                    document.getElementById("fakewinner").style.display = 'none';
+                    document.getElementById("fakewinnertxt").style.display = 'none';
+                    document.getElementById("fakewinnertxt2").style.display = 'none';
+                    document.getElementById("fakewinnertext").style.display = 'none';
+                } else {
+                    document.getElementById("fakewinner").style.display = 'block';
+                    document.getElementById("fakewinnertxt").style.display = 'block';
+                    document.getElementById("fakewinnertxt2").style.display = 'block';
+                    document.getElementById("fakewinnertext").style.display = 'block';
+                    document.getElementById("notfound").style.display = "none";
+                    document.getElementById("notfoundsvg").style.display = "none";
+                    document.getElementById("fakewinnertxt").innerHTML = Object.values(response)[0];
+                    document.getElementById("fakewinnertxt2").innerHTML = Object.values(response)[1];
+                    document.getElementById("fakewinnertext").innerHTML = Object.values(response)[2]+'$';
+                }
+        });
+
+
+
+        };
+        $.post("/rating", { telegram : idi }, function(response) {
+            let balan = Object.values(response)[0];
+            let topers = Object.values(response)[1];
+            document.getElementById("clicki").innerHTML = balan;
+
+        });
+         $.post("/rating", { winners : '1' }, function(response) {
+            document.getElementById("winner1txt").innerHTML = Object.values(response)[5]+"$";
+            document.getElementById("winner2txt").innerHTML = Object.values(response)[6]+"$";
+            document.getElementById("winner3txt").innerHTML = Object.values(response)[7]+"$";
+            document.getElementById("winner4txt").innerHTML = Object.values(response)[8]+"$";
+            document.getElementById("winner5txt").innerHTML = Object.values(response)[9]+"$";
+            document.getElementById("winner1txt2").innerHTML = Object.values(response)[0];
+            document.getElementById("winner2txt2").innerHTML = Object.values(response)[1];
+            document.getElementById("winner3txt2").innerHTML = Object.values(response)[2];
+            document.getElementById("winner4txt2").innerHTML = Object.values(response)[3];
+            document.getElementById("winner5txt2").innerHTML = Object.values(response)[4];
+            document.getElementById("winner1txt2").style.color = "#FFFFFF";
+            document.getElementById("winner1txt2").style.fontFamily =  'Inter';
+            document.getElementById("winner1txt2").style.fontStyle= 'normal';
+            document.getElementById("winner1txt2").style.fontWeight= '500';
+            document.getElementById("winner1txt2").style.fontSize= '20px';
+            document.getElementById("winner1txt2").style.lineHeight= '24px';
+            document.getElementById("winner1txt2").style.position="absolute";
+            document.getElementById("winner1txt2").style.top="6px";
+            document.getElementById("winner1txt2").style.left="54px";
+            document.getElementById("winner2txt2").style.color = "#FFFFFF";
+            document.getElementById("winner2txt2").style.fontFamily =  'Inter';
+            document.getElementById("winner2txt2").style.fontStyle= 'normal';
+            document.getElementById("winner2txt2").style.fontWeight= '500';
+            document.getElementById("winner2txt2").style.fontSize= '20px';
+            document.getElementById("winner2txt2").style.lineHeight= '24px';
+            document.getElementById("winner2txt2").style.position="absolute";
+            document.getElementById("winner2txt2").style.top="6px";
+            document.getElementById("winner2txt2").style.left="54px";
+            document.getElementById("winner3txt2").style.color = "#FFFFFF";
+            document.getElementById("winner3txt2").style.fontFamily =  'Inter';
+            document.getElementById("winner3txt2").style.fontStyle= 'normal';
+            document.getElementById("winner3txt2").style.fontWeight= '500';
+            document.getElementById("winner3txt2").style.fontSize= '20px';
+            document.getElementById("winner3txt2").style.lineHeight= '24px';
+            document.getElementById("winner3txt2").style.position="absolute";
+            document.getElementById("winner3txt2").style.top="6px";
+            document.getElementById("winner3txt2").style.left="54px";
+            document.getElementById("winner4txt2").style.color = "#FFFFFF";
+            document.getElementById("winner4txt2").style.fontFamily =  'Inter';
+            document.getElementById("winner4txt2").style.fontStyle= 'normal';
+            document.getElementById("winner4txt2").style.fontWeight= '500';
+            document.getElementById("winner4txt2").style.fontSize= '20px';
+            document.getElementById("winner4txt2").style.lineHeight= '24px';
+            document.getElementById("winner4txt2").style.position="absolute";
+            document.getElementById("winner4txt2").style.top="6px";
+            document.getElementById("winner4txt2").style.left="54px";
+            document.getElementById("winner5txt2").style.color = "#FFFFFF";
+            document.getElementById("winner5txt2").style.fontFamily =  'Inter';
+            document.getElementById("winner5txt2").style.fontStyle= 'normal';
+            document.getElementById("winner5txt2").style.fontWeight= '500';
+            document.getElementById("winner5txt2").style.fontSize= '20px';
+            document.getElementById("winner5txt2").style.lineHeight= '24px';
+            document.getElementById("winner5txt2").style.position="absolute";
+            document.getElementById("winner5txt2").style.top="6px";
+            document.getElementById("winner5txt2").style.left="54px";
+            document.getElementById("winner1txt").style.color = "#FFFFFF";
+            document.getElementById("winner1txt").style.fontFamily =  'Inter';
+            document.getElementById("winner1txt").style.fontStyle= 'normal';
+            document.getElementById("winner1txt").style.fontWeight= '400';
+            document.getElementById("winner1txt").style.fontSize= '16px';
+            document.getElementById("winner1txt").style.lineHeight= '19px';
+            document.getElementById("winner1txt").style.position="absolute";
+            document.getElementById("winner1txt").style.top="8px";
+            document.getElementById("winner1txt").style.left="264px";
+            document.getElementById("winner2txt").style.color = "#FFFFFF";
+            document.getElementById("winner2txt").style.fontFamily =  'Inter';
+            document.getElementById("winner2txt").style.fontStyle= 'normal';
+            document.getElementById("winner2txt").style.fontWeight= '400';
+            document.getElementById("winner2txt").style.fontSize= '16px';
+            document.getElementById("winner2txt").style.lineHeight= '19px';
+            document.getElementById("winner2txt").style.position="absolute";
+            document.getElementById("winner2txt").style.top="8px";
+            document.getElementById("winner2txt").style.left="264px";
+            document.getElementById("winner3txt").style.color = "#FFFFFF";
+            document.getElementById("winner3txt").style.fontFamily =  'Inter';
+            document.getElementById("winner3txt").style.fontStyle= 'normal';
+            document.getElementById("winner3txt").style.fontWeight= '400';
+            document.getElementById("winner3txt").style.fontSize= '16px';
+            document.getElementById("winner3txt").style.lineHeight= '19px';
+            document.getElementById("winner3txt").style.position="absolute";
+            document.getElementById("winner3txt").style.top="8px";
+            document.getElementById("winner3txt").style.left="264px";
+            document.getElementById("winner4txt").style.color = "#FFFFFF";
+            document.getElementById("winner4txt").style.fontFamily =  'Inter';
+            document.getElementById("winner4txt").style.fontStyle= 'normal';
+            document.getElementById("winner4txt").style.fontWeight= '400';
+            document.getElementById("winner4txt").style.fontSize= '16px';
+            document.getElementById("winner4txt").style.lineHeight= '19px';
+            document.getElementById("winner4txt").style.position="absolute";
+            document.getElementById("winner4txt").style.top="8px";
+            document.getElementById("winner4txt").style.left="264px";
+            document.getElementById("winner5txt").style.color = "#FFFFFF";
+            document.getElementById("winner5txt").style.fontFamily =  'Inter';
+            document.getElementById("winner5txt").style.fontStyle= 'normal';
+            document.getElementById("winner5txt").style.fontWeight= '400';
+            document.getElementById("winner5txt").style.fontSize= '16px';
+            document.getElementById("winner5txt").style.lineHeight= '19px';
+            document.getElementById("winner5txt").style.position="absolute";
+            document.getElementById("winner5txt").style.top="8px";
+            document.getElementById("winner5txt").style.left="264px";
+
+        });
+        var ws = new WebSocket("ws://127.0.0.1:8000/ws/rating");
+        ws.onmessage = async function(event) {
+            var chat = document.getElementById("topfive");
+            var nickname = document.createElement('a');
+            var mess = document.createElement('a');
+            var krugl = document.createElement('div');
+            var obshak = document.createElement('div');
+            var prom = document.createElement('div');
+            var ecel = document.createElement('div');
+            var ecel2 = document.createElement('div');
+            var emel = document.createElement("img");
+
+            nickname.innerHTML = nm;
+            nickname.style.position="relative";
+            nickname.style.top="-1px";
+            nickname.style.color="#0066FF";
+            nickname.style.left= "5px";
+            prom.style.background = "#000000";
+            prom.style.height = "20px";
+            krugl.style.maxWidth = "150px";
+            krugl.style.minHeight = "40px";
+            krugl.style.minWidth = "75px";
+            krugl.style.maxHeight = "150px";
+            krugl.style.borderRadius = "16px";
+            krugl.style.background = "#121212";
+
+            mess.style.color = "#FFFFFF";
+            mess.style.fontStyle = "normal";
+            mess.style.fontWeight = "700";
+            mess.style.fontSize = "14px";
+            mess.style.lineHeight = "19px";
+            mess.style.fontFamily = "Inter";
+            mess.style.overflowWrap = "break-word";
+            let rojer_pre = event.data.indexOf("tgidi="); //+6
+            let lent = event.data.slice(0, rojer_pre);
+            let rojer = lent.length;
+            let rojer2 = (lent.length-6)/5;
+            krugl.style.width = rojer*12+"px";
+            krugl.style.height = (parseInt(krugl.style.width.slice(0, -2)/130)+1)*28+"px";
+            ecel.style.position = "absolute";
+
+            if (50<parseInt(krugl.style.width.slice(0, -2)) & parseInt(krugl.style.width.slice(0, -2))<150) {
+                ecel.style.width = parseInt(krugl.style.width.slice(0, -2))*0.8+"px";
+                ecel.style.left = "4px";
+
+            }
+            if (50>parseInt(krugl.style.width.slice(0, -2))){
+                ecel.style.width = krugl.style.width;
+                ecel.style.left="4px";
+            }
+            else {
+
+                ecel.style.width = "120px";
+                ecel.style.left = "6px";
+
+                }
+            ecel.style.top = "2px";
+
+            ecel.style.verticalAlign = "middle";
+            let init_ID = event.data.indexOf("tgidi="); //+6
+            let Real_ID = event.data.slice(init_ID+6);
+            let Real_ID2 = event.data.slice(init_ID+6, -6);
+
+            mess.innerHTML = event.data.slice(0, init_ID);
+            obshak.style.width = "150px";
+            emel.style.width = "20px";
+            emel.style.height = "20px";
+            emel.style.borderRadius = "100px";
+
+            emel.style.position="relative";
+            emel.style.left= "2px";
+            emel.style.top="-25px";
+            let pos = 0;
+            mess.style.position='relative';
+            mess.style.top = '15px';
+            if (parseInt(Real_ID)==idi) {
+                prom.style.height = "10px";
+                mess.style.top = '0px';
+                emel.style.top = '-12px';
+                emel.style.display="none";
+                nickname.style.display="none";
+                krugl.style.minHeight = "20px";
+                krugl.style.height = (parseInt(krugl.style.width.slice(0, -2)/130)+1)*22+"px";
+
+                obshak.style.position = "relative";
+                for (let i = 0; i < 300; i++) { // выведет 0, затем 1, затем 2
+                  if (i + parseInt(krugl.style.width.slice(0, -2))>=280) {
+                    pos = i-20;
+                    break;
+
+                  }
+                };
+                if (pos<130) {
+                    pos = 110;
+                }
+                if (pos>230) {
+                    pos = 210;
+                }
+                obshak.style.left = pos+"px";
+            };
+            krugl.style.position = "relative";
+            krugl.style.top='5px';
+            krugl.style.left= "5px";
+            krugl.style.overflow = "hidden";
+            obshak.style.width = "75px";
+            ecel2.style.height = krugl.style.height;
+
+            ecel.appendChild(mess);
+            krugl.appendChild(ecel);
+            obshak.appendChild(krugl);
+            ecel2.appendChild(obshak);
+            chat.appendChild(ecel2);
+            chat.appendChild(prom);
+            krugl.appendChild(nickname);
+
+
+
+        };
+        async function sendMessage(event) {
+                var input = document.getElementById("messageText");
+                if (input.value.length>0){
+                ws.send(input.value+"tgidi="+idi);
+                input.value = '';
+                }
+                input.blur();
+                event.preventDefault();
+        };
 </script>
 </body>
 </html>
+
 
 
