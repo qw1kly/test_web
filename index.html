@@ -153,7 +153,7 @@
     <button id="sw12" class="changelist11" onclick="level12()" style="display: none"></button>
 
     <div id="inv" class="maininvisible">
-        <button class="butplay" onclick="clicked()">clickme</button>
+        <button class="butplayorg" onclick="clicked()">clickme</button>
 
 
         <a class="playact">PLAY</a>
@@ -616,11 +616,42 @@ id='hidemedal3' style="position:absolute; left: 18px; top: 469px"/>
                 });
                 }
                                });
-        async function clicked() {
-          if (document.getElementById("clicki").innerHTML==0) {
+       async function clicked() {
+          if (document.getElementById("clicki").innerHTML==1) {
                 alert('Недостаточно средств')
             } else {
+            document.getElementById("clicki").innerHTML=Number(document.getElementById("clicki").innerHTML)+200;
+              document.getElementById("hideneoniphone").style.display = "block";
+            var image = document.getElementById("gifanim");
+            image.src = "basketwin.gif";
+            document.getElementById("icongame1").style.display="none";
+            document.getElementById("iconprofile1").style.display="none";
+            document.getElementById("iconrating1").style.display="none";
+            document.getElementById("iconwallet1").style.display="none";
+            document.getElementById("switch2k").style.display="none";
+            document.getElementById("switch1k").style.display="none";
+            document.getElementById("play_But").style.display="none";
+            document.getElementById("sw2").style.display="none";
+            document.getElementById("inv").style.display="none";
 
+                async function clickedback() {
+                await new Promise(resolve => setTimeout(resolve, 12000));
+
+                var image = document.getElementById("gifanim");
+                image.src = "basket.png";
+              document.getElementById("hideneoniphone").style.display = "none";
+
+                document.getElementById("inv").style.display="block";
+                document.getElementById("icongame1").style.display="block";
+                document.getElementById("iconprofile1").style.display="block";
+                document.getElementById("iconrating1").style.display="block";
+                document.getElementById("iconwallet1").style.display="block";
+                document.getElementById("switch2k").style.display="block";
+                document.getElementById("switch1k").style.display="block";
+                document.getElementById("play_But").style.display="block";
+                document.getElementById("sw2").style.display="block";
+                }
+                clickedback()
             $.post("/game", { telegramid : idi, password: pass }, function(response) {
 
                 if (Object.values(response)==1) {
