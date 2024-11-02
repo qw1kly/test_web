@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Rubik+Mono+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <title>Game</title>
+
 </head>
 <body>
 <div id="insteadofall">
@@ -32,7 +33,6 @@
 
         <div class="profile" id="profile"></div>
             <a class="profiletext">Profile</a>
-
     <div class="icongame" id="icongame1">
     <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <rect width="35" height="35" fill="url(#pattern0_512_1016)"/>
@@ -83,8 +83,8 @@
 
 
 </div>
-</div>
-      <div class="webtonnw">
+    </div>
+ <div class="webtonnw">
     <img src="NNIGGAW.png" width="89" height="49"/>
 </div>
     <div class="webtonn">
@@ -108,6 +108,7 @@
 
 
     </div>
+
 <div class="dhead">
     <div class="clicks"></div>
         <a class="clicksbal" id="clicki">0</a>
@@ -115,7 +116,7 @@
     <div class="wallet"></div>
         <a class="walletbal" id="wallba">0</a>
 </div>
-    
+
 <div id='nowGame'>
 <div id="hideneoniphone"></div>
     <img src="basket.png" class="basket" id="gifanim" width="230" height="218"/>
@@ -458,7 +459,420 @@ id='hidemedal3' style="position:absolute; left: 18px; top: 469px"/>
 </div>
     <a id="notfound">Пользователя с таким никнеймом не найдено</a>
 </div>
-<div id="nowProfile"></div>
+<div id="nowProfile" style="display:none">
+
+
+<div id="hidefor">
+<button id="hide1" onclick="Hidemain1()"></button>
+<button id="hide2" onclick="Hidemain2()"></button>
+<button id="hide3" onclick="Hidemain3()"></button>
+<button id="hide4" onclick="Hidemain4()"></button>
+
+
+
+<div id='selprof2'></div>
+    <a id='proftext2'>Riddles</a>
+<div id='selprof3'></div>
+    <a id='proftext3'>Big bounty</a>
+<div id='selprof4'></div>
+    <a id='proftext4'>Friends</a>
+<div id='selprof5'></div>
+    <a id='proftext5'>Language</a>
+
+<div id="profilephoto">
+    <svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <rect width="84" height="84" fill="url(#pattern0_569_22)"/>
+    <defs>
+    <pattern id="pattern0_569_22" patternContentUnits="objectBoundingBox" width="1" height="1">
+    <use xlink:href="#image0_569_22" transform="translate(-0.0606061 -0.0606061) scale(0.0121212)"/>
+    </pattern>
+    <image id="image0_569_22" width="100" height="100" xlink:href="data:image/png;base64,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"/>
+    </defs>
+    </svg>
+
+</div>
+<a id='profilename'>undefinted</a>
+    <a id="winn">нулл</a>
+</div>
+    <div id="listofrules" style="display:none;">
+        <div class="closediv">
+            <button class="closebutton" onclick="Hideonlyrules()">CLOSE</button>
+        </div>
+        <a id="robni">Распределение наград:</a>
+        <li id="robni1">первое место — 40 баллов;</li>
+        <li id="robni2">второе место — 25 баллов;</li>
+        <li id="robni3">третье место — 10 баллов;</li>
+        <li id="robni4">четвёртое и пятое места — по 5 баллов;</li>
+        <li id="robni5">с шестого по десятое места — 3 балла.</li>
+
+    </div>
+    <div id="listbonus" style="display:none">
+        <button id="hundred" onclick="Showrules()"></button>
+        <button id="ticketshundred" onclick="Showrules()"></button>
+        <a id="moredetailstext">Приглашаем вас принять участие в еженедельном розыгрыше</a>
+        <a id="moredetailstext2">                                     Приглашаем вас принять участие в еженедельном розыгрыше билетов!   Будут выбраны 10 лучших участников, которые получат призы.  Как это работает? Вы приглашаете друзей присоединиться к проекту. За каждого активного реферала вы получаете одно очко. За каждое пополнение счёта вашим другом на сумму в один доллар вам начисляется одно очко. Чем больше вы наберёте, тем выше ваши шансы на победу. Соревнования проводятся еженедельно и заканчиваются в полночь воскресенья.</a>
+        <a id="hundtickets">100</a>
+        <a id="hundtickets2">билетов!</a>
+        <div class="closediv">
+            <button class="closebutton" onclick="Hideonlydetail()">CLOSE</button>
+    </div>
+    </div>
+    <div id="friendsbig">
+           <svg width="98" height="53" viewBox="0 0 98 53" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect width="98" height="53" fill="url(#pattern0_534_5)"/>
+<defs>
+<pattern id="pattern0_534_5" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_534_5" transform="matrix(0.0112121 0 0 0.0211429 -0.0606061 -0.657143)"/>
+</pattern>
+<image id="image0_534_5" width="100" height="100" xlink:href="data:image/png;base64,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"/>
+</defs>
+</svg>
+
+  </div>
+<div id="list5" style="display:none">
+
+
+    <a id="zagolovok">Transcation history</a>
+<div class="closediv">
+            <button class="closebutton" onclick="Hideallnew()">CLOSE</button>
+        </div>
+</div>
+    <div id="list1" style="display:none">
+    <svg id="pushnotif" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect width="23" height="23" fill="url(#pattern0_697_611)"/>
+<defs>
+<pattern id="pattern0_697_611" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_697_611" transform="scale(0.01)"/>
+</pattern>
+<image id="image0_697_611" width="100" height="100" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFG0lEQVR4nO2dy49URRTGfz6iODFxFDBRA7pS927FaIISRfAR9Q8YDQSIo1FZoi5dqAGVIGN04R9ARFdIzywmEncoPtjIjCLoRhkGV+IEPlOhiG2HmenHPXVP3a4v+TbTPbfqnK9vVd1Tp86FgoKCgoKCgoKCgoKCgoKCgp4guFWwQTAu2CtoCb4TzAjmBOcj5+LfwmeH43dfFDwiWF3c3icEI4InBHuicy8KNCDDNY4Jdgs2C24oAi0twtWC+wX7BecqEGA5hjY+FWwSXFPE+U+IFYLtgtkEIizGMMxtE1w/7MPSa4LfaxRCHQx9eSX0jWFCHCZ+diCAFuEpwTM0HYK7BF84cLi65EHBWpoIwZNxWarMeE7wHE1BmCjj8lWZc3/2k75gpeBrB85URfxKcAs5QnB7fKhTw3hcsIacILhX8KsD58mIJwX3kAMEdwh+ceA0GfO04E4ymDOOO3CWEvFHt3NKXE01aQJXlzzicvUl+MCBc1QT9+AJIczgwCmqmU/jKBwy78AhqplnXUzygs8dOENO+JmH+FTdTpAzbqpzP2MYnjfUI2dr2R4W7HRgvJzy5TqeOX5zYLicMuw8rkgpyHYDIxYE+wRjgl0xNGHlsNOxjbHY5oJBG1tTZodUnZDwT8g44f/tjAqmDBwVrjna0dY6A1FOCK5KIchDBk7at8TCYapiMa6YwCCYMLDrgRSCfGLQ8bEl2hupSJRFxYjtvGBg10dmQrQ55y+Djr/eRbtTVmLENt40sGvedAkc0ztlNMmOGonSjRg3G64aN1YuRFvHLZMVpgU3diFKy+Cak4Z2vV25EG2dt94jn65QFA9iBH5TuRBtRwKqyEKvYogZWWb4quIaVfGCYJWFIBsSdF4V3Cle7ox2rrcQZDyhAepTFI9iBO6wEGRvYiPUoyhexQh8z0KQwzUYoh7mAy9zxpV4yEKQ72syRt38+p3eGZd5rFo1LhlV92bUdD+iOBAjcNZCkDM1G6VeRXEiRuAfFoKcd2CYuhXFkRiBfxdB6DnMkp0guQ5ZraYOWTlP6q0mTuq5L3tbTVv2lgdDfD0Yeg6dTBrtp7gOnXgNLk728T+tJgQXPYbfJwf431bu4ffVZYOKfjeoVlYuiLMt3MkKr2V9pxytXIg2A3ZnIoYciWKa5LDZqNNNTgN6rHIhOpxiUe1tV0MT5c6aZ8ELPjboeFNTSSfMhGjr+IMGHf+wocnW61IdR5ipuOMLnZ3XpXE95+MIPyU5jhAN2GbgqIVYk+r5OJ5b1mIME/gbcZiaMDqwsyWJGFGQcqSNZWs2pi23IXjV8BeszDmeVIy2CddzZVHVxBNJD3x2iPKoAwfIGe3Og3QpykEHTpATHqhVjCjI2vhEqiHnnJtajILHE4Xm5ZTB9qfwhIbU5lWffBdviM8mRxw4R4kZQvzX4RGCmwTfOnCSEvEHt0Uwh7BM7KlsCvWHIsOx2LAaypOCu8kJgtviO5/UwFq9a8gRYXxt2EQ/HbYFyBmCawVvZf6ccjEu632upgaok5LrC12epYkIdW0zi30dyHa+6CPUUudr8rQMZ2qP2qZGqCMVqnca11ZUH88WL9W2n+Eo5LI1buyoJoaEhC2NmrSrgOC+uJr5M4EI8/HVq+uTZYdk/jrWjSGKGupNxQzyQQUI1zgqeCekdw71sDQoBKsED4eDL4L3BV/GIOZMPB18+fXdZ+LfwmeH4nd3xLvA5khAQUFBQUFBQUFBQUFBQUEBzcW/cD0KcGMsAf0AAAAASUVORK5CYII="/>
+</defs>
+</svg>
+
+<svg id="pushnotif1" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect width="23" height="23" fill="url(#pattern0_693_482)"/>
+<defs>
+<pattern id="pattern0_693_482" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_693_482" transform="scale(0.01)"/>
+</pattern>
+<image id="image0_693_482" width="100" height="100" xlink:href="data:image/png;base64,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"/>
+</defs>
+</svg>
+        <div id='line1'></div>
+        <div id='line2'></div>
+        <div id='line3'></div>
+        <div id='line4'></div>
+        <div id='line5'></div>
+        <div id='line6'></div>
+        <a id="riddles1">0031 FE0F 20E3</a>
+        <a id="riddles2">0039 FE0F 20E3</a>
+        <a id="riddles3">0038 FE0F 20E3</a>
+        <a id="riddles4">0033 FE0F 20E3</a>
+        <a id="riddles5">0032 FE0F 20E3</a>
+        <a id="riddles6">0030 FE0F 20E3</a>
+        <a id="riddles7">0031 FE0F 20E3</a>
+        <a id="riddles8">0031 FE0F U0E3</a>
+        <a id="riddlemean">Разгадай загадку и получи неограниченный доступ в чат и 1 000 тикетов</a>
+
+            <svg class="unicodesvg" width="60" height="36" viewBox="0 0 60 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M23.527 0.0909081H27.7543V23.2045C27.7543 25.5909 27.1918 27.7216 26.0668 29.5966C24.9531 31.4602 23.3793 32.9318 21.3452 34.0114C19.3111 35.0795 16.9247 35.6136 14.1861 35.6136C11.4474 35.6136 9.06108 35.0795 7.02699 34.0114C4.9929 32.9318 3.41335 31.4602 2.28835 29.5966C1.17472 27.7216 0.617898 25.5909 0.617898 23.2045V0.0909081H4.84517V22.8636C4.84517 24.5682 5.22017 26.0852 5.97017 27.4148C6.72017 28.733 7.78835 29.7727 9.17472 30.5341C10.5724 31.2841 12.2429 31.6591 14.1861 31.6591C16.1293 31.6591 17.7997 31.2841 19.1974 30.5341C20.5952 29.7727 21.6634 28.733 22.402 27.4148C23.152 26.0852 23.527 24.5682 23.527 22.8636V0.0909081ZM45.8778 28.8636V6.36364H49.696V28.8636H45.8778ZM36.5369 19.5227V15.7045H59.0369V19.5227H36.5369Z" fill="#002AFF"/>
+</svg>
+        <div class="abs">
+        </div>
+        <div class="abs1">
+        </div>
+        <div class="closediv">
+            <button class="closebutton" onclick="Hideallnew()">CLOSE</button>
+        </div>
+        <form action="" onsubmit="Sendriddle()" onclick="Hidesvgs()">
+            <input autocomplete="off" type="text" id="riddlemes" maxlength="50" onfocus="document.getElementById('riddlemes').style.color = 'white';"/>
+        </form>
+        <div id="sendtele">
+            <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <rect width="23" height="23" fill="url(#pattern0_613_325)"/>
+            <defs>
+            <pattern id="pattern0_613_325" patternContentUnits="objectBoundingBox" width="1" height="1">
+            <use xlink:href="#image0_613_325" transform="scale(0.01)"/>
+            </pattern>
+            <image id="image0_613_325" width="100" height="100" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAADgklEQVR4nO2dO2hUQRiF/6iFIopWKkQDImT/f7Ox8/1orGx9gIiWWgoWCtpZ2QgmoGJjIdjYWiqKGKzSqoUaW4mgbgofMeHI3Fw3ySIhIdmd/86cD067zMzZuefeeYoQQgghhBBCCCGEEJIau7BRDGfFcFUUp6UX62IXKV8UR8QwLgbM0bgobsgAtsQuXl7UsE0M39vMmKtfonggAxiMXdQ8UFxfwIx2PRXFcRH0xC52uigeLcGQGSneiuECc6YTGB4v2ZBZhUfdkDTQ25GyZcnyDPnXY36Xv7MndnWqz0oYMt+cETGcEsHq2FWrJittyKwx70VxSQaxPnYVq0WnDGnPmTq2x65qNei8IfNzRrE3dpV90y1DmDOODbFWr/nAnPFkiLXUZM74MgRlj5ksylPDPskWT4bYPHMy/Z7xaoi1jPmYV854N8TacsawQ5KmOoag1JQonkgN+yVJqmcI5mhUajgvR7FGkqHahqCVM2EtwG5sksqTgiGWUs6kZQhKTRc5U8cBqRxpGoLq5kz6hqDUWDVyJh9DUGqiyBlFn7gkP0PQljMHxRX5GgKfOTPzmhi7QeAqZxrYHM+QOk44aAg4U1MUtyLlDHrE8MxBI8CdFH/izM/0Ya0ohkXxNXojmFu97v78TAg1g4nimCjOFc9Tw+1ytcircszoh4PGQUR9EsPlYj+NG8JmngZ2iuFQ8a8JE0iKm2J4WK6Qf1OOKyFhTYjivvSjXypDeFtR1IseF14rrehxQ2WPGyl73E8HjbvcnLnnq8csl0YSxr3Mb/6/4dy4sDeTuMq4O/8rDumlId2h4fyRZTiZRm9ouG/oxeTHCxGsEtek0NC2qNfeu9KPDfEamh+G6M6HYRjT4tAJ4g+dhH986Hbh1IbYjwBD7oOL6BHFcwcVhjtFGX4PrseuuLlTxAmqMA8SvwHgKB8iT+FykQO8LXLIddXJNJcBmQtxoZwTjXEpqQ+N+smHfDNkmtsRfKjJDTvxTQC3tPnRaLXyIc0MmeK2aB9qVj8fUughyqM1vBgxwsNn4pswyeOZfDyymjzAzEOGKI/48xHqmms+LAYeE+sMHqTsDB417gwexu8MXlfhDF7oksSVR+/EcJFXHnUCxbUlmMFLwTqOYasovi1gAq/N6zqKw6L43GbEl+JiyWAYiUDYAWQ4I4orvHqVEEIIIYQQQgghhBDJnr+ydii/xrX1WAAAAABJRU5ErkJggg=="/>
+            </defs>
+            </svg>
+        </div>
+        <button id="sendrobit" onclick="Sendriddle()"></button>
+    </div>
+    <div id="list3" style="display:none">
+
+         <div id="invitedfriends"></div>
+            <a id="countfriends">0 Friends</a>
+
+            <a id="countpoints">0 Points</a>
+
+        <a id="detail">More details</a>
+        <button id="showmoredetails" onclick="Showdetailstext()"></button>
+        <div id="modalinvite" class="modalinvite">
+            <button id="modalbuttonsend" onclick="instantSend()"></button>
+            <button id="modalbuttoncopy" onclick="instantCopy()"></button>
+            <button id="closemodal" onclick="closeModal()"></button>
+            <div class="sendfriend">
+                <a id="textsend">Send</a>
+            </div>
+            <div class="sendlink">
+                <a id="copy">Copy link</a>
+            </div>
+            <a class="Modalinv">Invite</a>
+            <svg style="position: absolute;top: 55px" width="358" height="1" viewBox="0 0 358 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="-3.49691e-08" y1="0.6" x2="358" y2="0.599963" stroke="#888888" stroke-width="0.8"/>
+            </svg>
+
+            <div class="closemodal" style="position: absolute; left: 300px; top: 7px">
+                <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <rect width="33" height="33" fill="url(#pattern0_151_217)"/>
+                <defs>
+                <pattern id="pattern0_151_217" patternContentUnits="objectBoundingBox" width="1" height="1">
+                <use xlink:href="#image0_151_217" transform="scale(0.01)"/>
+                </pattern>
+                <image id="image0_151_217" width="100" height="100" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC+UlEQVR4nO3dz2pUMRQG8GPrxo0irRZfRXHtRtyLir6TILhSEdeCFCzUTf33AiJ0Pesh5yTnYu2mkZQ7MAtrZ+beO/eL/X5wtyXJ1+Qm08ypCBERERERERERERERERERXTTT6fSqVCjnfMnMrsv/IKV0x8w+mFljZllVj83sIITwNOe8IaByzhuq+szMvqjq79L2tg/vQwh3pTY5501VfdF25KznIKW0LWBSStsliH+1XVWflz5KLczs5TlhzDr20913BIS775Q2LdJ2M3slNYgx3lbVkwU7BROKLxfG7Lkn6FR1d8lOjR6KrxZGafeuVLAjOX2B1xKKrxhG+6TSZ0GVc768zHL1l1AOm6a5ta72uvtNM/vRob0nyLvFU6vOkHXPFO82M2aPCzoz2+/YyTz0TOk6M+ba+VHQmdmjrh21AWdKTzNj9jyUSg6FXxFD8X7D+Az//phJKd3oq+PaUyh9hlF+Tumj1KSvddp6eKcgtWVUCAPhAG2AMuaAOMPAGRhnGDgD5AxjMesYKGcYyxlywJxhrGaIgXOGgXVQU7CDaJX6/K22NWwWLgSUUJRh4ISiDANnpijDwFm+lGHgvFOUYeC86JVh4ISiDAMnFGUY3TgDweFcsnA4X+o4nNteHM6DIQ5+dAKEHy4CGTsM4xkFLwxjKPwTLhRecgDCa0BAeFEOCK+SAuFlayD8OgIQhOudDtAGCEgD4UBtGUWMcQvtrq33fJe49FFq0H4teg/xt9H7/ajmUyklIujaSmxwYQwRSozxiaBT1e8oy9TQy5eqfhNkba3CI8SZMdBM+QVdzaFU70SeGUPMlBDCNUHWoYDZ4RjbyY4zBb880yo7rIpL/O0JuhDCg5rC6BJKjPG+1MDMXiMvU30sX6r6TmoxmUyuqOrbczq1j3jajTFuLVAV703po9SmLF+lDN5cqfGjUtwsxvgYuTJ0znmzHPrKOWNuG9+UvlSzTC1SjB+6pOoZSptr/UcCREREREREREREREREREQkXfwBPjIWbwWVv/QAAAAASUVORK5CYII="/>
+                </defs>
+                </svg>
+            </div>
+        </div>
+        <button id="invitefriend" onclick="showModal()"></button>
+
+        <div class="shirina">
+            <a class="invite">Invite</a>
+            <a class="friend">friend and</a>
+            <a class="get1000">Get 100 tickets</a>
+            <div class="shirina1"></div>
+            <div class="shirina2"></div>
+            <div class="shirina3"></div>
+            <div class="shirina4"></div>
+            <div class="shirina5"></div>
+        </div>
+        <div class="closediv" id="closediv">
+            <button class="closebutton" onclick="Hideallnew()">CLOSE</button>
+        </div>
+    </div>
+    <div id="list4" style="display:none">
+        <button id="changelang1" onclick="ChangeENG()"></button>
+        <button id="changelang2" onclick="ChangeFR()"></button>
+        <div id="language1"><a id="languagetext1">English</a></div>
+        <div id="language2"><a id="languagetext2">Hindi (हिन्दी)</a></div>
+
+
+
+        <div class="closediv">
+            <button class="closebutton" onclick="Hideallnew()">CLOSE</button>
+        </div>
+    </div>
+    <div id="list2" style="display:none">
+        <div id="mygifts" style="display:none">
+            <a id="checksize">Призы полученные в ходе игры будут отображаться здесь</a>
+        </div>
+    <div id="maingift">
+        <div class='gift1'>
+        <div class="giftram1"></div>
+        <div class="giftram2"></div>
+        <div class="giftram3"></div>
+        <div class="giftram4"></div>
+        <div class="giftram5"></div>
+        <img style='width:47px;height:47px;position: absolute; left:30px; top:7px' src="bitcoin.png" width="45" height="45"/>
+        <a style='position: absolute; top:60px; left: 45px; width: 13px; height: 13px; font-family: "Inter"; font-style: normal; font-weight: 500; font-size: 18px; line-height: 22px; text-align: center; color: #FFFFFF;'>1</a>
+        <a style='position: absolute; top:80px; left: 25px; width: 13px; height: 13px; font-family: "Inter"; font-style: normal; font-weight: 500; font-size: 18px; line-height: 22px; text-align: center; color: #FFFFFF;'>Bitcoin</a>
+        </div>
+        <div class='gift2'>
+
+
+        <div class="giftram11"></div>
+        <div class="giftram22"></div>
+        <div class="giftram33"></div>
+        <div class="giftram44"></div>
+        <div class="giftram55"></div>
+        <img style='width:47px;height:47px;position: absolute; left:30px; top:7px' src="usdt.png" width="45" height="45"/>
+
+        <a style='position: absolute;top:60px;left: 12px; width: 83px; height: 13px;font-family: "Inter"; font-style: normal; font-weight: 500; font-size: 18px; line-height: 22px; text-align: center; color: #FFFFFF;'>20 000</a>
+        <a style='position: absolute;top:80px;left: 30px; width: 13px; height: 13px;font-family: "Inter"; font-style: normal; font-weight: 500; font-size: 18px; line-height: 22px; text-align: center; color: #FFFFFF;'>USDT</a>
+        </div>
+        <div class='gift3'>
+        <div class="giftram111"></div>
+        <div class="giftram222"></div>
+        <div class="giftram333"></div>
+        <div class="giftram444"></div>
+        <div class="giftram555"></div>
+        <img style='width:47px;height:47px;position: absolute; left:30px; top:7px' src="toncoin2.png" width="45" height="45"/>
+
+        <a style='position: absolute;top:60px;left: 15px; width: 73px; height: 13px;font-family: "Inter"; font-style: normal; font-weight: 500; font-size: 18px; line-height: 22px; text-align: center; color: #FFFFFF;'>2 000</a>
+        <a style='position: absolute;top:80px;left: 15px; width: 73px; height: 13px;font-family: "Inter"; font-style: normal; font-weight: 500; font-size: 18px; line-height: 22px; text-align: center; color: #FFFFFF;'>Toncoin</a>
+        </div>
+        <div class='gift4'>
+        <div class="giftram1111"></div>
+        <div class="giftram2222"></div>
+        <div class="giftram3333"></div>
+        <div class="giftram4444"></div>
+        <div class="giftram5555"></div>
+
+        <a style="
+
+position: absolute;
+width: 131px;
+height: 37px;
+top: 41px;
+left: -13px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 15px;
+text-align: center;
+
+color: #FFFFFF;
+
+">TELEGRAM numbers</a>
+        </div>
+        <div class='gift5'>
+        <div class="giftram11111"></div>
+        <div class="giftram22222"></div>
+        <div class="giftram33333"></div>
+        <div class="giftram44444"></div>
+        <div class="giftram55555"></div>
+        <img style='width:47px;height:47px;position: absolute; left:30px; top:7px' src="tickets.png" width="45" height="45"/>
+
+        <a style='position: absolute;top:60px;left: 12px; width: 83px; height: 13px;font-family: "Inter"; font-style: normal; font-weight: 500; font-size: 18px; line-height: 22px; text-align: center; color: #FFFFFF;'>20 000</a>
+        <a style='position: absolute;top:80px;left: 17px; width: 73px; height: 13px;font-family: "Inter"; font-style: normal; font-weight: 500; font-size: 18px; line-height: 22px; text-align: center; color: #FFFFFF;'>Tickets</a>
+        </div>
+        <div class='gift6'>
+        <div class="giftram111111"></div>
+        <div class="giftram222222"></div>
+        <div class="giftram333333"></div>
+        <div class="giftram444444"></div>
+        <div class="giftram555555"></div>
+        <img style='width:47px;height:47px;position: absolute; left:30px; top:7px' src="notcoin.png" width="45" height="45"/>
+
+        <a style='position: absolute;top:60px;left: 3px; width: 103px; height: 13px; font-family: "Inter"; font-style: normal; font-weight: 500; font-size: 18px; line-height: 22px; text-align: center; color: #FFFFFF;'>3 000 000</a>
+        <a style='position: absolute;top:80px;left: 15px; width: 73px; height: 13px; font-family: "Inter"; font-style: normal; font-weight: 500; font-size: 18px; line-height: 22px; text-align: center; color: #FFFFFF;'>Notcoin</a>
+        </div>
+        <div class='gift7'>
+        <div class="giftram1111111"></div>
+        <div class="giftram2222222"></div>
+        <div class="giftram3333333"></div>
+        <div class="giftram4444444"></div>
+        <div class="giftram5555555"></div>
+
+        <a style="position: absolute;width: 76px;height: 31px;top: 37px; left: 15px;font-family: 'Inter'; font-style: normal; font-weight: 500; font-size: 32px; line-height: 39px; text-align: center;color: #FFFFFF;">NFT</a>
+        </div>
+        <div class='gift8'>
+        <div class="giftram11111111"></div>
+        <div class="giftram22222222"></div>
+        <div class="giftram33333333"></div>
+        <div class="giftram44444444"></div>
+        <div class="giftram55555555"></div>
+
+        <a style="position: absolute;width: 76px;height: 31px;top: 37px; left: 15px;font-family: 'Inter'; font-style: normal; font-weight: 500; font-size: 32px; line-height: 39px; text-align: center;color: #FFFFFF;">NFT</a>
+        </div>
+        <div class='gift9'>
+        <div class="giftram111111111"></div>
+        <div class="giftram222222222"></div>
+        <div class="giftram333333333"></div>
+        <div class="giftram444444444"></div>
+        <div class="giftram555555555"></div>
+
+        <a style="position: absolute;width: 76px;height: 31px;top: 37px; left: 15px;font-family: 'Inter'; font-style: normal; font-weight: 500; font-size: 32px; line-height: 39px; text-align: center;color: #FFFFFF;">NFT</a>
+        </div>
+    </div>
+    <div class="closediv">
+    <button class="closebutton" onclick="Hideallnew()">CLOSE</button>
+    </div>
+    <button class='showall' onclick="Showall()"></button>
+    <button class='showmy' onclick="Showmy()"></button>
+        <div style="display: none" id="shomygift"></div>
+    <div class="selectgift"></div>
+        <div id='toblue1'></div>
+        <a id="allgift">ALL</a>
+
+        <div id='toblue2'></div>
+        <a id="mygift">MY</a>
+
+    <div id='bigbro'>
+        <svg width="75" height="75" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect width="75" height="75" fill="url(#pattern0_512_1411)"/>
+<defs>
+<pattern id="pattern0_512_1411" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_512_1411" transform="scale(0.01)"/>
+</pattern>
+<image id="image0_512_1411" width="100" height="100" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAADoElEQVR4nO2dvWsUQRjGX+JHY6wtLMRCs/OeH0WQoE0s/BeC2CSFRkW0j2AwpYgoUQv9A2yCiKhgoaBGwUawMTZqE3sFNakkj8ze6G4+vN1k527m9p4fvByEm313nmefWfZYMiKEEEIIIYQQ0osMYosYHBPFhCimxeBe+qm4KAmGZRibK/ewx2jgaHrM5T0m0t72HHqePdgpBnfF4Lso8N8y+CYG12UfdqxbMztGcaNkjzvpOfUe6BPFpCgWW4qkq0T7JYrzpdsoLojBwjp7LIjBpfQcewJFvygerkskXSXa/fQ4rXo0v7PxHooHLXvUAruOK55XFAquZtcUrGn4rKcez7zcv6LF4LYnobCmKX7N+JvGm1JLDIZEseTZEIjBGxnAdjmAbWLwwvvxbTVwRGqHweu2iKX/kuI3GcvrldSKBg6WnPiSGLxPb/rNT/+J2miPAeyX2qC4XGLp+SQJBpeNa+CQGHz2Zka1HpNSG2zkW0/2hxjsWnPsXuwWg58eDKna46XUBoMvBZOdLhh/y4Mh1XrYFNWGoifyBKMtxycYrWxI9R6LUhuKf0c623J8gnMe7h/Vetg51AaDjwWCPSkY/9TDklWth51DbWj+1F10BR9fc6zihAczqvewc6gNirESgv0WxVVJsFcUW9NPg2vu734MqdZjTKJAMeNRkF6vGRqiwU2gIRJeeBoi4cWmIRJeYBoi4UWlIRJeSBoi4cXrWkPeimKEhRGnRXBDPDSpCdoJrWhIeWhIZNCQyKAhkUFDIoOGREYkhvA5RON6DmFpXE/qLKUh6NILgQmR8CbQEAkvPA2R8GLTEAkvMA0R7XVDVmIwVdD0g/+mKzBoFE7efqfd2Lm2Poeptp8DDclBQxxMSA4uWRlMiIMJycGEZDAhDiYkBxOSwYQ4mJAcTEgGE+JgQnIwIRlMiIMJycGEZDAhDiYkBxOSwYQ4mJAcTEgGE+JgQnIwIRlMiIMJycGEZDAhDiYkBxOSwYQ4mJAcTEgGE+JgQnIwIRlMiIMJydHczKvVi87234q/a2sZzJV42Xqu7edRvKlZB3ZUUJyJ4LV+dEmNt9+QBIcjmCi6ouw2T+0HfWLwNfhkNfIymO/cXohctlDCkJPSOdKUPAp+FWqkZXdaEGzqoCEi6VZ1Bo+DT14jq6Ym/SH3tB1P18vQQmhwI+YlwalI9tBNlzC7ceTp9Ene4EqP1JS7IIciMYIQQgghhBBCCCGEEOkUfwBgt4MNgbl/SwAAAABJRU5ErkJggg=="/>
+</defs>
+</svg>
+
+
+    </div>
+    </div>
+    <div id='riddleicon'>
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect width="22" height="22" fill="url(#pattern0_534_10)"/>
+<defs>
+<pattern id="pattern0_534_10" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_534_10" transform="scale(0.01)"/>
+</pattern>
+<image id="image0_534_10" width="100" height="100" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEpUlEQVR4nO2da6hUVRTH//dmLyMre5eU2dU5a829N3IqqMhLJdGNHp/MD73sQ2GEYQUVRET2+NJD6NKnMAqCKAoqs6AHVBQhgVRagUgvoRelRYqW5j/2mYmLcJGZ2et45uxZP1gf5tPstX5nn8feZ+8DOI7jOI7jOI7jOI7jdMYQD8Ywz4LyZggnIHwdynUQ/gThFgj/hpIQ/tX6vQnKDyF8HsJ7UeflyHiilz2GjEdDuBTC1RBuywseH19A+BiU57ic9kWcC+WLUO40kjB1CL+GchkanO5ypmKYo1C+WaiEqcX8AuFtGOM0FxM4lYdA+TCE/+x3GXuL+RwZG/0tZS5PhnBtqSJ0r9iZ95a+RFiH8scekMApessEwEH0lYxw7i678LrPWAVwAMkzxGOh/K4HCs424n6kDQchfK8HCs02Yw+EC5Eswlt6oMjsKISbMcQZSPRU9UfpBdau4kEkh/CRgo7gXRBuLbiXbMM8HoNkqPFwKP80KtC3EK5AxjGcwSMn/4SDqPEkCK+C8MkCJN2BZFAuMThKt0B5Q9tDHKM8LB/p/X8kOD7WIxmU70YWYwNqnN3VfwvPhPJXIymnoPLM4qFRI7fCzRjhrKg2NKXsMBByIyqP8OLIU9W4STvCQ178afNxVB7lnRFFeMf4xiK2l6xB5VE+HVGAa0zbEmYf43rIWlSecJR3V4B/zZ+QlY9GCvkKlUf4aZfJf19AW+6KFPIlKo9yY5cFeN+8LcIHIoV8jMojvAzKRR2H8IIeu56FeMO8TX2N8LNIISvLTiEdhpnl8xtxQmzv+voa4TORMsI1ZG7ZaaRBnZcY9I51ZaeRBjWOtEaK43qH8vayU6k+wgVQ/mZwqgpzKzPLTqfCcADKW83mQsIDpdMlYdlBGAS0ENGMjfkUgtMpHEDG601OUZOxI59LcTqkToHwI0MRbN2VLem0Kf1NgwdCeV8Ba0mCjGVlp1ctRnkclB8Yiwix22V092zxg7kM4e9QXlrIAZQsNdYKenP+E9R5etnpVYthHp+/hWLbK7Yj43KAB5SdXvVQvmosYzXm8bSy06omwsWGIsL158qyU+r3ySW24iUfl4qXsdDoLfmlJgdH3yOciBQSHhz9dtYM5frIZWmL+/6gNqPB6VGzfcJnXYYlI5wTISPsDnGCC7GkzvMihLzmMqxRXhRx/UhoGVoaPWS87OanR8ZG10KCTKeA2UDtUkjG+e7Dmhpnu5DeWzS6qKsY4VFlN99xHMdxHMdxHMdxEmeIM1DnFVA+1Fp3/gKUT0F5D+o83/dw31/M4RH5OvHwjZB9Dyp+A+VN/bEJcrnv827qcC7kFSgPKrvp6aGc2bGMyVhVdvPTQ/hExBRu6CkLyk4hrVeAhNsjhbxcdhrpIByPktEUstWXGliRcXm0kBDhwzGOAcIVJkLC960cA5R3mwgJbz86BgivNbiG7PJP49luk7EnUkgC+yT2Esq3I4X4Ih1TMs6P2NVnQ77bg2OM8LrWDgud9Iyffd15kdR5YWsktx0Zb+Ufd3EKZozTILwayufyjws3d3rbnfeG5g7aK1Hn2e7BcRzHcRzHcRzHcRyY8B8DhxK+VIN2OAAAAABJRU5ErkJggg=="/>
+</defs>
+</svg>
+
+
+    </div>
+<div id='bigicon'>
+<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect width="22" height="22" fill="url(#pattern0_534_3)"/>
+<defs>
+<pattern id="pattern0_534_3" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_534_3" transform="scale(0.01)"/>
+</pattern>
+<image id="image0_534_3" width="100" height="100" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAADoElEQVR4nO2dvWsUQRjGX+JHY6wtLMRCs/OeH0WQoE0s/BeC2CSFRkW0j2AwpYgoUQv9A2yCiKhgoaBGwUawMTZqE3sFNakkj8ze6G4+vN1k527m9p4fvByEm313nmefWfZYMiKEEEIIIYQQ0osMYosYHBPFhCimxeBe+qm4KAmGZRibK/ewx2jgaHrM5T0m0t72HHqePdgpBnfF4Lso8N8y+CYG12UfdqxbMztGcaNkjzvpOfUe6BPFpCgWW4qkq0T7JYrzpdsoLojBwjp7LIjBpfQcewJFvygerkskXSXa/fQ4rXo0v7PxHooHLXvUAruOK55XFAquZtcUrGn4rKcez7zcv6LF4LYnobCmKX7N+JvGm1JLDIZEseTZEIjBGxnAdjmAbWLwwvvxbTVwRGqHweu2iKX/kuI3GcvrldSKBg6WnPiSGLxPb/rNT/+J2miPAeyX2qC4XGLp+SQJBpeNa+CQGHz2Zka1HpNSG2zkW0/2hxjsWnPsXuwWg58eDKna46XUBoMvBZOdLhh/y4Mh1XrYFNWGoifyBKMtxycYrWxI9R6LUhuKf0c623J8gnMe7h/Vetg51AaDjwWCPSkY/9TDklWth51DbWj+1F10BR9fc6zihAczqvewc6gNirESgv0WxVVJsFcUW9NPg2vu734MqdZjTKJAMeNRkF6vGRqiwU2gIRJeeBoi4cWmIRJeYBoi4UWlIRJeSBoi4cXrWkPeimKEhRGnRXBDPDSpCdoJrWhIeWhIZNCQyKAhkUFDIoOGREYkhvA5RON6DmFpXE/qLKUh6NILgQmR8CbQEAkvPA2R8GLTEAkvMA0R7XVDVmIwVdD0g/+mKzBoFE7efqfd2Lm2Poeptp8DDclBQxxMSA4uWRlMiIMJycGEZDAhDiYkBxOSwYQ4mJAcTEgGE+JgQnIwIRlMiIMJycGEZDAhDiYkBxOSwYQ4mJAcTEgGE+JgQnIwIRlMiIMJycGEZDAhDiYkBxOSwYQ4mJAcTEgGE+JgQnIwIRlMiIMJydHczKvVi87234q/a2sZzJV42Xqu7edRvKlZB3ZUUJyJ4LV+dEmNt9+QBIcjmCi6ouw2T+0HfWLwNfhkNfIymO/cXohctlDCkJPSOdKUPAp+FWqkZXdaEGzqoCEi6VZ1Bo+DT14jq6Ym/SH3tB1P18vQQmhwI+YlwalI9tBNlzC7ceTp9Ene4EqP1JS7IIciMYIQQgghhBBCCCGEEOkUfwBgt4MNgbl/SwAAAABJRU5ErkJggg=="/>
+</defs>
+</svg>
+
+</div>
+<div id='friendsicon'>
+<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect width="22" height="22" fill="url(#pattern0_534_8)"/>
+<defs>
+<pattern id="pattern0_534_8" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_534_8" transform="scale(0.01)"/>
+</pattern>
+<image id="image0_534_8" width="100" height="100" xlink:href="data:image/png;base64,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"/>
+</defs>
+</svg>
+
+</div>
+
+
+<div id='langicon'>
+<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect width="22" height="22" fill="url(#pattern0_534_9)"/>
+<defs>
+<pattern id="pattern0_534_9" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_534_9" transform="scale(0.01)"/>
+</pattern>
+<image id="image0_534_9" width="100" height="100" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAALV0lEQVR4nO1da5AdRRU+SQzg+x1RYqK4Zqd7NouwgiKPIA9LURR5KyhGgR/yUqMGAgYooxCRQLDEogQFCgUiBgUNolA+AphYFR9EqRRBQsKyCSABAwlL3N3POt0TdqZn5t559Nw7d+58VVOVyt3p1+np7nPOd04T1ahRo0aNGlWFxK4kcTBJnEYSC0ngVhJYSRJrSGA9CWwmgf95D/97vffbSvW3/I7EqV4Zu7a7O52HXvSSg1NI4DoSeJgkYPURWKvK5jq4rhoREHBJ4EIS+Jd1ATQX0L9JYjFJ7N/dsunFq0ng7LYIQcY+/ySBs1TbugYz8E4SWEQSzyYcpGGSWEESN5DEfJI4kVx8QC03EtNoJl5Ps/AyGsBk9W/+vz446m8ETiKJC9S7ek95MWGdz5LAd6kX76DKohdvI4kfksRIAgEsI4lz1DIyHbtYawOXJXAASZzr1THcZDnjg8LV1ToMDOAVJDGXJP7bUAgCd5CDz9LueG1L2+biCO8L2tpAMM+TwCXUg9dQR0PgcJJ4vEFHH1Oz1cEb291UmoE3eV/OYIOJM0gCH6GOA2+KenmK69gD5OAEte6XDQOYTBKfIonVMW0fU8tYx2z8vJlKrIudYRKziTCRSg9MIoEvNPjCHyEH76dSQ+JzkRulPt1coNbsTkM/XkkCF8Wc0IbVvlc+YIJS7KJn0moS2JM6HQ76SGJVTB8Xqy+qFJDYiSSWRjRylCQWqN+rAomdSODbXt/M/i5tf1+1MG6LWKKeI4EjqaoQ6vQYdYz/NfVg57IJ4zFysBdVHb2YqTb2cggFE0jilsj9oh9TqFvQh7co+1d4Uv5UjVHLoO1DZiMerJaJISF68GalV4XH4zxqCVwcpZQjU9HjhnUr+jEl4ksZJYFPFFuxC6E27GDFQzQTU6nbITGNBDYZY7OlOCcYm7i169Rf4Qvl11ZbbqUwFeMVxego2hweXCfzaqkOPkoCG9TM6kijXQQEPh+xn3yNrEJCRkj+pnyFYpJhJxosj7abExJLQisJO80sVvBbo4Incx9vBQ6NmEmHUBXApvzwfrLMTuEuPhgxcPm1cIlrIvSYa6gqkDgmYomfZaPg+w1h3GXJJvR0hKCfaZ/poQBI3G30b2U+hVG7N4POmT68N3dDw+WOPy6OoKpAYp+QzsYHGYt7xxJLDb0pViACP6EqQeDnRv/uzFaQi3eFpMsGNTsOn+cbCOS5jnRkxcHFHiENnqlQqaE5sf6ButdKAwWONxq4xnvgq+t4qhIk/mz0+VtZ/MlPGIP0GUuN+4VR7oUR3sbbqErQru2guSkVr4DNIcFB20xT8fLcDdsDrwspmKww8RNs8LD622px04JMzVSHI3PGKvu+BWgWh3/g/+r77W/Gb7OpSjC1d4Hz07y8wqrNarzc3xmN+rrvt7nW9Z0ygSdYsH/3pVlW/PzbMSuOJ+1dC5YrMP2l3/nf0neqY15tq7yPirBXsIdPc5v9p9aRZNRUF/sZS8dqKw2SOKPpDBG4z6j7dCoaAscpCwH7LiSOLbiuYOiFg32bv6RDx4rYP+41BvvMiLrPNOpebqXuxu3yGwGHCq1L4mZDIKckeWmxdd8we9PMz5WXMBP9mKKWKv+yVnSMhqmYFlvXfGNsF6U3lzj4ZO6G8OYd7PjdKQxyX6WqCMTF0UbfftP8JfP4aYMGysdbs+PJn1W56y+LQBwMpO+bGfnKNi27jUj/OJhB1ViyeozJvjbJS08GXspL72EFKK9AJOan6PScJtFatp5HUvMANF3IL5AnknQoaNrI6zCyEWUr8GCKJAPNYhhtPoOpxoLHMvj+cJIBNOMgsjO6+9BvDOzWRJFHvSpk2oz5e09CgYxVTSCma/UNqSoNlnWxUdYtid+VBneYgy6TwMGXPEWvIkuWzhXir3gaZSdkB0Pb0lArBY403l3fWgKzasM9xlic2o5NPchRZY9XFrBZIA+BoQc7h2Y6MwNbBW178gfmjOS2rWU69kr8yhiEozNVLnClUfm1qcuQuNYQ6pXUKrCFIqkyW6hiKHG50ZBz0tesPI4bjcoPzU2mE9iYKYKXnWtMXkvz9ybRzQ4XLYPpxMEXjZeuyxinPmYM5KSMgt3kaw+X+apURbj4mKeXjCbWZ9jKHByDh63QXM2DSiLjIrPrgl/IQ5kqZ0GOd+isTGXsODWNl/MjSotg5OxYU/Yg+4PCX/fZ1DbzO3+upnLo4K3pa8cEcrG3iimxQfZ2sbcVLyVPsEY0I51sxi+MDVb4BJkdVLpRyw2BnECdHbMxagjlhsi/5exD5t/aY9vMzk6rYt5QVoWujJC4IkKxC3ojOdeWzi7nH7R7rOk+uUgOTFEJvrw19WZaJkzHLhEugJGXfD0cHabzZ/n7zOzKnnLQgBisRQY7cCJ1MmZid8UvC+fpOiSk79hcqqKWKw5USn18l/imUcj91OkQavCDB5agy3jH/11dMJV0QVay9Uj6Y1rJIXBcTK6Sce3ZZh4vtlIH6xjNzhMwk8owtb4KELgkRhibrKfxC4/hnXkK299oNJPb3kcdC0wkia+oIMy4L4RJHpn0rgjwWJn+GU5ck7PQ5WGCW4vN4LaimQT+0kAQ/ucpK1kYBH6fXfdII2WJT1NnZe25OWbf4D3y+7Fp/HiJzkqw0HuVWd4BxTDueAaVOdHMACYrHYNTJcW7dAdVhPF4ApmgHjI+iNuV2T+NtVh7BoNkEW6LNfCpwAxDE7idygiJL4eCjcxTDn8VofgT5eGcG3kM1v19RlmOk0DfyuB/f5v9nCemWV4/Z1CZIFXGifi9gU0hzYyU/Ht8bsXHM8TA8DOH7EPNIJPmuZ1cHERlgVD7HSJOhnelW79V2o/TI5adoaanUpO1ow9BBaUM0aTppyL2k4xEiEKyo/7Y2zeGFOslD/OS7Xea6Dekvo5GMeYc3xJeKrcUyrr0GnlwxDp7PZUJkg2hLUxkw0z+MCGQ96qPt6YBfi+e/ixfVA6YbkRfpDD4Obe1DTFzo/Nm1m3oi02CeWPrlWeBeUZDrqJugqsyNDwaqUy25ZIBjscLNuRn1C1wcVRMepCl7bvxgc0nQYHcSlVHjyJLL4zR/tucalziG4ZAvkdVhsCeDe4UWdj+KzhY2Wp1CHM7wNmL2HvKSnBYEC9YdfVazVliI3VTmaCJD6d5SmGUGYZD//ahUiBs13qUqgKp0g+e1CDyi/ePH5SHhaNnzkPGbLmIqpFJ9LzYL0L3cwO5+BCVOlGwNjC+PRc9h30FAr9UeaXS+B3sLL0nqyv7Gt9puEUJq3SZ7vSdIeusKISavMYntW0RXrw/etfpzVKbqi3oMIMD1eAyu6TZzZ/aZndVZNaJUiCcbnxbJhuWxIcjiHiIeUZI4O/KgKnzePGMPjD26lV2pmly9n7qBKQv9Lox1dWrOnLrO+WxYkeBzcjh2XxpqjJ4aQt708r0POD5QUqyYTd2Tv3BmEUb1YxMHi84LzYbqb6ofp4XTmcKvdhH4B/K52E1N3vR0FwmszPHprgBYW2D5WhRYEZOVev84SRwmZfSybaA1nhc3pPVgaJDTQbDqQkO7KnTp5e4gVmlolKTMUj2UmkG9VVL15PEn9TA6i9rs3er83aPTL3Ou36J0xQuUV5Ddg2wq7njbwHimRvOqfs0vRu7NXHYXBZ7jNTL1hy1EddICc4mZw5oXJi0Dtm6tMk12HcE8izWSAEOY2t6nQQmKoo/n5zi+Ez6Wad8CDVyIHxp4hp19NUxe7O9hPr/aXKC4Yvhz7cSNNn1CEcbpTlK8rJ1uTUWeQ21fzQ6IcU9zNFaWF5TQydDs8abZ2bTjptlno+9OjdDlxK8Z/BJa0dmA7bxaMcMB+MvIAeHWTX+1ahRo0aNGjUoK/4PeYISF91beNYAAAAASUVORK5CYII="/>
+</defs>
+</svg>
+
+
+</div>
+
+
+<div id="languagenigga" style="display: none">
+    <svg width="108" height="74" viewBox="0 0 108 74" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect width="108" height="74" fill="url(#pattern0_547_54)"/>
+<defs>
+<pattern id="pattern0_547_54" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_547_54" transform="matrix(0.00685185 0 0 0.01 0.157407 0)"/>
+</pattern>
+<image id="image0_547_54" width="100" height="100" xlink:href="data:image/png;base64,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"/>
+</defs>
+</svg>
+
+</div>
+
+
+</div>
 <script>
         let tg = window.Telegram.WebApp;
         let idi =  10;
@@ -618,45 +1032,11 @@ id='hidemedal3' style="position:absolute; left: 18px; top: 469px"/>
                 });
                 }
                                });
-       async function clicked() {
+        async function clicked() {
           if (document.getElementById("clicki").innerHTML==1) {
                 alert('Недостаточно средств')
             } else {
-            document.getElementById("clicki").innerHTML=Number(document.getElementById("clicki").innerHTML)+200;
-              document.getElementById("hideneoniphone").style.display = "block";
-            var image = document.getElementById("gifanim");
-            image.src = "basketlost3-min.gif";
-              
-                document.getElementById("insteadofall").style.display = "none";
-            document.getElementById("icongame1").style.display="none";
-            document.getElementById("iconprofile1").style.display="none";
-            document.getElementById("iconrating1").style.display="none";
-            document.getElementById("iconwallet1").style.display="none";
-            document.getElementById("switch2k").style.display="none";
-            document.getElementById("switch1k").style.display="none";
-            document.getElementById("play_But").style.display="none";
-            document.getElementById("sw2").style.display="none";
-            document.getElementById("inv").style.display="none";
 
-                async function clickedback() {
-                await new Promise(resolve => setTimeout(resolve, 12000));
-
-                var image = document.getElementById("gifanim");
-                image.src = "basket.png";
-              document.getElementById("hideneoniphone").style.display = "none";
-
-                document.getElementById("insteadofall").style.display = "block";
-                document.getElementById("inv").style.display="block";
-                document.getElementById("icongame1").style.display="block";
-                document.getElementById("iconprofile1").style.display="block";
-                document.getElementById("iconrating1").style.display="block";
-                document.getElementById("iconwallet1").style.display="block";
-                document.getElementById("switch2k").style.display="block";
-                document.getElementById("switch1k").style.display="block";
-                document.getElementById("play_But").style.display="block";
-                document.getElementById("sw2").style.display="block";
-                }
-                clickedback()
             $.post("/game", { telegramid : idi, password: pass }, function(response) {
 
                 if (Object.values(response)==1) {
@@ -669,13 +1049,11 @@ id='hidemedal3' style="position:absolute; left: 18px; top: 469px"/>
                 }
                 var image = document.getElementById("gifanim");
 
-
+                document.getElementById("hideneoniphone").style.display = "block";
+                document.getElementById("insteadofall").style.display = "none";
                 image.src = items[Math.floor(Math.random()*items.length)];
                 image.src = "basketlost1.gif";
-                document.getElementById("inv").classList.remove("show");
-                image.classList.remove("hide");
-                image.classList.add("playing");
-                document.getElementById("inv").classList.add('hide');
+                document.getElementById("inv").style.display="none";
                 document.getElementById("icongame1").style.display="none";
                 document.getElementById("iconprofile1").style.display="none";
                 document.getElementById("iconrating1").style.display="none";
@@ -694,14 +1072,11 @@ id='hidemedal3' style="position:absolute; left: 18px; top: 469px"/>
 
                     }
                 var image = document.getElementById("gifanim");
-                image.classList.remove("playing");
-                image.classList.add("hide");
 
                 image.src = "basket.png";
-                image.style.top = "290px";
-                document.getElementById("inv").classList.remove('hide');
 
-                document.getElementById("inv").classList.add("show");
+                document.getElementById("insteadofall").style.display = "block";
+                document.getElementById("hideneoniphone").style.display = "none";
                 document.getElementById("inv").style.display="block";
                 document.getElementById("icongame1").style.display="block";
                 document.getElementById("iconprofile1").style.display="block";
@@ -747,6 +1122,17 @@ id='hidemedal3' style="position:absolute; left: 18px; top: 469px"/>
             document.getElementById("gameonbar").style.background = "#000000";
             document.getElementById("leaderboard").style.background = "#222222";
             document.getElementById("profile").style.background = "#000000";
+
+        }
+        async function showPROFILE() {
+            document.getElementById("nowGame").style.display = "none";
+            document.getElementById("nowProfile").style.display = "block";
+            document.getElementById("nowRating").style.display = "none";
+            document.getElementById("nowWallet").style.display = "none";
+            document.getElementById("walletbar").style.background = "#000000";
+            document.getElementById("gameonbar").style.background = "#000000";
+            document.getElementById("leaderboard").style.background = "#000000";
+            document.getElementById("profile").style.background = "#222222";
 
         }
 
@@ -1237,6 +1623,289 @@ document.getElementById("depositinput").blur();
                 input.blur();
                 event.preventDefault();
         };
+
+        $.post("/profile", { friends : idi }, function(response) {
+                let data = Object.values(response);
+                let coount = 0;
+                let friends = 0;
+                let all_points = 0;
+                for (let i = 0; i < (data.length/4); i++) {
+                    let name = data[coount];
+                    let idishnik = data[coount+1];
+                    let points = data[coount+2];
+                    var elem = document.createElement("div");
+                    var mes = document.createElement("a");
+                    var image = document.createElement("img");
+                    var lemda = document.createElement('div');
+                    var line = document.createElement('div');
+                    var pointer = document.createElement('a');
+                    var roja = document.createElement('div');
+
+                    line.style.position='relative';
+                    line.style.width= '320px';
+                    line.style.height= '0px';
+                    line.style.border= '0.8px solid #2B2B2B';
+                    line.style.top = '45px';
+                    lemda.style.position = 'relative';
+                    lemda.style.width = '45px';
+                    lemda.style.height = '5px';
+                    lemda.style.left='11px';
+                    lemda.style.top='-10px';
+                    mes.style.position="relative";
+                    mes.style.width= "70px";
+                    mes.style.height="24px";
+                    mes.innerHTML= name;
+                    mes.style.top = '7.5px';
+                    mes.style.left = '20px';
+
+                    mes.style.fontFamily= 'Inter';
+                    mes.style.fontStyle="normal";
+                    mes.style.fontWeight="500";
+                    mes.style.fontSize="20px";
+                    mes.style.lineHeight= "24px";
+
+                    mes.style.color="#FFFFFF";
+
+                    image.style.position='relative';
+                    image.style.width = '30px';
+                    image.style.height = '30px';
+                    image.style.left = '-10px';
+                    image.style.top = '0px';
+                    image.style.borderRadius = '100px';
+                    elem.style.width = '320px';
+                    elem.style.height = '45px';
+                    elem.style.position = 'relative';
+                    elem.style.top = '30px';
+                    pointer.style.position = 'relative';
+                    pointer.style.width= "70px";
+                    pointer.style.height="5px";
+                    pointer.style.left='290px';
+                    pointer.style.top = '-10px';
+
+                    pointer.style.fontFamily='Inter';
+                    pointer.style.fontStyle= "normal";
+                    pointer.style.fontWeight="500";
+                    pointer.style.fontSize= "20px";
+                    pointer.style.lineHeight= "24px";
+                    pointer.style.textAlign="center";
+                    pointer.style.color= "#002AFF";
+                    pointer.innerHTML = parseInt(points);
+                    roja.style.width = '10px';
+                    roja.style.height='0px';
+                    roja.appendChild(pointer);
+                    elem.appendChild(line);
+
+                    elem.appendChild(mes);
+                    document.getElementById("invitedfriends").appendChild(elem);
+                    document.getElementById("invitedfriends").appendChild(roja);
+
+                    coount = coount + 4;
+                    friends = friends + 1;
+                    all_points = all_points + parseInt(points);
+                }
+                document.getElementById("countfriends").innerHTML = friends+' Friends';
+                document.getElementById("countpoints").innerHTML = all_points+' Points';
+            });
+        $.post("/profile", { profilename : idi }, function(response) {
+            document.getElementById("profilename").innerHTML = Object.values(response)[0];
+            document.getElementById('clicki').innerHTML = Object.values(response)[1];
+            document.getElementById('walletbal').innerHTML = Object.values(response)[2];
+
+        });
+        async function Hidesvgs() {
+            document.getElementById("sendtele").style.display = "block";
+            document.getElementById("pushnotif1").style.display = "none";
+            document.getElementById("pushnotif").style.display = "none";
+        }
+        async function ChangeENG() {
+
+        };
+        async function ChangeFR() {
+
+        };
+
+        async function Hidemain1() {
+            document.getElementById("hidefor").style.display = 'none';
+            document.getElementById("riddleicon").style.display = 'none';
+            document.getElementById("bigicon").style.display = 'none';
+            document.getElementById("friendsicon").style.display = 'none';
+            document.getElementById("langicon").style.display = 'none';
+
+            document.getElementById("friendsbig").style.display = 'none';
+            document.getElementById("list1").style.display = "block";
+        };
+        async function Hidemain2() {
+            document.getElementById("friendsbig").style.display = 'none';
+            document.getElementById("hidefor").style.display = 'none';
+            document.getElementById("riddleicon").style.display = 'none';
+            document.getElementById("bigicon").style.display = 'none';
+            document.getElementById("friendsicon").style.display = 'none';
+            document.getElementById("langicon").style.display = 'none';
+            document.getElementById("list2").style.display="block";
+            document.getElementById("maingift").style.display ="block";
+        };
+        async function Hidemain3() {
+            document.getElementById("friendsbig").style.display = 'block';
+            document.getElementById("hidefor").style.display = 'none';
+            document.getElementById("riddleicon").style.display = 'none';
+            document.getElementById("bigicon").style.display = 'none';
+            document.getElementById("friendsicon").style.display = 'none';
+            document.getElementById("langicon").style.display = 'none';
+            document.getElementById("list3").style.display="block";
+
+
+        };
+        async function Hidemain4() {
+            document.getElementById("friendsbig").style.display = 'none';
+            document.getElementById("hidefor").style.display = 'none';
+            document.getElementById("riddleicon").style.display = 'none';
+            document.getElementById("bigicon").style.display = 'none';
+            document.getElementById("friendsicon").style.display = 'none';
+            document.getElementById("langicon").style.display = 'none';
+            document.getElementById("list4").style.display="block";
+            document.getElementById("languagenigga").style.display="block";
+
+
+        };
+
+        async function Hidemain5() {
+            document.getElementById("friendsbig").style.display = 'none';
+        document.getElementById("hidefor").style.display = 'none';
+            document.getElementById("riddleicon").style.display = 'none';
+            document.getElementById("bigicon").style.display = 'none';
+            document.getElementById("friendsicon").style.display = 'none';
+            document.getElementById("langicon").style.display = 'none';
+
+            document.getElementById("list5").style.display = 'block';
+
+        }
+        async function Showall() {
+            document.getElementById("toblue1").style.background = "#002AFF";
+            document.getElementById("toblue2").style.background = "linear-gradient(180deg, #141414 0%, #0F0F0F 100%)";
+            document.getElementById("maingift").style.display = "block";
+            document.getElementById("mygifts").style.display = "none";
+            document.getElementById("allgift").style.color = "#FFFFFF";
+            document.getElementById("mygift").style.color = "#999999";
+
+        };
+        async function instantSend() {
+        const shareData = {
+              title: "Make a Wish",
+              text: "Your referal url!",
+              url: "https://t.me/casino_test_cashup_bot/start"+"="+idi,
+            };
+            await navigator.share(shareData);
+        };
+        async function instantCopy() {
+            navigator.clipboard.writeText("https://t.me/casino_test_cashup_bot/start"+"="+idi)
+              .then(() => {
+                // Получилось!
+              })
+              .catch(err => {
+                console.log('Something went wrong', err);
+              });
+        }
+        async function Showmy() {
+            document.getElementById("toblue2").style.background = "#002AFF";
+            document.getElementById("mygift").style.color = "#FFFFFF";
+            document.getElementById("allgift").style.color = "#999999";
+
+            document.getElementById("toblue1").style.background = "linear-gradient(180deg, #141414 0%, #0F0F0F 100%)";
+            document.getElementById("maingift").style.display = "none";
+            document.getElementById("mygifts").style.display = "block";
+            document.getElementById("maingift").style.display = "none";
+        };
+        async function Hideallnew() {
+            document.getElementById("list1").style.display = "none";
+            document.getElementById("list2").style.display = "none";
+            document.getElementById("list3").style.display = "none";
+            document.getElementById("list4").style.display = "none";
+            document.getElementById("list5").style.display = "none";
+            document.getElementById("maingift").style.display="none";
+
+            document.getElementById("friendsbig").style.display = 'none';
+            document.getElementById("hidefor").style.display = 'block';
+            document.getElementById("riddleicon").style.display = 'block';
+            document.getElementById("bigicon").style.display = 'block';
+            document.getElementById("friendsicon").style.display = 'block';
+            document.getElementById("langicon").style.display = 'block';
+            document.getElementById("languagenigga").style.display="none";
+
+        };
+
+        async function showModal() {
+            document.getElementById("modalinvite").classList.remove("hidee");
+
+            document.getElementById("modalinvite").classList.add("show");
+            document.getElementById("modalinvite").style.display='block';
+            document.getElementById("icongame1").style.display='none';
+            document.getElementById("iconprofile1").style.display='none';
+            document.getElementById("iconwallet1").style.display='none';
+            document.getElementById("iconrating1").style.display='none';
+            document.getElementById("closediv").style.display = "none";
+        };
+        async function closeModal() {
+            document.getElementById("modalinvite").classList.remove("show");
+            document.getElementById("modalinvite").classList.add("hidee");
+            document.getElementById("modalinvite").style.display='none';
+            document.getElementById("icongame1").style.display='block';
+            document.getElementById("iconprofile1").style.display='block';
+            document.getElementById("iconwallet1").style.display='block';
+            document.getElementById("iconrating1").style.display='block';
+            document.getElementById("closediv").style.display = "block";
+
+        };
+        async function Sendriddle() {
+            event.preventDefault();
+            let val = document.getElementById("riddlemes").value;
+            document.getElementById("riddlemes").value="";
+            document.getElementById("riddlemes").blur();
+            $.post("/riddle", { telegram : idi, riddle : val }, function(response) {
+                document.getElementById("pushnotif").style.display = "none";
+                if (Object.values(response) == 0) {
+                    document.getElementById("sendtele").style.display = "none";
+                    document.getElementById("pushnotif").style.display = "block";
+                    document.getElementById("pushnotif").style.zIndex = "1";
+                }
+                if (Object.values(response) == 1) {
+                    document.getElementById("sendtele").style.display = "none";
+                    document.getElementById("pushnotif1").style.display = "block";
+                    document.getElementById("pushnotif1").style.zIndex = "1";
+                }
+                if (Object.values(response) == 2) {
+                    document.getElementById("sendtele").style.display = "none";
+                    document.getElementById("pushnotif").style.display = "block";
+                    document.getElementById("pushnotif").style.zIndex = "1";
+                }
+                if (Object.values(response) == 3) {
+                    document.getElementById("sendtele").style.display = "none";
+                    document.getElementById("pushnotif").style.display = "block";
+                    document.getElementById("pushnotif").style.zIndex = "1";
+
+                }
+            });
+        };
+        async function Showdetailstext() {
+            document.getElementById("list3").style.display = "none";
+            document.getElementById("friendsbig").style.display = 'block';
+            document.getElementById("listbonus").style.display = "block";
+        };
+        async function Hideonlydetail() {
+            document.getElementById("list3").style.display = "block";
+            document.getElementById("friendsbig").style.display = 'block';
+            document.getElementById("listbonus").style.display = "none";
+
+        }
+        async function Showrules() {
+            document.getElementById("listbonus").style.display = "none";
+            document.getElementById("listofrules").style.display = "block";
+            document.getElementById("friendsbig").style.display = "none";
+        }
+        async function Hideonlyrules() {
+            document.getElementById("listbonus").style.display = "block";
+            document.getElementById("listofrules").style.display = "none";
+            document.getElementById("friendsbig").style.display = "block";
+        }
 </script>
 </body>
 </html>
