@@ -1,6 +1,6 @@
-  a{
-    pointer-events: none;
- }
+a {
+    user-select: none;
+}
  #exchangesvg{
  display: none;
 position: absolute;
