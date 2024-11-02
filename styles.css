@@ -570,7 +570,7 @@ color: #FFFFFF;
             position: fixed;
             width: 348px;
             height: 68px;
-            left: calc(50% - 348px/2);
+            left: 5px;
             top: 627px;
 
             background: rgba(18, 18, 18, 0.1);
@@ -1340,7 +1340,7 @@ border-radius: 21.5px;
         .profiletext{
             /* Profile */
 
-            position: fixed;
+position:fixed;
 width: 58px;
 height: 20px;
 left: 290px;
@@ -4832,3 +4832,4 @@ pointer-events: auto;
         left: 113px;
         top: 638px;
 }
+
