@@ -1,4 +1,4 @@
- a{
+  a{
     pointer-events: none;
  }
  #exchangesvg{
@@ -567,7 +567,7 @@ color: #FFFFFF;
         pointer-events: none;
         /* Rectangle 31 */
 
-            position: absolute;
+            position: fixed;
             width: 348px;
             height: 68px;
             left: calc(50% - 348px/2);
@@ -1199,7 +1199,7 @@ border-radius: 21.5px;
             pointer-events: none;
             /* Rectangle 32 */
 
-            position: absolute;
+            position: fixed;
             width: 59px;
             height: 54px;
             left: 8px;
@@ -1212,7 +1212,7 @@ border-radius: 21.5px;
 
             pointer-events: none;                            /* Rectangle 33 */
 
-            position: absolute;
+            position: fixed;
             width: 59px;
             height: 54px;
             left: 102px;
@@ -1225,7 +1225,7 @@ border-radius: 21.5px;
             pointer-events: none;
             /* Rectangle 34 */
 
-            position: absolute;
+            position: fixed;
             width: 59px;
             height: 54px;
             left: 196px;
@@ -1238,7 +1238,7 @@ border-radius: 21.5px;
             pointer-events: none;
             /* Rectangle 35 */
 
-            position: absolute;
+            position: fixed;
             width: 59px;
             height: 54px;
             left: 290px;
@@ -1246,7 +1246,7 @@ border-radius: 21.5px;
             border-radius: 16px;
         }
         .gametext{
-            position: absolute;
+            position: fixed;
             width: 39px;
             height: 20px;
             left: 18px;
@@ -1263,7 +1263,7 @@ border-radius: 21.5px;
         }
         .icongame{
             pointer-events: none;
-            position: absolute;
+            position: fixed;
             width: 35px;
             height: 35px;
             left: 20px;
@@ -1271,7 +1271,7 @@ border-radius: 21.5px;
         }
         .iconwallet{
             pointer-events: none;
-            position: absolute;
+            position: fixed;
             width: 35px;
             height: 35px;
             left: 114px;
@@ -1279,7 +1279,7 @@ border-radius: 21.5px;
         }
         .iconrating{
             pointer-events: none;
-            position: absolute;
+            position: fixed;
             width: 35px;
             height: 35px;
             left: 208px;
@@ -1287,7 +1287,7 @@ border-radius: 21.5px;
         }
         .iconprofile{
             pointer-events: none;
-            position: absolute;
+            position: fixed;
             width: 35px;
             height: 35px;
             left: 302px;
@@ -1296,7 +1296,7 @@ border-radius: 21.5px;
         .wallettext{
             /* Wallet */
 
-            position: absolute;
+            position: fixed;
             width: 59px;
             height: 20px;
             left: 102px;
@@ -1319,7 +1319,7 @@ border-radius: 21.5px;
         /* Rating */
         pointer-events: auto;
 
-        position: absolute;
+        position: fixed;
         width: 39px;
         height: 15px;
         left: 201px;
@@ -1340,7 +1340,7 @@ border-radius: 21.5px;
         .profiletext{
             /* Profile */
 
-position: absolute;
+            position: fixed;
 width: 58px;
 height: 20px;
 left: 290px;
