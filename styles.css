@@ -4832,4 +4832,11 @@ pointer-events: auto;
         left: 113px;
         top: 638px;
 }
+#hidemazafaka{
+    position: absolute;
+    width: 230px;
+    height: 218px;
+    left: calc(50% - 230px/2);
+    top: 327px;
 
+}
