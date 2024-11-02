@@ -1,6 +1,9 @@
 a {
     user-select: none;
 }
+img {
+    user-select: none;
+}
  #exchangesvg{
  display: none;
 position: absolute;
