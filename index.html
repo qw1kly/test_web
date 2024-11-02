@@ -17,7 +17,6 @@
 
 </head>
 <body>
-
 <div id="insteadofall">
     <button id="showGAME" onclick="showGAME()"></button>
     <button id="showWALLET" onclick="showWALLET()"></button>
@@ -119,6 +118,7 @@
 </div>
 
 <div id='nowGame'>
+    <div id="hidemazafaka"></div>
 <div id="hideneoniphone"></div>
     <img src="basket.png" class="basket" id="gifanim" width="230" height="218"/>
     <div class="blur" id='alsoblur'>
@@ -193,8 +193,6 @@
 
 
 
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script>
          document.getElementById("barwitha").style.top = document.documentElement.clientHeight-83+'px';
@@ -210,10 +208,9 @@
         document.getElementById("wallettext").style.top = document.documentElement.clientHeight-43+'px';
         document.getElementById("leadertext").style.top = document.documentElement.clientHeight-43+'px';
         document.getElementById("profiletext").style.top = document.documentElement.clientHeight-43+'px';
-
         document.body.style.left = ((document.documentElement.scrollWidth - 358) / 2)-10 + 'px';
         document.getElementById("icongame1").style.left = ((document.documentElement.scrollWidth - 358) / 2)+20 + 'px';
-                document.getElementById("barwitha").style.left = ((document.documentElement.scrollWidth - 358) / 2)+5 + 'px'
+        document.getElementById("barwitha").style.left = ((document.documentElement.scrollWidth - 358) / 2)+5 + 'px';
 
         document.getElementById("iconrating1").style.left = ((document.documentElement.scrollWidth - 358) / 2)+208+ 'px';
         document.getElementById("iconwallet1").style.left = ((document.documentElement.scrollWidth - 358) / 2)+114 + 'px';
@@ -228,8 +225,9 @@
         document.getElementById("wallettext").style.left = ((document.documentElement.scrollWidth - 358) / 2) +102+ 'px';
         window.addEventListener('resize', (e) => {
                 document.body.style.left = ((document.documentElement.scrollWidth - 358) / 2)-10 + 'px';
+
                 document.getElementById("icongame1").style.left = ((document.documentElement.scrollWidth - 358) / 2)+20 + 'px';
-                    document.getElementById("barwitha").style.left = ((document.documentElement.scrollWidth - 358) / 2)+5 + 'px'
+        document.getElementById("barwitha").style.left = ((document.documentElement.scrollWidth - 358) / 2)+5 + 'px';
 
         document.getElementById("iconrating1").style.left = ((document.documentElement.scrollWidth - 358) / 2)+208+ 'px';
         document.getElementById("iconwallet1").style.left = ((document.documentElement.scrollWidth - 358) / 2)+114 + 'px';
@@ -242,6 +240,20 @@
         document.getElementById("profiletext").style.left = ((document.documentElement.scrollWidth - 358) / 2) +290+ 'px';
         document.getElementById("leadertext").style.left = ((document.documentElement.scrollWidth - 358) / 2) +201+ 'px';
         document.getElementById("wallettext").style.left = ((document.documentElement.scrollWidth - 358) / 2) +102+ 'px';
+
+         document.getElementById("barwitha").style.top = document.documentElement.clientHeight-83+'px';
+        document.getElementById("iconrating1").style.top = document.documentElement.clientHeight-75+'px';
+        document.getElementById("icongame1").style.top = document.documentElement.clientHeight-75+'px';
+        document.getElementById("iconwallet1").style.top = document.documentElement.clientHeight-75+'px';
+        document.getElementById("iconprofile1").style.top = document.documentElement.clientHeight-75+'px';
+        document.getElementById("walletbar").style.top = document.documentElement.clientHeight-77+'px';
+        document.getElementById("gameonbar").style.top = document.documentElement.clientHeight-77+'px';
+        document.getElementById("leaderboard").style.top = document.documentElement.clientHeight-77+'px';
+        document.getElementById("profile").style.top = document.documentElement.clientHeight-77+'px';
+        document.getElementById("gametext").style.top = document.documentElement.clientHeight-43+'px';
+        document.getElementById("wallettext").style.top = document.documentElement.clientHeight-43+'px';
+        document.getElementById("leadertext").style.top = document.documentElement.clientHeight-43+'px';
+        document.getElementById("profiletext").style.top = document.documentElement.clientHeight-43+'px';
         });
     </script>
 
@@ -1075,45 +1087,6 @@ color: #FFFFFF;
                 }
                                });
         async function clicked() {
-          var image = document.getElementById("gifanim");
-
-                document.getElementById("hideneoniphone").style.display = "block";
-                document.getElementById("insteadofall").style.display = "none";
-                image.src = items[Math.floor(Math.random()*items.length)];
-                image.src = "basketlost3-min.gif";
-                document.getElementById("inv").style.display="none";
-                document.getElementById("icongame1").style.display="none";
-                document.getElementById("iconprofile1").style.display="none";
-                document.getElementById("iconrating1").style.display="none";
-                document.getElementById("iconwallet1").style.display="none";
-                document.getElementById("switch2k").style.display="none";
-                document.getElementById("switch1k").style.display="none";
-                document.getElementById("play_But").style.display="none";
-                document.getElementById("sw2").style.display="none";
-
-
-                async function clickedback() {
-                    
-                    await new Promise(resolve => setTimeout(resolve, 8000));
-
-                    
-                var image = document.getElementById("gifanim");
-
-                image.src = "basket.png";
-
-                document.getElementById("insteadofall").style.display = "block";
-                document.getElementById("hideneoniphone").style.display = "none";
-                document.getElementById("inv").style.display="block";
-                document.getElementById("icongame1").style.display="block";
-                document.getElementById("iconprofile1").style.display="block";
-                document.getElementById("iconrating1").style.display="block";
-                document.getElementById("iconwallet1").style.display="block";
-                document.getElementById("switch2k").style.display="block";
-                document.getElementById("switch1k").style.display="block";
-                document.getElementById("play_But").style.display="block";
-                document.getElementById("sw2").style.display="block";
-                }
-                clickedback()  
           if (document.getElementById("clicki").innerHTML==1) {
                 alert('Недостаточно средств')
             } else {
@@ -1990,6 +1963,7 @@ document.getElementById("depositinput").blur();
 </script>
 </body>
 </html>
+
 
 
 
