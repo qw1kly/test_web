@@ -569,7 +569,7 @@ color: #FFFFFF;
         .barwitha{
         pointer-events: none;
         /* Rectangle 31 */
-
+            z-index:99;
             position: fixed;
             width: 348px;
             height: 68px;
@@ -1207,14 +1207,14 @@ border-radius: 21.5px;
             height: 54px;
             left: 8px;
             top: 633px;
-
+z-index:99;
             background: #222222;
             border-radius: 16px;
         }
         .walletbar{
 
             pointer-events: none;                            /* Rectangle 33 */
-
+z-index:99;
             position: fixed;
             width: 59px;
             height: 54px;
@@ -1227,7 +1227,7 @@ border-radius: 21.5px;
         .leaderboard{
             pointer-events: none;
             /* Rectangle 34 */
-
+z-index:99;
             position: fixed;
             width: 59px;
             height: 54px;
@@ -1240,7 +1240,7 @@ border-radius: 21.5px;
         .profile{
             pointer-events: none;
             /* Rectangle 35 */
-
+z-index:99;
             position: fixed;
             width: 59px;
             height: 54px;
@@ -1254,7 +1254,7 @@ border-radius: 21.5px;
             height: 20px;
             left: 18px;
             top: 668px;
-
+z-index:99;
             font-family: 'Inter';
             font-style: normal;
             font-weight: 300;
@@ -1271,6 +1271,7 @@ border-radius: 21.5px;
             height: 35px;
             left: 20px;
             top: 635px;
+            z-index:99;
         }
         .iconwallet{
             pointer-events: none;
@@ -1279,6 +1280,7 @@ border-radius: 21.5px;
             height: 35px;
             left: 114px;
             top: 635px;
+            z-index:99;
         }
         .iconrating{
             pointer-events: none;
@@ -1287,6 +1289,7 @@ border-radius: 21.5px;
             height: 35px;
             left: 208px;
             top: 635px;
+            z-index:99;
         }
         .iconprofile{
             pointer-events: none;
@@ -1294,6 +1297,7 @@ border-radius: 21.5px;
             width: 35px;
             height: 35px;
             left: 302px;
+            z-index:99;
             top: 635px;
         }
         .wallettext{
@@ -1303,6 +1307,7 @@ border-radius: 21.5px;
             width: 59px;
             height: 20px;
             left: 102px;
+            z-index:99;
             top: 667px;
 
             font-family: 'Inter';
@@ -1324,6 +1329,7 @@ border-radius: 21.5px;
 
         position: fixed;
         width: 39px;
+            z-index:99;
         height: 15px;
         left: 201px;
         top: 668px;
@@ -1342,7 +1348,7 @@ border-radius: 21.5px;
         }
         .profiletext{
             /* Profile */
-
+z-index:99;
 position:fixed;
 width: 58px;
 height: 20px;
