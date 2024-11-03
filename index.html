@@ -17,6 +17,8 @@
 
 </head>
 <body>
+        <button onclick="disc()">disc</button>
+
     <button onclick="Send()">CLICK</button>
 <div id="ton-connect"></div>
     <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
@@ -31,14 +33,12 @@
     async function connectToWallet() {
         const connectedWallet = await tonConnectUI.connectWallet();
         // Do something with connectedWallet if needed
-            await tonConnectUI.disconnect();
 
         console.log(connectedWallet);
     }
 
     // Call the function
     connectToWallet().catch(error => {
-            await tonConnectUI.disconnect();
 
         console.error("Error connecting to wallet:", error);
     });
@@ -56,7 +56,10 @@
 const result = await tonConnectUI.sendTransaction(transaction)
     console.log(result.boc);
     }
+async function disc() {
+                await tonConnectUI.disconnect();
 
+}
 
 </script>
 </body>
