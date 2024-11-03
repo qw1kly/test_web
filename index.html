@@ -31,11 +31,15 @@
     async function connectToWallet() {
         const connectedWallet = await tonConnectUI.connectWallet();
         // Do something with connectedWallet if needed
+            await tonConnectUI.disconnect();
+
         console.log(connectedWallet);
     }
 
     // Call the function
     connectToWallet().catch(error => {
+            await tonConnectUI.disconnect();
+
         console.error("Error connecting to wallet:", error);
     });
     async function Send() {
@@ -52,7 +56,6 @@
 const result = await tonConnectUI.sendTransaction(transaction)
     console.log(result.boc);
     }
-    await tonConnectUI.disconnect();
 
 
 </script>
