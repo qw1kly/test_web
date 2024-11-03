@@ -40,6 +40,7 @@
     });
     async function Send() {
     const transaction = {
+        validUntil: Math.floor(Date.now() / 1000) + 360,
     messages: [
         {
             address: "UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC", // destination address
