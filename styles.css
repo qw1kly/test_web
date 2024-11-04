@@ -567,7 +567,7 @@ color: #FFFFFF;
         background-size: 100%;
         }
         .barwitha{
-        pointer-events: none;
+        pointer-events: auto;
         /* Rectangle 31 */
             z-index:99;
             position: fixed;
@@ -2093,7 +2093,7 @@ z-index: 1;
         }
         #winner5{
         /* Rectangle 38 */
-
+        pointer-events: none;
         position: absolute;
         width: 326px;
         height: 35px;
