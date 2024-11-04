@@ -567,7 +567,7 @@ color: #FFFFFF;
         background-size: 100%;
         }
         .barwitha{
-        pointer-events: none;
+        pointer-events: auto;
         /* Rectangle 31 */
             z-index:99;
             position: fixed;
