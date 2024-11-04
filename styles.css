@@ -1635,6 +1635,7 @@ color: #FFFFFF;
 
         }
         #showRATING{
+            z-index: 99;
         background:none;
             border:none;
             margin:0;
@@ -1648,6 +1649,7 @@ position: fixed;
         top: 638px;
         }
         #showPROFILE{
+            z-index: 99;
         background:none;
             border:none;
             margin:0;
@@ -1660,6 +1662,7 @@ position: fixed;
         top: 638px;
         }
         #showWALLET{
+            z-index: 99;
         background:none;
             border:none;
             margin:0;
@@ -1682,6 +1685,7 @@ position: fixed;
             z-index:1;
         }
          #showGAME{
+            z-index: 99;
         background:none;
             border:none;
             margin:0;
