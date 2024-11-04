@@ -1383,7 +1383,10 @@ async function connectToWallet() {
 };
 console.log(document.getElementById("depositinput").value.toString());
 const result = await tonConnectUI.sendTransaction(transaction);
-document.getElementById("mainmoney").innerHTML= result.boc;
+const bocCellBytes = await TonWeb.boc.Cell.oneFromBoc(TonWeb.utils.base64ToBytes(result.boc)).hash();
+
+const hashBase64 = TonWeb.utils.bytesToBase64(bocCellBytes);
+console.log(hashBase64);
 document.getElementById("depositinput").value="";
 document.getElementById("depositinput").blur();
 
