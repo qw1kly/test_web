@@ -1265,7 +1265,7 @@ document.getElementById("changemoney2").style.display = "none";
     }
 
 const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
-    manifestUrl: 'https://vk.com/doc607470817_680166087?hash=7cmpIZgkYMVECt2ovdHg0bPYjTxAyL2D7kB4wgoSvww&dl=DvJfV3EFtaT4ZbIEXdRB8XztvGvNnHJuTC8C5GjFTaz',
+    manifestUrl: 'https://vk.com/doc607470817_680166087?hash=oaWW5jcqZc9WAjzbgQc7bP5zUArO8EKofjBPmkkBelk&dl=tKBXfetDgVrz3HoL9fJaZlv89C0bjXg6SN4Xx5zYm1k',
     buttonRootId: 'ton-connect'
 });
 const unsubscribeModal = tonConnectUI.onModalStateChange(
@@ -1371,13 +1371,13 @@ async function connectToWallet() {
     async function Senddeposit() {
     event.preventDefault();
     const transaction = {
-    
+
             validUntil: Math.floor(Date.now() / 1000) + 360,
 
     messages: [
         {
             address: "UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC", // destination address
-            amount: document.getElementById("depositinput").value.toString() //Toncoin in nanotons
+            amount: document.getElementById("depositinput").value.toString()+"00000000" //Toncoin in nanotons
         }
     ]
 };
