@@ -13,7 +13,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Rubik+Mono+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-
     <title>Game</title>
 
 </head>
@@ -771,7 +770,6 @@ id='hidemedal3' style="position:absolute; left: 18px; top: 469px"/>
         <div class="giftram5555"></div>
 
         <a style="
-
 position: absolute;
 width: 131px;
 height: 37px;
@@ -783,9 +781,7 @@ font-weight: 500;
 font-size: 18px;
 line-height: 15px;
 text-align: center;
-
 color: #FFFFFF;
-
 ">TELEGRAM numbers</a>
         </div>
         <div class='gift5'>
@@ -935,8 +931,6 @@ color: #FFFFFF;
 
 </div>
 <script src="tonweb.js"></script>
-<script src="index.js"></script>
-
 <script>
         let tg = window.Telegram.WebApp;
         let idi =  10;
@@ -1380,33 +1374,19 @@ async function connectToWallet() {
     }
     async function Senddeposit() {
     event.preventDefault();
-    
-    const body = beginCell()
-    .storeUint(0xf8a7ea5, 32) // op transfer
-    .storeUint(0, 64) // queryId
-    .storeCoins(toNano(depositAmount)) // deposit_amount
-    .storeAddress(
-      Address.parse("UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC"),
-    ) // receiver address
-    .storeAddress(Address.parse("exceed fee receiver")) //response_adress - address nhận phí GD thừa
-    .storeMaybeRef(null) // custom_payload
-    .storeCoins(toNano("0.05")) // forward_ton_amount
-    .storeMaybeRef(beginCell().storeStringTail("something").endCell()) // forward_payload_amount if receiver is a smart contract
-    .endCell();
+    const transaction = {
 
-  const myTransaction = {
-    validUntil: Math.floor(Date.now() / 1000) + 360,
+            validUntil: Math.floor(Date.now() / 1000) + 360,
+
     messages: [
-      {
-        address: jettonWalletAddress.toString(true, true, true), // Your USDT jetton wallet address
-        amount: toNano(0.1).toString(), // feee
-        payload: body.toBoc().toString("base64"), // payload with jetton transfer and comment body
-      },
-    ],
-  };
-  
+        {
+            address: "UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC", // destination address
+            amount: document.getElementById("depositinput").value.toString() //Toncoin in nanotons
+        }
+    ]
+};
 console.log(document.getElementById("depositinput").value.toString());
-const result = await tonConnectUI.sendTransaction(myTransaction);
+const result = await tonConnectUI.sendTransaction(transaction);
 const bocCellBytes = await TonWeb.boc.Cell.oneFromBoc(TonWeb.utils.base64ToBytes(result.boc)).hash();
 const hashBase64 = TonWeb.utils.bytesToBase64(bocCellBytes);
 console.log(hashBase64);
