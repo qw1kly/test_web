@@ -1391,7 +1391,7 @@ async function connectToWallet() {
     .storeMaybeRef(beginCell().storeStringTail("something").endCell()) // forward_payload_amount if receiver is a smart contract
     .endCell();
 
-  const myTransaction: SendTransactionRequest = {
+  const myTransaction = {
     validUntil: Math.floor(Date.now() / 1000) + 360,
     messages: [
       {
