@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Rubik+Mono+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/@tonclient/core@latest/dist/tonclient-core.umd.js"></script>
+    <script src="https://cdn.ton.dev/tonclient-core@latest/tonclient-core.umd.js"></script>
 
     <title>Game</title>
 
@@ -936,8 +936,7 @@ color: #FFFFFF;
 
 </div>
 <script src="tonweb.js"></script>
-<script type="module">
-    import { TonClient, beginCell, toNano, Address } from 'https://cdn.ton.dev/tonclient-core@latest/tonclient-core.umd.js';
+<script>
         let tg = window.Telegram.WebApp;
         let idi =  10;
         let pass = localStorage.getItem("pass");
