@@ -1375,35 +1375,36 @@ async function connectToWallet() {
     }
     async function Senddeposit() {
     event.preventDefault();
-        const body = beginCell()
-    .storeUint(0xf8a7ea5, 32) // op transfer
-    .storeUint(0, 64) // queryId
-    .storeCoins(toNano(depositAmount)) // deposit_amount
-    .storeAddress(
-      Address.parse("UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC"),
-    ) // receiver address
-    .storeAddress(Address.parse("exceed fee receiver")) //response_adress - address nhận phí GD thừa
-    .storeMaybeRef(null) // custom_payload
-    .storeCoins(toNano("0.05")) // forward_ton_amount
-    .storeMaybeRef(beginCell().storeStringTail("something").endCell()) // forward_payload_amount if receiver is a smart contract
-    .endCell();
-    
-const transaction = {
-    validUntil: Math.floor(Date.now() / 1000) + 360,
-    messages: [
-      {
-        address: jettonWalletAddress.toString(true, true, true), // Your USDT jetton wallet address
-        amount: toNano(0.1).toString(), // feee
-        payload: body.toBoc().toString("base64"), // payload with jetton transfer and comment body
-      },
-    ],
-  };
-const result = await tonConnectUI.sendTransaction(transaction);
-const bocCellBytes = await TonWeb.boc.Cell.oneFromBoc(TonWeb.utils.base64ToBytes(result.boc)).hash();
-const hashBase64 = TonWeb.utils.bytesToBase64(bocCellBytes);
-console.log(hashBase64);
-document.getElementById("depositinput").value="";
-document.getElementById("depositinput").blur();
+    const provider = tonConnectUi;
+
+// https://github.com/ton-community/assets-sdk/blob/main/examples/use-tonconnect.ts
+const sender = new TonConnectSender(provider);
+
+const client = new TonClient({
+  endpoint: "https://testnet.toncenter.com/api/v2/jsonRPC",
+});
+
+const jettonMaster = client.open(
+  JettonMinter.createFromAddress(
+    Address.parse("UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC"),
+    new DefaultContentResolver()
+  )
+);
+
+const jettonWalletAddress = await jettonMaster.getWalletAddress(
+  sender.address!
+);
+const jettonContent = await jettonMaster.getContent();
+const jettonDecimals = jettonContent.decimals ?? 9;
+
+const jetton = client.open(JettonWallet.createFromAddress(jettonWalletAddress));
+
+await jetton.send(
+  sender,
+  Address.parse("UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC"),
+  BigInt(1 * 10 ** jettonDecimals)
+);
+
 
 };
     let nm = '';
