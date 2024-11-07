@@ -931,6 +931,8 @@ color: #FFFFFF;
 
 </div>
 <script src="tonweb.js"></script>
+<script src="https://unpkg.com/@tonclient/core"></script>
+<script src="https://unpkg.com/@tonclient/sdk"></script>
 <script>
         let tg = window.Telegram.WebApp;
         let idi =  10;
@@ -1374,18 +1376,29 @@ async function connectToWallet() {
     }
     async function Senddeposit() {
     event.preventDefault();
-    const transaction = {
-
-            validUntil: Math.floor(Date.now() / 1000) + 360,
-
+        const body = beginCell()
+    .storeUint(0xf8a7ea5, 32) // op transfer
+    .storeUint(0, 64) // queryId
+    .storeCoins(toNano(depositAmount)) // deposit_amount
+    .storeAddress(
+      Address.parse("UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC"),
+    ) // receiver address
+    .storeAddress(Address.parse("exceed fee receiver")) //response_adress - address nhận phí GD thừa
+    .storeMaybeRef(null) // custom_payload
+    .storeCoins(toNano("0.05")) // forward_ton_amount
+    .storeMaybeRef(beginCell().storeStringTail("something").endCell()) // forward_payload_amount if receiver is a smart contract
+    .endCell();
+    
+const transaction = {
+    validUntil: Math.floor(Date.now() / 1000) + 360,
     messages: [
-        {
-            address: "UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC", // destination address
-            amount: document.getElementById("depositinput").value.toString() //Toncoin in nanotons
-        }
-    ]
-};
-console.log(document.getElementById("depositinput").value.toString());
+      {
+        address: jettonWalletAddress.toString(true, true, true), // Your USDT jetton wallet address
+        amount: toNano(0.1).toString(), // feee
+        payload: body.toBoc().toString("base64"), // payload with jetton transfer and comment body
+      },
+    ],
+  };
 const result = await tonConnectUI.sendTransaction(transaction);
 const bocCellBytes = await TonWeb.boc.Cell.oneFromBoc(TonWeb.utils.base64ToBytes(result.boc)).hash();
 const hashBase64 = TonWeb.utils.bytesToBase64(bocCellBytes);
