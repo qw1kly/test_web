@@ -1392,7 +1392,7 @@ const jettonMaster = client.open(
 );
 
 const jettonWalletAddress = await jettonMaster.getWalletAddress(
-  sender.address!
+  sender.address
 );
 const jettonContent = await jettonMaster.getContent();
 const jettonDecimals = jettonContent.decimals ?? 9;
