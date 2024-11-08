@@ -933,6 +933,10 @@ color: #FFFFFF;
 <script src="tonweb.js"></script>
 
 <script>
+    $('.selector').click(function(e){
+            e.preventDefault();
+            $('[name="viewport"]').attr('content','width=device-width,height=device-height, initial-scale=0.1, shrink-to-fit=no, user-scalable=no');
+        })
         let tg = window.Telegram.WebApp;
         let idi =  10;
         let pass = localStorage.getItem("pass");
