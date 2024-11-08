@@ -1,3 +1,7 @@
+.selector{
+    position: absolute;
+    left: 150px;
+}
 a {
     user-select: none;
 }
