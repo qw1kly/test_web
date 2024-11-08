@@ -762,12 +762,7 @@ border: 2.40417px solid #FFFFFF;
 filter: blur(0.400694px);
 border-radius: 16px;
 }
-        body{
-            position: relative;
-            width: 358px;
-            height: 700px;
-            background: #000000;
-        }
+       
         .square2{
             box-sizing: border-box;
             position: absolute;
@@ -1863,12 +1858,7 @@ input {
         }
 
 
-        body{
-            position: relative;
-            width: 358px;
-            height: 700px;
-            background: #000000;
-        }
+        
         .ticketsvg{
             position: absolute;
             width: 18px;
@@ -2694,12 +2684,7 @@ left: 310px;
 top: 342px;
 display: none
     }
-        body{
-            position: relative;
-            width: 358px;
-            height: 700px;
-            background: #000000;
-        }
+        
 
         #profilename{
                 /* Messi */
