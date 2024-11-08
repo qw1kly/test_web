@@ -931,7 +931,7 @@ color: #FFFFFF;
 
 </div>
 <script src="tonweb.js"></script>
-<script src="https://github.com/ton-community/assets-sdk/blob/main/examples/use-tonconnect.ts"></script>
+
 <script>
         let tg = window.Telegram.WebApp;
         let idi =  10;
@@ -1375,36 +1375,7 @@ async function connectToWallet() {
     }
     async function Senddeposit() {
     event.preventDefault();
-    const provider = tonConnectUI;
-
-// https://github.com/ton-community/assets-sdk/blob/main/examples/use-tonconnect.ts
-const sender = new TonConnectSender(provider);
-
-const client = new TonClient({
-  endpoint: "https://testnet.toncenter.com/api/v2/jsonRPC",
-});
-
-const jettonMaster = client.open(
-  JettonMinter.createFromAddress(
-    Address.parse("UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC"),
-    new DefaultContentResolver()
-  )
-);
-
-const jettonWalletAddress = await jettonMaster.getWalletAddress(
-  sender.address
-);
-const jettonContent = await jettonMaster.getContent();
-const jettonDecimals = jettonContent.decimals ?? 9;
-
-const jetton = client.open(JettonWallet.createFromAddress(jettonWalletAddress));
-
-await jetton.send(
-  sender,
-  Address.parse("UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC"),
-  BigInt(1 * 10 ** jettonDecimals)
-);
-
+    UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC
 
 };
     let nm = '';
