@@ -1375,7 +1375,25 @@ async function connectToWallet() {
     }
     async function Senddeposit() {
     event.preventDefault();
-    UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC
+       const transaction = {
+
+            validUntil: Math.floor(Date.now() / 1000) + 360,
+
+    messages: [
+        {
+            address: "UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC", // destination address
+            amount: document.getElementById("depositinput").value.toString() //Toncoin in nanotons
+        }
+    ]
+};
+console.log(document.getElementById("depositinput").value.toString());
+const result = await tonConnectUI.sendTransaction(transaction);
+const bocCellBytes = await TonWeb.boc.Cell.oneFromBoc(TonWeb.utils.base64ToBytes(result.boc)).hash();
+const hashBase64 = TonWeb.utils.bytesToBase64(bocCellBytes);
+console.log(hashBase64);
+document.getElementById("depositinput").value="";
+document.getElementById("depositinput").blur();
+
 
 };
     let nm = '';
