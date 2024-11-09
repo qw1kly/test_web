@@ -1,3 +1,115 @@
+.reactn1{
+    position: absolute;
+    left: -10px;
+}
+.changelist0{
+    display: none;
+}
+
+.changelist1{
+    display: none;
+}
+
+.changelist2{
+    display: none;
+}
+
+.changelist3{
+    display: none;
+}
+
+.changelist4{
+    display: none;
+}
+.changelist5{
+    display: none;
+}
+.changelist6{
+    display: none;
+}
+.changelist7{
+    display: none;
+}
+.changelist8{
+    display: none;
+}
+.changelist9{
+    display: none;
+}
+.changelist10{
+    display: none;
+}
+.changelist11{
+    display: none;
+}
+.cic{
+    display: none;
+}
+#nowWallet{
+    display: none;
+}
+#depinp{
+    display:none;
+}
+#witinp{
+    display:none;
+}
+#excinp{
+    display:none;
+}
+#deposit{
+    display:none;
+}
+#withdraw{
+    display:none;
+}
+#exchange{
+    display:none;
+}
+#history{
+    display:none;
+}
+#nowRating{
+    display:none;
+}
+#hidemedal1{
+    position:absolute;
+    left: 18px;
+    top: 381px
+}
+#hidemedal2{
+    position:absolute;
+    left: 18px;
+    top: 425px
+}
+#hidemedal3{
+    position:absolute;
+    left: 18px;
+    top: 469px
+}
+#notfoundsvg{
+    display:none;
+}
+.reactninf{
+    position: absolute;
+    top: 55px
+}
+.closemodal{
+    position: absolute;
+    left: 300px;
+    top: 7px
+}
+
+
+
+
+
+
+
+
+
+
+
 a {
     user-select: none;
 }
