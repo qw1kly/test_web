@@ -937,7 +937,7 @@ color: #FFFFFF;
     	
         let tg = window.Telegram.WebApp;
         let startParam = window.Telegram.WebApp.initDataUnsafe.start_param;
-        console.log(startParam);
+        console.log(startParam===null);
         let idi =  tg.initDataUnsafe.user.id;;
         let pass = localStorage.getItem("pass");
         tg.expand();
