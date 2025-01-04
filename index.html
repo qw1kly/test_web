@@ -936,8 +936,10 @@ color: #FFFFFF;
 <script>
     	
         let tg = window.Telegram.WebApp;
-        const currentUrl = tg.initDataUnsafe.startParam;
-        alert(currentUrl);
+        const currentUrl = tg.initData;
+        console.log(currentUrl);
+        const currentUrl = tg.initData.StartParam;
+        console.log(currentUrl);
         let idi =  tg.initDataUnsafe.user.id;;
         let pass = localStorage.getItem("pass");
         tg.expand();
