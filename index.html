@@ -934,16 +934,9 @@ color: #FFFFFF;
 <script src="tonweb.js"></script>
 
 <script>
-    $(document).ready(function(){
-	zoom = $(window).width()/$("body").outerWidth()*85;
-	document.body.style.zoom = zoom+"%";
-});
-$(window).on('resize', function(){
-	zoom = $(window).width()/$("body").outerWidth()*85;
-	document.body.style.zoom = zoom+"%";
-});
+    	alert(window.location.pathname);
         let tg = window.Telegram.WebApp;
-        let idi =  10;
+        let idi =  tg.initDataUnsafe.user.id;;
         let pass = localStorage.getItem("pass");
         tg.expand();
         tg.setBackgroundColor("#000000");
