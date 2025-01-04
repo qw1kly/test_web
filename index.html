@@ -934,9 +934,10 @@ color: #FFFFFF;
 <script src="tonweb.js"></script>
 
 <script>
-    	const currentUrl = window.location.hash;
-        alert(currentUrl);
+    	
         let tg = window.Telegram.WebApp;
+        const currentUrl = tg.initDataUnsafe.startParam;
+        alert(currentUrl);
         let idi =  tg.initDataUnsafe.user.id;;
         let pass = localStorage.getItem("pass");
         tg.expand();
