@@ -1863,9 +1863,14 @@ document.getElementById("depositinput").blur();
               text: "Your referal url!",
               url: "https://t.me/casino_test_cashup_bot/start"+"="+idi,
             };
-            let canI = await navigator.canShare(shareData);
-            alert(canI);
-            await navigator.share(shareData);
+        await navigator.share(shareData).then(() => {
+            console.log("yahoo");
+        })
+              .catch(err => {
+                console.log('Something went wrong', err);
+              });
+            
+           
         };
         async function instantCopy() {
             await navigator.clipboard.writeText("https://t.me/casino_test_cashup_bot/start"+"="+idi)
