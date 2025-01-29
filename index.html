@@ -1863,7 +1863,8 @@ document.getElementById("depositinput").blur();
               text: "Your referal url!",
               url: "https://t.me/casino_test_cashup_bot/start"+"="+idi,
             };
-            let canI = await navigator.canShare(data);
+            let canI = await navigator.canShare(shareData);
+            alert(canI);
             await navigator.share(shareData);
         };
         async function instantCopy() {
