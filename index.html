@@ -1862,17 +1862,8 @@ document.getElementById("depositinput").blur();
         };
         async function instantSend() {
             
-            const shareData = {
-              title: "Make a Wish",
-              text: "Your referal url!",
-              url: "https://t.me/casino_test_cashup_bot/start"+"="+idi,
-            };
-        await window.navigator.share(shareData).then(() => {
-                console.log(1);
-              })
-              .catch(err => {
-                console.log('Something went wrong', err);
-              });
+            const shareData = "https://t.me/casino_test_cashup_bot/start"+"="+idi"
+            tg.shareMessage(shareData);
             
            
         };
