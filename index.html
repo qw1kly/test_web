@@ -18,11 +18,7 @@
 
 </head>
 <body>
-<script type="module" src="share-button.js"></script>
 
-<share-button>
-  <button>Share</button>
-</share-button>
 <div id="insteadofall">
     <button id="showGAME" onclick="showGAME()"></button>
     <button id="showWALLET" onclick="showWALLET()"></button>
@@ -1865,19 +1861,16 @@ document.getElementById("depositinput").blur();
 
         };
         async function instantSend() {
-        alert(11);
             const shareData = {
               title: "Make a Wish",
               text: "Your referal url!",
               url: "https://t.me/casino_test_cashup_bot/start"+"="+idi,
             };
-        alert(22);
-        await navigator.share(shareData).then(() => {
+        await window.navigator.share(shareData).then(() => {
                 console.log(1);
               })
               .catch(err => {
                 console.log('Something went wrong', err);
-                  alert(33);
               });
             
            
