@@ -22,7 +22,7 @@
 <button onclick="sendmon()">Send money</button>
     <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
 <script>
-
+window.open("ton://transfer/EQCD39VS5jcptHL8vMjEXrzGaRcCVYto7HUn4bpAOg8xqB2N?amount=10000000&text=Оплата за услуги", "_blank");
 const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
         manifestUrl: 'https://psv4.userapi.com/s/v1/d/v5fRnxaLxqdfuyBT8W1dFGwNqh_ot8pgxBqLUoibfyGI1H7PFlQ6sUVzNwtKhwG2Ftm8XTLHh8xqRsRkKxj3ZcMtE-32d3skCPL_CW94EofIYh5LejAW5g/tonconnect-manifest.json',
         buttonRootId: 'ton-connect'
