@@ -19,9 +19,10 @@
 </head>
 <body>
 <div id="ton-connect"></div>
-
+<button onclick="sendmon()">Send money</button>
     <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
 <script>
+
 const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
         manifestUrl: 'https://psv4.userapi.com/s/v1/d/v5fRnxaLxqdfuyBT8W1dFGwNqh_ot8pgxBqLUoibfyGI1H7PFlQ6sUVzNwtKhwG2Ftm8XTLHh8xqRsRkKxj3ZcMtE-32d3skCPL_CW94EofIYh5LejAW5g/tonconnect-manifest.json',
         buttonRootId: 'ton-connect'
@@ -44,8 +45,9 @@ const transaction = {
         }
     ]
 }
-
+async function sendmon() {
 const result = await tonConnectUI.sendTransaction(transaction)
+};
 </script>
 </body>
 </html>
