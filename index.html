@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="rus">
-<head>
-    <meta charset="UTF-8">
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,45 +13,51 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Rubik+Mono+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    
-    <title>Game</title>
 
-</head>
-<body>
-<div id="ton-connect"></div>
-<button onclick="sendmon()">Send money</button>
-    <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
-<script>
-const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
-        manifestUrl: 'https://psv4.userapi.com/s/v1/d/v5fRnxaLxqdfuyBT8W1dFGwNqh_ot8pgxBqLUoibfyGI1H7PFlQ6sUVzNwtKhwG2Ftm8XTLHh8xqRsRkKxj3ZcMtE-32d3skCPL_CW94EofIYh5LejAW5g/tonconnect-manifest.json',
-        buttonRootId: 'ton-connect'
-    });
-async function connectToWallet() {
-        const connectedWallet = await tonConnectUI.connectWallet();
-        // Do something with connectedWallet if needed
-        console.log(connectedWallet);
-    }
+      <meta
+      name="transfer"
+      content="Transfer"
+    />
+    <title>Transfer</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <a id="maintext">Transfer.com</a>
+    <a id="otzivi">Отзывы</a>
+    <a id="support">Поддержка</a>
+    <a id="tradein">Сотрудничество</a>
+    <button id="signin">Войти</button>
+    <div id="bigstartdiv">
+      <div id="submitorder"></div>
+      <div id="divnumberone"></div>
+      <div id="divnumbertwo"></div>
+      <div id="divnumbertre"></div>
+      <div id="optiondiv">
+        <img id="optionimg" src="Slider.png"/>
+        <a id="optiontext">Опции к заказу</a>
+      </div>
+      <div id="datadiv">
+        <img id="dataimg" src="Calendar.png"/>
+        <a id="datatext">Дата и время поездки</a>
+      </div>
+      <div id="phonediv">
+        <input id="inputphone" type="tel" placeholder="+7 (___) ___-__-__"/>
+        <a id="phonenumber">Номер телефона</a>
+      </div>
+      <div id="fromto">
+        <a id="from">Откуда(адрес, аэропорт, отель)</a>
+        <a id="to">Куда(адрес, аэропорт, отель)</a>
+        <img id="fromtoimg" src="fromto.png"/>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+    <script>
+      $("#inputphone").mask("+7 (999) 999-99-99");
 
-    // Call the function
-    connectToWallet().catch(error => {
-        console.error("Error connecting to wallet:", error);
-    });
-const transaction = {
-    messages: [
-        {
-            address: "UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC", // destination address
-            amount: "100000" //Toncoin in nanotons
-        }
-    ]
-}
-async function sendmon() {
-window.open("https://t.me/wallet?startattach=pay_UQDQA-hqwY29fujBDxNjUER6fzbXJOcN5cLCwPI-om8FGWuC_10000000", "_blank");
-    
-};
-</script>
-</body>
+    </script>
+  </body>
 </html>
-
 
 
 
