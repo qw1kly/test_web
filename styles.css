@@ -1,1511 +1,273 @@
-body{
-  background: #151419;
-}
-#divnumbertwo{
-box-sizing: border-box;
-position: absolute;
-width: 195px;
-height: 81px;
-left: 11px;
-top: 321px;
-border: 5px solid #1B1A1F;
-border-radius: 23px;
-}
-#divnumberone{
-box-sizing: border-box;
-position: absolute;
-width: 195px;
-height: 81px;
-left: 212.5px;
-top: 321px;
-border: 5px solid #1B1A1F;
-border-radius: 23px;
-}
-#divnumbertre{
-box-sizing: border-box;
-position: absolute;
-width: 195px;
-height: 81px;
-left: 414px;
-top: 321px;
-border: 5px solid #1B1A1F;
-border-radius: 23px;
-}
-#maintext{
-  -webkit-user-select: none;
--khtml-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
--o-user-select: none;
-user-select: none;
-position: absolute;
-width: 172px;
-height: 29px;
-left: 38px;
-top: 28px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 700;
-font-size: 24px;
-line-height: 29px;
-
-color: #F56F10;
-}
-@media (min-width: 1505px) {
-  #bigstartdiv{
-    position: absolute;
-    width: 619px;
-    height: 426px;
-    left: calc(50% - 619px/2 + 0.5px);
-    top: calc(50% - 426px/2);
-    background: #262626;
-    border-radius: 50px;
-          }
-          #fromto{
-            /* Rectangle 17 */
-    
-    box-sizing: border-box;
-    
-    position: absolute;
-    width: 589px;
-    height: 97px;
-    left: 15px;
-    top: 11px;
-    
-    background: #1B1A1F;
-    border-radius: 56px;
-    
-          }
-          #fromtoimg{
-    position: absolute;
-    width: 29px;
-    height: 29px;
-    left: 280px;
-    top: 34px;
-          }
-          #from{
-            /* Откуда(адрес, аэропорт, отель) */
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            -o-user-select: none;
-            user-select: none;
-    position: absolute;
-    width: 286px;
-    height: 26px;
-    left: 22px;
-    top: 36px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 22px;
-    color: #878787;
-          }
-          
-          #to{
-            /* Откуда(адрес, аэропорт, отель) */
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            -o-user-select: none;
-            user-select: none;
-    position: absolute;
-    width: 286px;
-    height: 26px;
-    left: 341px;
-    top: 36px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 22px;
-    color: #878787;
-          }
-          #phonediv{
-            /* Rectangle 22 */
-    
-    box-sizing: border-box;
-    -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            -o-user-select: none;
-            user-select: none;
-    position: absolute;
-    width: 589px;
-    height: 81px;
-    left: 15px;
-    top: 125px;
-    background: #1B1A1F;
-    border: 5px solid #1B1A1F;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 56px;
-          }
-          #phonenumber{
-    position: absolute;
-    width: 131px;
-    height: 25px;
-    left: 25px;
-    top: 14px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 10px;
-    line-height: 12px;
-    color: #F56F10;
-          }
-          #inputphone{
-            border: none;
-            background: none;
-            /* +7 (___) ___-__-__ */
-    outline: none;
-    position: absolute;
-    width: 196px;
-    height: 18px;
-    left: 27px;
-    top: 32px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 22px;
-    color: #FBFBFB;
-          }
-          #inputphone::placeholder{
-            color:#FBFBFB;
-          }
-          #datadiv{
-            /* Rectangle 18 */
-    
-    box-sizing: border-box;
-    
-    position: absolute;
-    width: 280px;
-    height: 81px;
-    left: 15px;
-    top: 223px;
-    
-    background: #1B1A1F;
-    border-radius: 56px;
-    
-          }
-          #optiondiv{
-            /* Rectangle 18 */
-    
-    box-sizing: border-box;
-    
-    position: absolute;
-    width: 280px;
-    height: 81px;
-    left: 324px;
-    top: 223px;
-    background: #1B1A1F;
-    border-radius: 56px;
-          }
-          #optionimg{
-           /* Slider */
-    
-    position: absolute;
-    width: 23px;
-    height: 23px;
-    left: 22px;
-    top: 29px; 
-          }
-          #dataimg{
-    position: absolute;
-    width: 23px;
-    height: 23px;
-    left: 22px;
-    top: 29px;
-          }
-          #optiontext{
-            /* Опции к заказу */
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            -o-user-select: none;
-            user-select: none;
-    position: absolute;
-    width: 156px;
-    height: 23px;
-    left: 61px;
-    top: 29px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 22px;
-    color: #FBFBFB;
-          }
-          #datatext{
-            /* Опции к заказу */
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            -o-user-select: none;
-            user-select: none;
-    position: absolute;
-    width: 200px;
-    height: 23px;
-    left: 61px;
-    top: 28px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 22px;
-    color: #FBFBFB;
-          }
-          #submitorder{
-            /* Rectangle 9 */
-    
-    box-sizing: border-box;
-    
-    position: absolute;
-    width: 280px;
-    height: 81px;
-    left: calc(50% - 280px/2 + 160px);
-    top: 438px;
-    
-    
-    background: #F56F10;
-    border-radius: 56px;
-          }
-#otzivi{
-  -webkit-user-select: none;
--khtml-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
--o-user-select: none;
-user-select: none;
-  /* Отзывы */
-
-position: absolute;
-width: 71px;
-height: 29px;
-left: 64.8%;
-top: 34px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 18px;
-line-height: 22px;
-
-color: #FBFBFB;
-
-
-}
-
-#support{
-  /* Поддержка */
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-
-position: absolute;
-width: 105px;
-height: 29px;
-left: 70.8%;
-top: 34px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 18px;
-line-height: 22px;
-
-color: #FBFBFB;
-
-
-}
-
-#tradein{
-  /* Сотрудничество */
-
-  -webkit-user-select: none;
--khtml-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
--o-user-select: none;
-user-select: none;
-position: absolute;
-width: 156px;
-height: 29px;
-left: 78.95%;
-top: 34px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 18px;
-line-height: 22px;
-
-color: #FBFBFB;
-
-
-}
-#signin{
-  /* Rectangle 3 */
-
-  -webkit-user-select: none;
--khtml-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
--o-user-select: none;
-user-select: none;
-position: absolute;
-width: 119px;
-height: 43px;
-left: 90.5%;
-top: 24px;
-
-background: #F56F10;
-border-radius: 56px;
-font-family: 'Inter';
-font-style: normal;
-font-weight: 700;
-font-size: 24px;
-line-height: 29px;
-
-color: #151419;
-border: none;
-
-}
-
-}
-
-
-@media (min-width: 1300px) and (max-width: 1505px) {
-  #divnumberone{
-    width: 170px;
-    left: 11px;
-    height: 71px;
-  }
-  #divnumbertwo{
-    
-    height: 71px;
-    width: 170px;
-    left: 190px;
-  }
-  #divnumbertre{
-    
-    height: 71px;
-    width: 170px;
-    left: 369px;
-  }
-  #bigstartdiv{
-    position: absolute;
-    width: 550px;
-    height: 406px;
-    left: calc(50% - 550px/2 + 0.5px);
-    top: calc(50% - 406px/2);
-    background: #262626;
-    border-radius: 50px;
-          }
-          #fromto{
-            /* Rectangle 17 */
-    
-    box-sizing: border-box;
-    
-    position: absolute;
-    width: 520px;
-    height: 97px;
-    left: 15px;
-    top: 11px;
-    
-    background: #1B1A1F;
-    border-radius: 56px;
-    
-          }
-          #fromtoimg{
-    position: absolute;
-    width: 29px;
-    height: 29px;
-    left: 250px;
-    top: 34px;
-          }
-          #from{
-            /* Откуда(адрес, аэропорт, отель) */
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            -o-user-select: none;
-            user-select: none;
-    position: absolute;
-    width: 286px;
-    height: 26px;
-    left: 22px;
-    top: 36px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 22px;
-    color: #878787;
-          }
-          
-          #to{
-            /* Откуда(адрес, аэропорт, отель) */
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            -o-user-select: none;
-            user-select: none;
-    position: absolute;
-    width: 286px;
-    height: 26px;
-    left: 320px;
-    top: 36px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 22px;
-    color: #878787;
-          }
-          #phonediv{
-            /* Rectangle 22 */
-    
-    box-sizing: border-box;
-    -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            -o-user-select: none;
-            user-select: none;
-    position: absolute;
-    width: 520px;
-    height: 81px;
-    left: 15px;
-    top: 125px;
-    background: #1B1A1F;
-    border: 5px solid #1B1A1F;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 56px;
-          }
-          #phonenumber{
-    position: absolute;
-    width: 131px;
-    height: 25px;
-    left: 25px;
-    top: 14px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 10px;
-    line-height: 12px;
-    color: #F56F10;
-          }
-          #inputphone{
-            border: none;
-            background: none;
-            /* +7 (___) ___-__-__ */
-    outline: none;
-    position: absolute;
-    width: 196px;
-    height: 18px;
-    left: 27px;
-    top: 32px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 22px;
-    color: #FBFBFB;
-          }
-          #inputphone::placeholder{
-            color:#FBFBFB;
-          }
-          #datadiv{
-            /* Rectangle 18 */
-    
-    box-sizing: border-box;
-    
-    position: absolute;
-    width: 250px;
-    height: 81px;
-    left: 15px;
-    top: 223px;
-    
-    background: #1B1A1F;
-    border-radius: 56px;
-    
-          }
-          #optiondiv{
-            /* Rectangle 18 */
-    
-    box-sizing: border-box;
-    
-    position: absolute;
-    width: 250px;
-    height: 81px;
-    left: 285px;
-    top: 223px;
-    background: #1B1A1F;
-    border-radius: 56px;
-          }
-          #optionimg{
-           /* Slider */
-    
-    position: absolute;
-    width: 23px;
-    height: 23px;
-    left: 22px;
-    top: 29px; 
-          }
-          #dataimg{
-    position: absolute;
-    width: 23px;
-    height: 23px;
-    left: 22px;
-    top: 29px;
-          }
-          #optiontext{
-            /* Опции к заказу */
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            -o-user-select: none;
-            user-select: none;
-    position: absolute;
-    width: 156px;
-    height: 23px;
-    left: 61px;
-    top: 29px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 22px;
-    color: #FBFBFB;
-          }
-          #datatext{
-            /* Опции к заказу */
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            -o-user-select: none;
-            user-select: none;
-    position: absolute;
-    width: 200px;
-    height: 23px;
-    left: 61px;
-    top: 28px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 22px;
-    color: #FBFBFB;
-          }
-          #submitorder{
-            /* Rectangle 9 */
-    
-    box-sizing: border-box;
-    
-    position: absolute;
-    width: 250px;
-    height: 81px;
-    left: calc(50% - 250px/2 + 130px);
-    top: 418px;
-    
-    
-    background: #F56F10;
-    border-radius: 56px;
-          }
-  #otzivi{
-    -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-    /* Отзывы */
-  
+#text1{
   position: absolute;
-  width: 71px;
-  height: 29px;
-  left: 63%;
-  top: 34px;
-  
-  font-family: 'Inter';
+  top: 300px;
+  left: 210px;
+  color:#DBD7D2;
+  font-family: 'Gurajada';
   font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 22px;
-  
-  color: #FBFBFB;
-  
-  
-  }
-  
-  #support{
-    /* Поддержка */
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-  
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 35px;
+  text-align: center;
+}
+#img1{
   position: absolute;
-  width: 105px;
-  height: 29px;
-  left: 69.4%;
-  top: 34px;
-  
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 22px;
-  
-  color: #FBFBFB;
-  
-  
-  }
-  
-  #tradein{
-    /* Сотрудничество */
-  
-    -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
+  width: 300px;
+  height: 300px;
+  left: 100px;
+}
+#categories{
+  overflow-y: scroll;
+  max-height: 500px;
   position: absolute;
-  width: 156px;
-  height: 29px;
-  left: 77.7%;
-  top: 34px;
-  
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 22px;
-  
-  color: #FBFBFB;
-  
-  
-  }
-  #signin{
-    /* Rectangle 3 */
-  
-    -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-  position: absolute;
-  width: 119px;
-  height: 43px;
-  left: 89.6%;
-  top: 24px;
-  
-  background: #F56F10;
-  border-radius: 56px;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 29px;
-  
-  color: #151419;
+  width: 1200px;
+  height: 500px;
+  left: 200px;
+background-color: #000000;
+  top: 200px;
+}
+.dropbtn {
+  background-color: #B87333;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
   border: none;
-  
-  }
-  
-  }
+  border-radius: 16px;
+}
 
-  @media (min-width: 1180px) and (max-width: 1300px) {
-    #divnumberone{
-      width: 170px;
-      left: 11px;
-      height: 71px;
-    }
-    #divnumbertwo{
-      
-      height: 71px;
-      width: 170px;
-      left: 190px;
-    }
-    #divnumbertre{
-      
-      height: 71px;
-      width: 170px;
-      left: 369px;
-    }
-    #bigstartdiv{
-      position: absolute;
-      width: 550px;
-      height: 406px;
-      left: calc(50% - 550px/2 + 0.5px);
-      top: calc(50% - 406px/2);
-      background: #262626;
-      border-radius: 50px;
-            }
-            #fromto{
-              /* Rectangle 17 */
-      
-      box-sizing: border-box;
-      
-      position: absolute;
-      width: 520px;
-      height: 97px;
-      left: 15px;
-      top: 11px;
-      
-      background: #1B1A1F;
-      border-radius: 56px;
-      
-            }
-            #fromtoimg{
-      position: absolute;
-      width: 29px;
-      height: 29px;
-      left: 250px;
-      top: 34px;
-            }
-            #from{
-              /* Откуда(адрес, аэропорт, отель) */
-              -webkit-user-select: none;
-              -khtml-user-select: none;
-              -moz-user-select: none;
-              -ms-user-select: none;
-              -o-user-select: none;
-              user-select: none;
-      position: absolute;
-      width: 286px;
-      height: 26px;
-      left: 22px;
-      top: 36px;
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 12px;
-      line-height: 22px;
-      color: #878787;
-            }
-            
-            #to{
-              /* Откуда(адрес, аэропорт, отель) */
-              -webkit-user-select: none;
-              -khtml-user-select: none;
-              -moz-user-select: none;
-              -ms-user-select: none;
-              -o-user-select: none;
-              user-select: none;
-      position: absolute;
-      width: 286px;
-      height: 26px;
-      left: 320px;
-      top: 36px;
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 12px;
-      line-height: 22px;
-      color: #878787;
-            }
-            #phonediv{
-              /* Rectangle 22 */
-      
-      box-sizing: border-box;
-      -webkit-user-select: none;
-              -khtml-user-select: none;
-              -moz-user-select: none;
-              -ms-user-select: none;
-              -o-user-select: none;
-              user-select: none;
-      position: absolute;
-      width: 520px;
-      height: 81px;
-      left: 15px;
-      top: 125px;
-      background: #1B1A1F;
-      border: 5px solid #1B1A1F;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      border-radius: 56px;
-            }
-            #phonenumber{
-      position: absolute;
-      width: 131px;
-      height: 25px;
-      left: 25px;
-      top: 14px;
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 10px;
-      line-height: 12px;
-      color: #F56F10;
-            }
-            #inputphone{
-              border: none;
-              background: none;
-              /* +7 (___) ___-__-__ */
-      outline: none;
-      position: absolute;
-      width: 196px;
-      height: 18px;
-      left: 27px;
-      top: 32px;
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 18px;
-      line-height: 22px;
-      color: #FBFBFB;
-            }
-            #inputphone::placeholder{
-              color:#FBFBFB;
-            }
-            #datadiv{
-              /* Rectangle 18 */
-      
-      box-sizing: border-box;
-      
-      position: absolute;
-      width: 250px;
-      height: 81px;
-      left: 15px;
-      top: 223px;
-      
-      background: #1B1A1F;
-      border-radius: 56px;
-      
-            }
-            #optiondiv{
-              /* Rectangle 18 */
-      
-      box-sizing: border-box;
-      
-      position: absolute;
-      width: 250px;
-      height: 81px;
-      left: 285px;
-      top: 223px;
-      background: #1B1A1F;
-      border-radius: 56px;
-            }
-            #optionimg{
-             /* Slider */
-      
-      position: absolute;
-      width: 23px;
-      height: 23px;
-      left: 22px;
-      top: 29px; 
-            }
-            #dataimg{
-      position: absolute;
-      width: 23px;
-      height: 23px;
-      left: 22px;
-      top: 29px;
-            }
-            #optiontext{
-              /* Опции к заказу */
-              -webkit-user-select: none;
-              -khtml-user-select: none;
-              -moz-user-select: none;
-              -ms-user-select: none;
-              -o-user-select: none;
-              user-select: none;
-      position: absolute;
-      width: 156px;
-      height: 23px;
-      left: 61px;
-      top: 29px;
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 22px;
-      color: #FBFBFB;
-            }
-            #datatext{
-              /* Опции к заказу */
-              -webkit-user-select: none;
-              -khtml-user-select: none;
-              -moz-user-select: none;
-              -ms-user-select: none;
-              -o-user-select: none;
-              user-select: none;
-      position: absolute;
-      width: 200px;
-      height: 23px;
-      left: 61px;
-      top: 28px;
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 22px;
-      color: #FBFBFB;
-            }
-            #submitorder{
-              /* Rectangle 9 */
-      
-      box-sizing: border-box;
-      
-      position: absolute;
-      width: 250px;
-      height: 81px;
-      left: calc(50% - 250px/2 + 130px);
-      top: 418px;
-      
-      
-      background: #F56F10;
-      border-radius: 56px;
-            }
-  #otzivi{
-    -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-    /* Отзывы */
-  
-  position: absolute;
-  width: 71px;
-  height: 29px;
-  left: 59.7%;
-  top: 34px;
-  
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 22px;
-  
-  color: #FBFBFB;
-  
-  
-  }
-  
-  #support{
-    /* Поддержка */
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-  
-  position: absolute;
-  width: 105px;
-  height: 29px;
-  left: 66.4%;
-  top: 34px;
-  
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 22px;
-  
-  color: #FBFBFB;
-  
-  
-  }
-  
-  #tradein{
-    /* Сотрудничество */
-  
-    -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-  position: absolute;
-  width: 156px;
-  height: 29px;
-  left: 75.7%;
-  top: 34px;
-  
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 22px;
-  
-  color: #FBFBFB;
-  
-  
-  }
-  #signin{
-    /* Rectangle 3 */
-  
-    -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-  position: absolute;
-  width: 119px;
-  height: 43px;
-  left: 88.6%;
-  top: 24px;
-  
-  background: #F56F10;
-  border-radius: 56px;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 29px;
-  
-  color: #151419;
-  border: none;
-  
-  }
-  
-  }
+.dropdown {
+  position: relative;
+  display: inline-block;
+  top: 190px;
+  left: 60px;
+}
 
-  @media (min-width: 1090px) and (max-width: 1180px) {
-    #divnumberone{
-      width: 170px;
-      left: 11px;
-      height: 71px;
-    }
-    #divnumbertwo{
-      
-      height: 71px;
-      width: 170px;
-      left: 190px;
-    }
-    #divnumbertre{
-      
-      height: 71px;
-      width: 170px;
-      left: 369px;
-    }
-    #bigstartdiv{
-      position: absolute;
-      width: 550px;
-      height: 406px;
-      left: calc(50% - 550px/2 + 0.5px);
-      top: calc(50% - 406px/2);
-      background: #262626;
-      border-radius: 50px;
-            }
-            #fromto{
-              /* Rectangle 17 */
-      
-      box-sizing: border-box;
-      
-      position: absolute;
-      width: 520px;
-      height: 97px;
-      left: 15px;
-      top: 11px;
-      
-      background: #1B1A1F;
-      border-radius: 56px;
-      
-            }
-            #fromtoimg{
-      position: absolute;
-      width: 29px;
-      height: 29px;
-      left: 250px;
-      top: 34px;
-            }
-            #from{
-              /* Откуда(адрес, аэропорт, отель) */
-              -webkit-user-select: none;
-              -khtml-user-select: none;
-              -moz-user-select: none;
-              -ms-user-select: none;
-              -o-user-select: none;
-              user-select: none;
-      position: absolute;
-      width: 286px;
-      height: 26px;
-      left: 22px;
-      top: 36px;
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 12px;
-      line-height: 22px;
-      color: #878787;
-            }
-            
-            #to{
-              /* Откуда(адрес, аэропорт, отель) */
-              -webkit-user-select: none;
-              -khtml-user-select: none;
-              -moz-user-select: none;
-              -ms-user-select: none;
-              -o-user-select: none;
-              user-select: none;
-      position: absolute;
-      width: 286px;
-      height: 26px;
-      left: 320px;
-      top: 36px;
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 12px;
-      line-height: 22px;
-      color: #878787;
-            }
-            #phonediv{
-              /* Rectangle 22 */
-      
-      box-sizing: border-box;
-      -webkit-user-select: none;
-              -khtml-user-select: none;
-              -moz-user-select: none;
-              -ms-user-select: none;
-              -o-user-select: none;
-              user-select: none;
-      position: absolute;
-      width: 520px;
-      height: 81px;
-      left: 15px;
-      top: 125px;
-      background: #1B1A1F;
-      border: 5px solid #1B1A1F;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      border-radius: 56px;
-            }
-            #phonenumber{
-      position: absolute;
-      width: 131px;
-      height: 25px;
-      left: 25px;
-      top: 14px;
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 10px;
-      line-height: 12px;
-      color: #F56F10;
-            }
-            #inputphone{
-              border: none;
-              background: none;
-              /* +7 (___) ___-__-__ */
-      outline: none;
-      position: absolute;
-      width: 196px;
-      height: 18px;
-      left: 27px;
-      top: 32px;
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 18px;
-      line-height: 22px;
-      color: #FBFBFB;
-            }
-            #inputphone::placeholder{
-              color:#FBFBFB;
-            }
-            #datadiv{
-              /* Rectangle 18 */
-      
-      box-sizing: border-box;
-      
-      position: absolute;
-      width: 250px;
-      height: 81px;
-      left: 15px;
-      top: 223px;
-      
-      background: #1B1A1F;
-      border-radius: 56px;
-      
-            }
-            #optiondiv{
-              /* Rectangle 18 */
-      
-      box-sizing: border-box;
-      
-      position: absolute;
-      width: 250px;
-      height: 81px;
-      left: 285px;
-      top: 223px;
-      background: #1B1A1F;
-      border-radius: 56px;
-            }
-            #optionimg{
-             /* Slider */
-      
-      position: absolute;
-      width: 23px;
-      height: 23px;
-      left: 22px;
-      top: 29px; 
-            }
-            #dataimg{
-      position: absolute;
-      width: 23px;
-      height: 23px;
-      left: 22px;
-      top: 29px;
-            }
-            #optiontext{
-              /* Опции к заказу */
-              -webkit-user-select: none;
-              -khtml-user-select: none;
-              -moz-user-select: none;
-              -ms-user-select: none;
-              -o-user-select: none;
-              user-select: none;
-      position: absolute;
-      width: 156px;
-      height: 23px;
-      left: 61px;
-      top: 29px;
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 22px;
-      color: #FBFBFB;
-            }
-            #datatext{
-              /* Опции к заказу */
-              -webkit-user-select: none;
-              -khtml-user-select: none;
-              -moz-user-select: none;
-              -ms-user-select: none;
-              -o-user-select: none;
-              user-select: none;
-      position: absolute;
-      width: 200px;
-      height: 23px;
-      left: 61px;
-      top: 28px;
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 22px;
-      color: #FBFBFB;
-            }
-            #submitorder{
-              /* Rectangle 9 */
-      
-      box-sizing: border-box;
-      
-      position: absolute;
-      width: 250px;
-      height: 81px;
-      left: calc(50% - 250px/2 + 130px);
-      top: 418px;
-      
-      
-      background: #F56F10;
-      border-radius: 56px;
-            }
-    #otzivi{
-      -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-      /* Отзывы */
-    
-    position: absolute;
-    width: 71px;
-    height: 29px;
-    left: 56%;
-    top: 34px;
-    
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 22px;
-    
-    color: #FBFBFB;
-    
-    
-    }
-    
-    #support{
-      /* Поддержка */
-      -webkit-user-select: none;
-      -khtml-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      -o-user-select: none;
-      user-select: none;
-    
-    position: absolute;
-    width: 105px;
-    height: 29px;
-    left: 63.5%;
-    top: 34px;
-    
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 22px;
-    
-    color: #FBFBFB;
-    
-    
-    }
-    
-    #tradein{
-      /* Сотрудничество */
-    
-      -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-    position: absolute;
-    width: 156px;
-    height: 29px;
-    left: 74%;
-    top: 34px;
-    
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 22px;
-    
-    color: #FBFBFB;
-    
-    
-    }
-    #signin{
-      /* Rectangle 3 */
-    
-      -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-    position: absolute;
-    width: 119px;
-    height: 43px;
-    left: 88.6%;
-    top: 24px;
-    
-    background: #F56F10;
-    border-radius: 56px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 29px;
-    
-    color: #151419;
-    border: none;
-    
-    }
-    
-    }
-    @media (min-height: 500px) and (max-height: 700px) {
-      #divnumberone{
-        height: 67px;
-        top: 250px;
-      }
-      #divnumbertwo{
-        
-        height: 67px;
-        top: 250px;
-      }
-      #divnumbertre{
-        
-        height: 67px;
-        top: 250px;
-      }
-      #bigstartdiv{
-        height: 330px;
-        top: calc(50% - 330px/2);
-      }
-      #fromto{
-        height: 67px;
-      }
-      #from{
-        top:22px;
-      }
 
-      #to{
-        top:22px;
-      }
-      #submitorder{
-        top:342px;
-        height: 61px;
-      }
-      #phonediv{
-height: 61px;
-top: 95px;
-      }
-      #phonenumber{
-top: 10px;
-      }
-      #inputphone{
-top: 28px;
+.dropdown-content {
+  overflow-y: scroll;
+  max-height:400px;
+  scrollbar-color: #824d1b #DBD7D2;
+
+  display: none;
+  position: absolute;
+  background-color: #DBD7D2;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #824d1b;}
+
+#linedown1{
+  position: absolute;
+  width: 576px;
+  height: 1px;
+  top: 700px;
+  left: 930px;
+}
+#linedown2{
+position: absolute;
+width: 576px;
+height: 1px;
+top: 700px;
+left: 0px;
+}
+#delivertext{
+  /* Бесплатная доставка по всему Зеленограду */
+
+position: absolute;
+width: 290px;
+height: 60px;
+top: 680px;
+left: 615px;
+font-family: 'Gurajada';
+font-style: normal;
+font-weight: 400;
 font-size: 16px;
-      }
-      #inputphone::placeholder{
-        color:#FBFBFB;
-      }
-      #datadiv{
+line-height: 35px;
+text-align: center;
+text-decoration-line: underline;
 
-height: 61px;
-top: 173px;
-      }
-      #optiondiv{
-height: 61px;
-top: 173px;
-      }
-      #optionimg{
-top: 18px; 
-      }
-      #dataimg{
-top: 18px;
-      }
-      #optiontext{
-height: 23px;
-top: 18px;
-font-size: 14px;
-      }
-      #datatext{
-height: 23px;
-top: 18px;
-font-size: 14px;
-      }
-      #fromtoimg{
-        top:19px;
-      }
+color: #5F5F5F;
+
+
+}
+#image1{
+
+position: absolute;
+width: 452px;
+height: 432px;
+top: 230px;
+left: 35px;
+}
+#image2{
+
+  position: absolute;
+  width: 452px;
+  height: 432px;
+  top: 230px;
+  left: 535px;
+  }
+  #image3{
+
+    position: absolute;
+    width: 452px;
+    height: 432px;
+    top: 230px;
+    left: 1035px;
     }
- 
+#logos{
+  position:absolute;
+  
+  top:1px;
+  width: 172px;
+  height:125px;
+  left: calc(50% - 172px/2);
+}
+#line1{
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  left: 0px;
+  top: 175px;
+}
+
+#firstlogo{
+  /* Охотничий */
+
+position: absolute;
+width: 209px;
+height: 53px;
+left: calc(50% - 209px/2 - 0.5px);
+top: 113px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 44px;
+text-align: center;
+
+color: #803535;
+}
+#secondlogo{
+position: absolute;
+width: 141px;
+height: 45px;
+left: calc(50% - 141px/2 - 0.5px);
+top: 138px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 44px;
+text-align: center;
+color: #E77817;
+}
+#page1{
+position: absolute;
+width: 128px;
+height: 55px;
+top: 100px;
+left: 50px;
+font-family: 'Gurajada';
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 71px;
+text-align: center;
+color: #000000;
+}
+#page2{
+  position: absolute;
+  width: 128px;
+  height: 55px;
+  top: 100px;
+  left: 230px;
+  font-family: 'Gurajada';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 71px;
+  text-align: center;
+  color: #000000;
+  }
+  
+#page3{
+  position: absolute;
+  width: 128px;
+  height: 55px;
+  top: 100px;
+  left: 450px;
+  font-family: 'Gurajada';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 71px;
+  text-align: center;
+  color: #000000;
+  }
+  #page4{
+    position: absolute;
+    width: 128px;
+    height: 55px;
+    top: 100px;
+    left: 950px;
+    font-family: 'Gurajada';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 71px;
+    text-align: center;
+    color: #000000;
+    }
+    #page5{
+      position: absolute;
+      width: 128px;
+      height: 55px;
+      top: 100px;
+      left: 1120px;
+      font-family: 'Gurajada';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 71px;
+      text-align: center;
+      color: #000000;
+      }
+      #phonecall{
+        /* Rectangle 7 */
+
+position: absolute;
+width: 184px;
+height: 49px;
+left: 1310px;
+top: 105px;
+
+background: #B87333;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 100px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 29px;
+
+color: #FFFFFF;
+
+
+      }
+      
    
