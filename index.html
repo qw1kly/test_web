@@ -14,51 +14,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Rubik+Mono+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 
-      <meta
-      name="transfer"
-      content="Transfer"
-    />
-    <title>Transfer</title>
   </head>
   <body>
     <div id="root"></div>
-    <a id="maintext">Transfer.com</a>
-    <a id="otzivi">Отзывы</a>
-    <a id="support">Поддержка</a>
-    <a id="tradein">Сотрудничество</a>
-    <button id="signin">Войти</button>
-    <div id="bigstartdiv">
-      <div id="submitorder"></div>
-      <div id="divnumberone"></div>
-      <div id="divnumbertwo"></div>
-      <div id="divnumbertre"></div>
-      <div id="optiondiv">
-        <img id="optionimg" src="Slider.png"/>
-        <a id="optiontext">Опции к заказу</a>
+    <img id="logos" src="logokafe.jpg"/>
+    <a id="firstlogo">Охотничий</a>
+    <a id="secondlogo">домик</a>
+    <img src="line1.png" id="line1"/>
+    <a id="page1">Меню</a>
+    <a id="page2">Кондитерская</a>
+    <a id="page3">О нас</a>
+    <a id="page4">Адрес</a>
+    <a id="page5">Отзывы</a>
+    <button id="phonecall">+7 (926) 610-60-02</button>
+    <div id="mainpage">
+      <img src="image1.jpg" id="image1"/>
+      <img src="image2.jpg" id="image2"/>
+      <img src="image3.jpg" id="image3"/>
+      <a id="delivertext">Бесплатная доставка по всему Зеленограду</a>
+      <img src="line1.png" id="linedown1"/>
+      <img src="line1.png" id="linedown2"/>
+    </div>
+    <div id="menupage" style="display:none">
+      <div class="dropdown">
+        <button class="dropbtn">Категория</button>
+        <div class="dropdown-content">
+          <a id="shash">Шашлыки</a>
+          <a id="shash">Блюда из рыбы</a>
+          <a id="shash">Гарниры</a>
+          <a id="shash">Первые блюда</a>
+          <a id="shash">Вторые блюда</a>
+          <a id="shash">Салаты</a>
+          <a id="shash">Холодные закуски</a>
+          <a id="shash">Горячие закуски</a>
+          <a id="shash">Вино</a>
+          <a id="shash">Пиво</a>
+          <a id="shash">Закуски к пиву</a>
+          <a id="shash">Безалкогольные напитки</a>
+          <a id="shash">Горячие напитки</a>
+          <a id="shash">Соусы</a>
+          <a id="shash">Хлеб</a>
+        </div>
       </div>
-      <div id="datadiv">
-        <img id="dataimg" src="Calendar.png"/>
-        <a id="datatext">Дата и время поездки</a>
+      <div id="allobjects">
+
       </div>
-      <div id="phonediv">
-        <input id="inputphone" type="tel" placeholder="+7 (___) ___-__-__"/>
-        <a id="phonenumber">Номер телефона</a>
-      </div>
-      <div id="fromto">
-        <a id="from">Откуда(адрес, аэропорт, отель)</a>
-        <a id="to">Куда(адрес, аэропорт, отель)</a>
-        <img id="fromtoimg" src="fromto.png"/>
+      <div id="categories">
+        <div id="shashlik">
+          <img id="img1" src="shashlik.jpg"/>
+          <a id="text1">Шашлык</a>
+        </div>
+        
       </div>
     </div>
-    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
-    <script>
-      $("#inputphone").mask("+7 (999) 999-99-99");
-
-    </script>
+    
   </body>
 </html>
-
-
-
-
