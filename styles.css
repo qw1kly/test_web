@@ -1355,17 +1355,13 @@ color: #FFFFFF;
   #linedown1{
     width: 30%;
     left: 70%;
-    top: 600px;
-
+  
   }
   #linedown2{
     width: 30%;
-    top: 600px;
-
+  
   }
-  #delivertext{
-    top: 570px;
-  }
+  
 }
 
 
@@ -1419,16 +1415,11 @@ color: #FFFFFF;
   #linedown1{
     width: 30%;
     left: 70%;
-    top: 600px;
-
+   
   }
   #linedown2{
     width: 30%;
-    top: 600px;
-
-  }
-  #delivertext{
-    top: 570px;
+   
   }
 }
 
@@ -1470,16 +1461,13 @@ color: #FFFFFF;
   #linedown1{
     width: 30%;
     left: 70%;
-    top: 600px;
 
   }
   #linedown2{
     width: 30%;
-    top: 600px;
 
   }
   #delivertext{
-    top: 570px;
     font-size: 12px;
     width: 230px;
     left: calc(50% - 230px/2);
@@ -1530,16 +1518,11 @@ color: #FFFFFF;
   #linedown1{
     width: 30%;
     left: 70%;
-    top: 500px;
-
   }
   #linedown2{
     width: 30%;
-    top: 500px;
-
   }
   #delivertext{
-    top: 470px;
     font-size: 12px;
     width: 230px;
     left: calc(50% - 230px/2);
@@ -1595,16 +1578,11 @@ color: #FFFFFF;
   #linedown1{
     width: 30%;
     left: 70%;
-    top: 500px;
-
   }
   #linedown2{
     width: 30%;
-    top: 500px;
-
   }
   #delivertext{
-    top: 470px;
     font-size: 12px;
     width: 230px;
     left: calc(50% - 230px/2);
@@ -1667,23 +1645,20 @@ color: #FFFFFF;
   #phonecall{
     width: 96px;
     height: 29px;
-    left: 77%;
+    left: 76%;
     top: 122.5px;
     font-size: 8px;
   }
   #linedown1{
     width: 30%;
     left: 70%;
-    top: 540px;
 
   }
   #linedown2{
     width: 30%;
-    top: 540px;
 
   }
   #delivertext{
-    top: 510px;
     font-size: 11px;
     width: 200px;
     left: calc(50% - 200px/2);
