@@ -1066,17 +1066,17 @@ color: #000000;  font-family: 'Gurajada';
 
 #linedown1{
   position: absolute;
-  width: 576px;
+  width: 546px;
   height: 1px;
   top: 700px;
-  left: 930px;
+  left: 900px;
 }
 #linedown2{
 position: absolute;
-width: 576px;
+width: 546px;
 height: 1px;
 top: 700px;
-left: 0px;
+left: 80px;
 }
 #delivertext{
   /* Бесплатная доставка по всему Зеленограду */
@@ -1654,13 +1654,13 @@ color: #FFFFFF;
     font-size: 8px;
   }
   #linedown1{
-    width: 30%;
+    width: 25%;
     left: 70%;
 
   }
   #linedown2{
-    width: 30%;
-
+    width: 25%;
+    left: 5%;
   }
   #delivertext{
     font-size: 11px;
