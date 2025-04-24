@@ -1,3 +1,6 @@
+#rojas{
+  position: relative;
+}
 #mainpage{
   position: absolute;
   width: 100%;
@@ -1100,24 +1103,27 @@ color: #5F5F5F;
 position: absolute;
 width: 452px;
 height: 432px;
-top: 230px;
 left: 35px;
+top: -30px;
+
 }
 #image2{
 
   position: absolute;
   width: 452px;
   height: 432px;
-  top: 230px;
   left: 535px;
+  top: -30px;
+
   }
   #image3{
 
     position: absolute;
     width: 452px;
     height: 432px;
-    top: 230px;
     left: 1035px;
+    top: -30px;
+
     }
 #logos{
   position:absolute;
@@ -1275,8 +1281,7 @@ color: #FFFFFF;
     #image3{
       width: 382px;
       height: 372px;
-      left: 68%;
-    }
+      left: 68%;    }
     #page1, #page2, #page3, #page4, #page5{
       font-size: 24px;
     }
@@ -1600,7 +1605,6 @@ color: #FFFFFF;
     width: 295px;
     height: 272px;
     left: calc(50% - 295px/2);
-    top: 220px;
     scrollbar-color: #824d1b #ffffff;
 
   }
@@ -1643,7 +1647,7 @@ color: #FFFFFF;
     display: none;
   }
   #phonecall{
-    width: 96px;
+    width: 86px;
     height: 29px;
     left: 76%;
     top: 122.5px;
