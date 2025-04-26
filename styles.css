@@ -1,3 +1,6 @@
+body{
+  overflow-x: hidden;
+}
 #rojas{
   position: relative;
 }
@@ -5,6 +8,120 @@
   position: absolute;
   width: 100%;
   left: calc(50%-100%/2);
+}
+#addresstext{
+
+position: absolute;
+width: 704px;
+height: 239px;
+left: calc(50% - 704px/2);
+top: 200px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 36px;
+line-height: 44px;
+text-align: center;
+text-decoration:underline;
+color: #000000;
+
+
+}
+#karta{
+  /* Rectangle 9 */
+
+position: absolute;
+width: 272px;
+height: 58px;
+
+background: #C0C0C0;
+border-radius: 100px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 44px;
+text-align: center;
+
+color: #000000;
+
+
+}
+#divkarta{
+  width: 272px;
+  position: absolute;
+  top: 480px;
+  left: calc(50% - 272px/2);
+
+}
+#textabus{
+  /* Добро пожаловать в наш уютный ресторан, который уже более 20 лет радует гостей теплой атмосферой, вкусной кухней и гостеприимством! Мы создали особое пространство, где каждый найдет что-то для себя: ✔ Три уютных деревянных домика – идеально для компании до 4 человек, где можно насладиться тишиной и душевной беседой. ✔ Просторный домик на 10-15 персон – отличный вариант для семейных обедов или дружеских встреч. ✔ Большой зал с караоке и музыкой – здесь с размахом отмечают свадьбы, юбилеи, корпоративы и другие важные события. Наша кухня – это гармония кавказских и русских традиций: сочные шашлыки, душистые супы и множество еще различных блюд. Мы готовим с душой, используя только свежие продукты. У нас можно: 🔹 Провести банкет (свадьба, день рождения, поминки, юбилей) 🔹 Устроить романтический ужин 🔹 Собраться большой семьей за одним столом 🔹 Отметить праздник с музыкой и караоке Мы работаем ежедневно с 11:00 до 00:00 и всегда рады нашим гостям! Приезжайте к нам – вкусно поесть, отдохнуть и создать новые теплые воспоминания! */
+
+position: absolute;
+width: 1036px;
+height: 740px;
+left: calc(50% - 1036px/2);
+top: 200px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+text-align: center;
+
+color: #000000;
+
+
+}
+#divtaksi{
+  width: 272px;
+  position: absolute;
+  top: 550px;
+  left: calc(50% - 272px/2);
+
+}
+#taksi{
+  /* Rectangle 10 */
+
+position: absolute;
+width: 272px;
+height: 58px;
+
+background: #F5E100;
+border-radius: 100px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 44px;
+text-align: center;
+
+color: #000000;
+
+
+}
+#kartaimg{
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  left: 15px;
+  top: 7.5px;
+  z-index:1;
+}
+#taksiimg{
+  position: absolute;
+
+  width: 42px;
+  height: 42px;
+  left: 15px;
+  top: 7.5px;
+  z-index:1;
+}
+#lineinaddress{
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  top:350px;
 }
 #nav{
   display: none;
@@ -59,9 +176,12 @@ font-weight:lighter;
   position: relative;
 }
 
+#menuWrapper{
+  display: none;
+}
 header#nav #menuWrapper {
   height: auto;
-  display: block;
+  display: none;
 }
 
 header#nav ul {
@@ -1018,7 +1138,9 @@ color: #000000;  font-family: 'Gurajada';
   position: absolute;
   width: 1400px;
   height: 500px;
-  left: 10px;
+  left: -130px;
+  overflow-x: hidden;
+
   top: 200px;
   background-color: #ffffff;
 }
@@ -1268,6 +1390,19 @@ color: #FFFFFF;
       }
       
 @media (min-width: 1200px) and (max-width: 1527px) {
+  #addresstext{
+    width: 700px;
+    left: calc(50% - 700px/2);
+    font-size: 28px;
+  }
+  #categories{
+    
+    width: 111.5%;
+    height: 500px;
+    left: -180px;
+    top: 200px;
+    
+  }
     #image1{
       width: 382px;
       height: 372px;
@@ -1317,6 +1452,52 @@ color: #FFFFFF;
 }
 
 @media (min-width: 1030px) and (max-width: 1200px) {
+  #textabus{
+    width: 900px;
+left: calc(50% - 900px/2);
+    font-size: 20px;
+  }
+  #addresstext{
+    width: 600px;
+    left: calc(50% - 600px/2);
+    font-size: 26px;
+  }
+  #categories{
+    
+    width: 100%;
+    height: 500px;
+    left: calc(55% - 1400px/2);
+    top: 200px;
+    
+  }
+  #img1,#img2,#img3,#img4,#img5,#img6,#img7,#img8,#img9,#img10,#img11,#img12,#img13,#img14,#img15{
+    width: 200px;
+    height: 200px;
+  }
+  #img2,#img5,#img8,#img11,#img14{
+    left: -150px;
+  }
+  #img3,#img6,#img9,#img12,#img15{
+    left: -300px;
+  }
+  #text1,#text2,#text3,#text4,#text5,#text6,#text7,#text8,#text9,#text10,#text11,#text12,#text13,#text14,#text15{
+    top: 200px;
+  }
+  #text1{
+    left:255px;
+  }
+  #text4,#text7,#text10,#text13{
+    left: 0px;
+  }
+  #text2,#text5,#text8,#text11,#text14{
+    left: -150px;
+  }
+  #text3,#text6,#text9,#text15{
+    left: -300px;
+  }
+  #text12{
+    left: -325px;
+  }
   #image1{
     width: 322px;
     height: 302px;
@@ -1371,6 +1552,52 @@ color: #FFFFFF;
 
 
 @media (min-width: 910px) and (max-width: 1030px) {
+  #textabus{
+    width: 900px;
+left: calc(50% - 900px/2);
+    font-size: 20px;
+  }
+  #addresstext{
+    width: 550px;
+    left: calc(50% - 550px/2);
+    font-size: 24px;
+  }
+  #categories{
+    
+    width: 111%;
+    height: 500px;
+    left: calc(57% - 1400px/2);
+    top: 200px;
+    
+  }
+  #img1,#img2,#img3,#img4,#img5,#img6,#img7,#img8,#img9,#img10,#img11,#img12,#img13,#img14,#img15{
+    width: 200px;
+    height: 200px;
+  }
+  #img2,#img5,#img8,#img11,#img14{
+    left: -150px;
+  }
+  #img3,#img6,#img9,#img12,#img15{
+    left: -300px;
+  }
+  #text1,#text2,#text3,#text4,#text5,#text6,#text7,#text8,#text9,#text10,#text11,#text12,#text13,#text14,#text15{
+    top: 200px;
+  }
+  #text1{
+    left:255px;
+  }
+  #text4,#text7,#text10,#text13{
+    left: 0px;
+  }
+  #text2,#text5,#text8,#text11,#text14{
+    left: -150px;
+  }
+  #text3,#text6,#text9,#text15{
+    left: -300px;
+  }
+  #text12{
+    left: -325px;
+  }
   #firstlogo{
     font-size: 24px;
   }
@@ -1429,6 +1656,133 @@ color: #FFFFFF;
 }
 
 @media (min-width: 792px) and (max-width: 910px) {
+  #textabus{
+    width: 700px;
+left: calc(50% - 700px/2);
+    font-size: 16px;
+  }
+  #addresstext{
+    width: 500px;
+    left: calc(50% - 500px/2);
+    font-size: 22px;
+  }
+  #categories{
+    
+    width: 1015px;
+    height: 500px;
+    left: -190px;
+    top: 200px;
+    
+  }
+  #img1,#img2,#img3,#img4,#img5,#img6,#img7,#img8,#img9,#img10,#img11,#img12,#img13,#img14,#img15{
+    width: 300px;
+    height: 300px;
+  }
+  #img3{
+    top: 350px;
+    left: -800px;
+  }
+  #img4{
+    left: 400px;
+  }
+  #img5{
+    top:350px;
+    left: -400px;
+  }
+  #img6{
+    top: 350px;
+    left: -400px;
+  }
+  #img7{
+    top: 350px;
+  }
+  #img8{
+    top: 350px;
+  }
+  #img9{
+    left: -800px;
+    top: 1750px;
+  }
+  #img10{
+    top: 700px;
+    left: 400px;
+  }
+  #img11{
+    top: 1050px;
+  }
+  #img12{
+    left: -800px;
+    top: 350px;
+  }
+  #img13{
+    top: 700px;
+  }
+  #img14{
+    top: 350px;
+    left: -400px;
+  }
+  #img15{
+    left: -400px;
+  }
+  #text1,#text2,#text3,#text4,#text5,#text6,#text7,#text8,#text9,#text10,#text11,#text12,#text13,#text14,#text15{
+    top: 200px;
+  }
+  #text1{
+    left:300px;
+    top: 300px;
+  }
+  #text2{
+    left:50px;
+    top: 300px;
+  }
+  #text3{
+    left: -750px;
+    top: 650px;
+  }
+  #text4{
+    top:300px;
+    left: 450px
+  }
+  #text5{
+    top: 650px;
+    left: -350px;
+  }
+  #text6{
+    top: 650px;
+    left: -350px;
+  }
+  #text7{
+    top: 650px;
+  }
+  #text8{
+    top:650px;
+  }
+  #text12{
+    top: 650px;
+    left: -775px;
+  }
+  #text15{
+    top: 300px;
+    left: -350px
+  }
+  #text11{
+    top: 1350px;
+  }
+  #text13{
+    top: 1000px;
+  }
+  #text10{
+    left: 450px;
+    top: 1000px;
+  }
+  #text14{
+    top: 650px;
+    left: -350px;
+  }
+  #text9{
+    left: -750px;
+    top: 2050px;
+  }
   #nav{
     display: block;
   }
@@ -1481,6 +1835,84 @@ color: #FFFFFF;
 
 
 @media (min-width: 600px) and (max-width: 792px) {
+  #textabus{
+    width: 570px;
+left: calc(50% - 570px/2);
+    font-size: 14px;
+  }
+  #addresstext{
+    width: 400px;
+    left: calc(50% - 400px/2);
+    font-size: 18px;
+  }
+  #categories{
+    
+   width: 900px;
+    height: 1050px;
+    left: calc(52% - 900px/2);
+    top: 200px;
+    overflow-y:hidden;
+    overflow-x: hidden;
+    max-height: 1800px;
+  }
+  #img1,#img2,#img3,#img4,#img5,#img6,#img7,#img8,#img9,#img10,#img11,#img12,#img13,#img14,#img15{
+    width: 150px;
+    height: 150px;
+  }
+  #img2,#img5,#img8,#img11,#img14{
+    left: -240px;
+  }
+  #img3,#img6,#img9,#img12,#img15{
+    left: -480px;
+  }
+  #img4,#img5,#img6{
+    top: -150px;
+  }
+  #img7,#img8,#img9{
+    top: -300px;
+  }
+  #img10,#img11,#img12{
+    top: -450px;
+  }
+  #img13,#img14,#img15{
+    top: -600px;
+  }
+  
+  
+  #text1,#text2,#text3,#text4,#text5,#text6,#text7,#text8,#text9,#text10,#text11,#text12,#text13,#text14,#text15{
+    top: 150px;
+    font-size: 16px;
+  }
+  #text4,#text5,#text6{
+    top: 0px;
+  }
+  #text7,#text8,#text9{
+    top: -150px;
+  }
+
+  #text10,#text11,#text12{
+    top: -300px;
+  }
+  #text13,#text14,#text15{
+    top: -450px;
+  }
+  #text1{
+    left:240px;
+  }
+  #text4,#text7,#text10,#text13{
+    left: -25px;
+  }
+  #text2,#text5,#text8,#text11,#text14{
+    left: -265px;
+  }
+  #text3,#text6,#text9,#text15{
+    left: -505px;
+  }
+  #text12{
+    left: -530px;
+  }
+
+
   #rojas{
     width:100%;
     position: absolute;
@@ -1535,6 +1967,84 @@ color: #FFFFFF;
 }
 
 @media (min-width: 521px) and (max-width: 600px) {
+  #textabus{
+    width: 500px;
+left: calc(50% - 500px/2);
+    font-size: 14px;
+  }
+  #addresstext{
+    width: 300px;
+    left: calc(50% - 300px/2);
+    font-size: 15px;
+  }
+  #categories{
+    
+    width: 900px;
+     height: 1050px;
+     left: calc(52% - 900px/2);
+     top: 200px;
+     overflow-y:hidden;
+     overflow-x: hidden;
+     max-height: 1800px;
+   }
+   #img1,#img2,#img3,#img4,#img5,#img6,#img7,#img8,#img9,#img10,#img11,#img12,#img13,#img14,#img15{
+     width: 150px;
+     height: 150px;
+   }
+   #img2,#img5,#img8,#img11,#img14{
+     left: -240px;
+   }
+   #img3,#img6,#img9,#img12,#img15{
+     left: -480px;
+   }
+   #img4,#img5,#img6{
+     top: -150px;
+   }
+   #img7,#img8,#img9{
+     top: -300px;
+   }
+   #img10,#img11,#img12{
+     top: -450px;
+   }
+   #img13,#img14,#img15{
+     top: -600px;
+   }
+   
+   
+   #text1,#text2,#text3,#text4,#text5,#text6,#text7,#text8,#text9,#text10,#text11,#text12,#text13,#text14,#text15{
+     top: 150px;
+     font-size: 16px;
+   }
+   #text4,#text5,#text6{
+     top: 0px;
+   }
+   #text7,#text8,#text9{
+     top: -150px;
+   }
+ 
+   #text10,#text11,#text12{
+     top: -300px;
+   }
+   #text13,#text14,#text15{
+     top: -450px;
+   }
+   #text1{
+     left:240px;
+   }
+   #text4,#text7,#text10,#text13{
+     left: -25px;
+   }
+   #text2,#text5,#text8,#text11,#text14{
+     left: -265px;
+   }
+   #text3,#text6,#text9,#text15{
+     left: -505px;
+   }
+   #text12{
+     left: -530px;
+   }
+ 
+ 
   #rojas{
     width:100%;
     position: absolute;
@@ -1599,6 +2109,150 @@ color: #FFFFFF;
 
 
 @media (max-width: 521px) {
+  #textabus{
+    width: 300px;
+left: calc(50% - 300px/2);
+    font-size: 14px;
+  }
+  #addresstext{
+    width: 300px;
+    left: calc(50% - 300px/2);
+    font-size: 15px;
+  }
+  #categories{
+    
+    width: 800px;
+    height: 900px;
+    left: calc(44% - 800px/2);
+    top: 200px;
+    overflow-x: hidden;
+  }
+  #img1,#img2,#img3,#img4,#img5,#img6,#img7,#img8,#img9,#img10,#img11,#img12,#img13,#img14,#img15{
+    width: 150px;
+    height: 150px;
+  }
+  #img1{
+    left: 250px;
+  }
+  #img2{
+    left: -150px;
+  }
+  #img3{
+    top: 200px;
+    left: -750px;
+  }
+  #img4{
+    left: 250px;
+    top:-150px;
+  }
+  #img5{
+    top:50px;
+    left: -350px;
+  }
+  #img6{
+    top: 50px;
+    left: -550px;
+  }
+  #img7{
+    top: -100px;
+    left: 50px;
+  }
+  #img8{
+    top: -100px;
+    left: -150px;
+  }
+  #img9{
+    left: -750px;
+    top: 100px;
+  }
+  #img10{
+    top:-250px;
+    left: 250px;
+  }
+  #img11{
+    top: -50px;
+    left: -150px;
+  }
+  #img12{
+    left: -750px;
+    top: -50px;
+  }
+  #img13{
+    top: -200px;
+    left: 50px;
+  }
+  #img14{
+    top: 0px;
+    left: -250px;
+  }
+  #img15{
+    left: -550px;
+    top: -200px;
+  }
+  #text1,#text2,#text3,#text4,#text5,#text6,#text7,#text8,#text9,#text10,#text11,#text12,#text13,#text14,#text15{
+    top: 200px;
+    font-size: 16px;
+  }
+  #text1{
+    left:290px;
+    top: 150px;
+  }
+  #text2{
+    left:-175px;
+    top: 150px;
+  }
+  #text3{
+    left: -775px;
+    top: 350px;
+  }
+  #text4{
+    top:0px;
+    left: 225px
+  }
+  #text5{
+    top: 200px;
+    left: -375px;
+  }
+  #text6{
+    top: 200px;
+    left: -575px;
+  }
+  #text7{
+    top: 50px;
+    left: 25px;
+  }
+  #text8{
+    top:50px;
+    left: -175px;
+  }
+  #text12{
+    top: 100px;
+    left: -800px;
+  }
+  #text15{
+    top: -50px;
+    left: -575px
+  }
+  #text11{
+    top: 100px;
+    left: -175px;
+  }
+  #text13{
+    top: -50px;
+    left: 25px;
+  }
+  #text10{
+    left: 225px;
+    top: -100px;
+  }
+  #text14{
+    top: 150px;
+    left: -275px;
+  }
+  #text9{
+    left: -775px;
+    top: 250px;
+  }
   #rojas{
     position: absolute;
     overflow-y: scroll;
