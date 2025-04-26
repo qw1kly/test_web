@@ -24,29 +24,27 @@
           <div id="menuWrapper">
             <ul>
               
-              <li>
-                <a href="#" alt="1">Меню</a>
-                <ul><!-- No Class = default : drop in quick! -->
-                  <li><a href="#" alt="1">That's all it is :</a></li>
-                </ul>
-              </li>
-              
-              <li>
-                <a href="#" alt="1">Кондитерская</a>
+              <li id="rowan1">
+                <a alt="1" id="rowan1text">Меню</a>
                 
               </li>
               
-              <li>
-                <a href="#" alt="4">О нас</a>
+              <li id="rowan2">
+                <a alt="1" id="rowan2text">Кондитерская</a>
+                
+              </li>
+              
+              <li id="rowan3">
+                <a  alt="4" id="rowan3text">О нас</a>
               </li>
                         
-              <li>
-                <a href="#" alt="4">Адрес</a>
+              <li id="rowan4">
+                <a alt="4" id="rowan4text">Адрес</a>
                 
               </li>
               
-              <li>
-                <a href="#" alt="2">Отзывы</a>
+              <li id="rowan5">
+                <a alt="2" id="rowan5text">Отзывы</a>
                 </li>					
               
               
@@ -65,6 +63,28 @@
     <a id="page4">Адрес</a>
     <a id="page5">Отзывы</a>
     <button id="phonecall">+7 (926) 610-60-02</button>
+    <div id="aboutus" style="display: none">
+      <a id="textabus">
+        Добро пожаловать в наш уютный ресторан, который уже более 20 лет радует гостей теплой атмосферой, вкусной кухней и гостеприимством!<br/><br/>  
+        
+        Мы создали особое пространство, где каждый найдет что-то для себя:<br/><br/>
+        ✔ Три уютных деревянных домика – идеально для компании до 4 человек, где можно насладиться тишиной и душевной беседой.<br/> 
+        ✔ Просторный домик на 10-15 персон – отличный вариант для семейных обедов или дружеских встреч. <br/>
+        ✔ Большой зал с караоке и музыкой – здесь с размахом отмечают свадьбы, юбилеи, корпоративы и другие важные события. <br/><br/>
+        
+        Наша кухня – это гармония кавказских и русских традиций: сочные шашлыки, душистые супы и множество еще различных блюд. Мы готовим с душой, используя только свежие продукты.<br/><br/>  
+        
+        У нас можно:  <br/>
+        🔹 Провести банкет (свадьба, день рождения, поминки, юбилей)  <br/>
+        🔹 Устроить романтический ужин  <br/>
+        🔹 Собраться большой семьей за одним столом <br/> 
+        🔹 Отметить праздник с музыкой и караоке  <br/><br/>
+        
+        Мы работаем ежедневно с 11:00 до 00:00 и всегда рады нашим гостям! <br/> 
+        
+        Приезжайте к нам – вкусно поесть, отдохнуть и создать новые теплые воспоминания!
+      </a>
+    </div>
     <div id="mainpage">
       <div id="rojas">
       <img src="image1.jpg" id="image1"/>
@@ -75,17 +95,19 @@
       <img src="line1.png" id="linedown1"/>
       <img src="line1.png" id="linedown2"/>
     </div>
+    <div id="addresspage" style="display:none;">
+      <a id="addresstext">Наш ресторан находится по адресу: ул. Военно-Морская, 1, Алабушево, Московская область,</a>
+      <img id="lineinaddress" src="line1.png"/>
+      <div id="divkarta">
+        <img id="kartaimg" src="karta.png"/>
+      <button id="karta">Мы на карте</button>
+      </div>
+      <div id="divtaksi">
+      <img id="taksiimg" src="taksi.png"/>
+      <button id="taksi">Такси до нас</button>
+    </div>
+    </div>
     <div id="menupage" style="display:none">
-      <!-- <div class="dropdown">
-        <button class="dropbtn">Категория</button>
-        <div class="dropdown-content">
-          <a id="shash">Меню</a>
-          <a id="shash">Кондитерская</a>
-          <a id="shash">О нас</a>
-          <a id="shash">Адрес</a>
-          <a id="shash">Отзывы</a>
-        </div>
-      </div> -->
       <div id="allobjects">
 
       </div>
@@ -160,24 +182,23 @@
     event.preventDefault();
     $("#nav").addClass("showNav");
     var winHeight = $(window).outerHeight();
-    // Set the window height of the mobile menu when engaged!
     $('#menuWrapper').css('height',winHeight + 'px');
     document.getElementById("hamburger").style.display = "none";
+    document.getElementById("menuWrapper").style.display = "block";
+
 });
 
 $("#close").click(function(event) {
     event.preventDefault();
     $("#nav").removeClass("showNav");
-    // Set the window height of the mobile menu when not engaged!
     $('#menuWrapper').css('height','auto');
     document.getElementById("hamburger").style.display = "block";
+    document.getElementById("menuWrapper").style.display = "none";
 
 });
 
-/* On hover apply a class to the dropdown '.hov' */
 $('#menuWrapper ul li').hover( function () {
 var el = $(this).children('ul');
-// check if it has a class of .hov 
 if (el.hasClass('hov')) {
     $(el).removeClass('hov');
 } else {
@@ -194,8 +215,182 @@ const menu = document.getElementById("page1");
 menu.addEventListener("click", (e) => {
     document.getElementById("mainpage").style.display = "none";
     menu.style.color = "#bc7029";
-    document.getElementById("menupage").style.display = "block";
+    address.style.color="#000000";
+    abus.style.color = "#000000";
 
+    document.getElementById("menupage").style.display = "block";
+    document.getElementById("addresspage").style.display = "none";
+    document.getElementById("aboutus").style.display = "none";
+
+});
+
+
+
+const menu2 = document.getElementById("rowan1");
+menu2.addEventListener("click", (e) => {
+    document.getElementById("mainpage").style.display = "none";
+    document.getElementById("rowan1text").style.color = "#bc7029";
+    document.getElementById("rowan2text").style.color = "#000000";
+    document.getElementById("rowan3text").style.color = "#000000";
+    document.getElementById("rowan4text").style.color = "#000000";
+    document.getElementById("rowan5text").style.color = "#000000";
+    document.getElementById("addresspage").style.display = "none";
+    document.getElementById("aboutus").style.display = "none";
+
+    document.getElementById("menupage").style.display = "block";
+    $("#nav").removeClass("showNav");
+    $('#menuWrapper').css('height','auto');
+    document.getElementById("hamburger").style.display = "block";
+    document.getElementById("menuWrapper").style.display = "none";
+})
+
+const menu4 = document.getElementById("rowan4");
+menu4.addEventListener("click", (e) => {
+    document.getElementById("mainpage").style.display = "none";
+    document.getElementById("rowan1text").style.color = "#000000";
+    document.getElementById("rowan2text").style.color = "#000000";
+    document.getElementById("rowan3text").style.color = "#000000";
+    document.getElementById("rowan4text").style.color = "#bc7029";
+    document.getElementById("rowan5text").style.color = "#000000";
+    document.getElementById("addresspage").style.display = "block";
+    document.getElementById("aboutus").style.display = "none";
+
+    document.getElementById("menupage").style.display = "none";
+    $("#nav").removeClass("showNav");
+    $('#menuWrapper').css('height','auto');
+    document.getElementById("hamburger").style.display = "block";
+    document.getElementById("menuWrapper").style.display = "none";
+})
+
+const menu3 = document.getElementById("rowan3");
+menu3.addEventListener("click", (e) => {
+    document.getElementById("mainpage").style.display = "none";
+    document.getElementById("rowan1text").style.color = "#000000";
+    document.getElementById("rowan2text").style.color = "#000000";
+    document.getElementById("rowan3text").style.color = "#bc7029";
+    document.getElementById("rowan4text").style.color = "#000000";
+    document.getElementById("rowan5text").style.color = "#000000";
+    document.getElementById("addresspage").style.display = "none";
+    document.getElementById("aboutus").style.display = "block";
+
+    document.getElementById("menupage").style.display = "none";
+    $("#nav").removeClass("showNav");
+    $('#menuWrapper').css('height','auto');
+    document.getElementById("hamburger").style.display = "block";
+    document.getElementById("menuWrapper").style.display = "none";
+})
+
+const menu5 = document.getElementById("rowan5");
+menu5.addEventListener("click", (e) => {
+    window.open("https://www.google.com/search?newwindow=1&sca_esv=ce0c501f5050c174&sxsrf=AHTn8zqkJ53Y3j150oGJziVj93EgXAXmBw:1745697623019&si=APYL9bs7Hg2KMLB-4tSoTdxuOx8BdRvHbByC_AuVpNyh0x2KzVKUZSlPseqhbk9d6U3lz4A67BgoAQ1wFhT7bYCeQ1aDUjlMnCirNLP2Axr3q2X9-_GaNAHivDwWD2wjUGroI29TssZ8r5fvh-CDD5qiA60bl6EWmP9zZAOT1-YL_6iyCKmhoeE%3D&q=%D0%9A%D0%B0%D1%84%D0%B5+%22%D0%9E%D1%85%D0%BE%D1%82%D0%BD%D0%B8%D1%87%D0%B8%D0%B9+%D0%94%D0%BE%D0%BC%D0%B8%D0%BA%22+%D0%9E%D1%82%D0%B7%D1%8B%D0%B2%D1%8B&sa=X&ved=2ahUKEwjJ_9G1vvaMAxXGgSoKHc5NN_sQ0bkNegQIOBAD&biw=1920&bih=922&dpr=1")
+})
+
+
+const address = document.getElementById("page4");
+address.addEventListener("click", (e) => {
+    document.getElementById("mainpage").style.display = "none";
+    address.style.color = "#bc7029";
+    menu.style.color = "#000000";
+    abus.style.color = "#000000";
+
+    document.getElementById("menupage").style.display = "none";
+    document.getElementById("addresspage").style.display = "block";
+    document.getElementById("aboutus").style.display = "none";
+
+});
+
+
+
+const abus = document.getElementById("page3");
+abus.addEventListener("click", (e) => {
+    document.getElementById("mainpage").style.display = "none";
+    address.style.color = "#000000";
+    menu.style.color = "#000000";
+    abus.style.color = "#bc7029";
+
+    document.getElementById("menupage").style.display = "none";
+    document.getElementById("addresspage").style.display = "none";
+
+    document.getElementById("aboutus").style.display = "block";
+});
+
+const otzivi = document.getElementById("page5");
+otzivi.addEventListener("click", (e) => {
+    window.open("https://www.google.com/search?newwindow=1&sca_esv=ce0c501f5050c174&sxsrf=AHTn8zqkJ53Y3j150oGJziVj93EgXAXmBw:1745697623019&si=APYL9bs7Hg2KMLB-4tSoTdxuOx8BdRvHbByC_AuVpNyh0x2KzVKUZSlPseqhbk9d6U3lz4A67BgoAQ1wFhT7bYCeQ1aDUjlMnCirNLP2Axr3q2X9-_GaNAHivDwWD2wjUGroI29TssZ8r5fvh-CDD5qiA60bl6EWmP9zZAOT1-YL_6iyCKmhoeE%3D&q=%D0%9A%D0%B0%D1%84%D0%B5+%22%D0%9E%D1%85%D0%BE%D1%82%D0%BD%D0%B8%D1%87%D0%B8%D0%B9+%D0%94%D0%BE%D0%BC%D0%B8%D0%BA%22+%D0%9E%D1%82%D0%B7%D1%8B%D0%B2%D1%8B&sa=X&ved=2ahUKEwjJ_9G1vvaMAxXGgSoKHc5NN_sQ0bkNegQIOBAD&biw=1920&bih=922&dpr=1");
+});
+
+
+
+
+const showmen1 = document.getElementById("img1");
+showmen1.addEventListener("click", (e) => {
+    window.open("shashl.pdf")
+})
+const showmen2 = document.getElementById("img2");
+showmen2.addEventListener("click", (e) => {
+    window.open("pervie.pdf")
+})
+const showmen3 = document.getElementById("img3");
+showmen3.addEventListener("click", (e) => {
+    window.open("secondbl.pdf")
+})
+const showmen4 = document.getElementById("img4");
+showmen4.addEventListener("click", (e) => {
+    window.open("fish.pdf")
+})
+const showmen5 = document.getElementById("img5");
+showmen5.addEventListener("click", (e) => {
+    window.open("fish.pdf")
+})
+const showmen6 = document.getElementById("img6");
+showmen6.addEventListener("click", (e) => {
+    window.open("salats.pdf")
+})
+const showmen7 = document.getElementById("img7");
+showmen7.addEventListener("click", (e) => {
+    window.open("sakus.pdf")
+})
+const showmen8 = document.getElementById("img8");
+showmen8.addEventListener("click", (e) => {
+    window.open("sakus.pdf")
+})
+const showmen9 = document.getElementById("img9");
+showmen9.addEventListener("click", (e) => {
+    window.open("pivo.pdf")
+})
+const showmen10 = document.getElementById("img10");
+showmen10.addEventListener("click", (e) => {
+    window.open("pivo.pdf")
+})
+const showmen11 = document.getElementById("img11");
+showmen11.addEventListener("click", (e) => {
+    window.open("wine.pdf")
+})
+const showmen12 = document.getElementById("img12");
+showmen12.addEventListener("click", (e) => {
+    window.open("noalc.pdf")
+})
+const showmen13 = document.getElementById("img13");
+showmen13.addEventListener("click", (e) => {
+    window.open("noalc.pdf")
+})
+const showmen14 = document.getElementById("img14");
+showmen14.addEventListener("click", (e) => {
+    window.open("fish.pdf")
+})
+const showmen15 = document.getElementById("img15");
+showmen15.addEventListener("click", (e) => {
+    window.open("fish.pdf")
+})
+
+const mapApi = document.getElementById("karta");
+mapApi.addEventListener("click", (e) => {
+    window.open("https://yandex.ru/maps/213/moscow/?ll=37.129268%2C55.997688&mode=poi&poi%5Bpoint%5D=37.127538%2C55.998007&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D220299496429&z=17.46");
+})
+
+const taksiApi = document.getElementById("taksi");
+taksiApi.addEventListener("click", (e) => {
+    window.open("https://taxi.yandex.ru/?utm_source&utm_medium&gfrom=%2C&gto=55.99775889721284%2C37.126369042328086&ref&level&city&tariff=econom&referrer=appmetrica_tracking_id%3D1178268795219780156%26ym_tracking_id%3D10006371548177016380");
 })
 
 document.getElementById("linedown1").style.top = window.innerHeight-50+"px";
