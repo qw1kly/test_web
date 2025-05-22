@@ -21,14 +21,25 @@
     <title>VPN app</title>
   </head>
   <body>
+    <a id="priceof">Стоимость 1 ключа 100₽/месяц</a>
     <div id="root"></div>
+    <a id="invisibleid" style="display:none;"></a>
+    <a id="hashid" style="display: none;"></a>
+    <div id="createkey">Создать ключ</div>
+    <div id="keys">
+      <a id="mykeys">Мои ключи:</a>
+      <a id="amountofkeys">Кол-во ключей: </a>
+    </div>
+    <div id="menurow">
+      <img id="menuimg" src="Menu.png"/>
+      <a id="menutext">Меню</a>
+    </div>
     <div id="mainroot">
       <a id="ball">Баланс</a>
-      <a id="summofball">0₽
+      <a id="summofball">100₽
         <img id="addfundsimg" src="Plus.png"/>
 
       </a>
-      <button id="addfunds"></button>
       <div id="svet"></div>
       <img id="star1" src="sparkling 7.png"/>
       <img id="star2" src="sparkling 7.png"/>
@@ -54,23 +65,26 @@
     </div>
     <script src="https://telegram.org/js/telegram-web-app.js?57"></script>
     <script>
-      console.log(window.Telegram.WebApp.initData);
-      document.body.style.left = ((document.documentElement.scrollWidth - 358) / 2)-10 + 'px';
-let tora = document.documentElement.scrollWidth;
-let mora = document.documentElement.clientHeight;
-let tora1 = tora;
-let mora1 = mora;
-window.addEventListener('resize', (e) => {
-    if (document.documentElement.scrollWidth > document.documentElement.clientHeight) {
-        
-        tora = document.documentElement.scrollWidth;
-        mora = document.documentElement.clientHeight;
-    }
-    document.body.style.left = ((tora - 358) / 2)-10 + 'px';
-    tora = tora1;
-    mora = mora1;
+            
+      
+      const keyCreation = document.getElementById("createkey");
+      keyCreation.addEventListener("click", (e) => {
+          alert(1);
+      })
+      
+      
+      const addfunds = document.getElementById("addfundsimg");
+      addfunds.addEventListener("click", (e) => {
+          alert(1);
+      })
+      
+      
+      
+      const menu = document.getElementById("menurow");
+      menu.addEventListener("click", (e) => {
+          alert(1);
+      })
 
-});
     </script>
   </body>
 </html>
