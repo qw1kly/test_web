@@ -65,7 +65,22 @@
     </div>
     <script src="https://telegram.org/js/telegram-web-app.js?57"></script>
     <script>
-            
+            document.body.style.left = ((document.documentElement.scrollWidth - 358) / 2)-10 + 'px';
+let tora = document.documentElement.scrollWidth;
+let mora = document.documentElement.clientHeight;
+let tora1 = tora;
+let mora1 = mora;
+window.addEventListener('resize', (e) => {
+    if (document.documentElement.scrollWidth > document.documentElement.clientHeight) {
+        
+        tora = document.documentElement.scrollWidth;
+        mora = document.documentElement.clientHeight;
+    }
+    document.body.style.left = ((tora - 358) / 2)-10 + 'px';
+    tora = tora1;
+    mora = mora1;
+
+});
       
       const keyCreation = document.getElementById("createkey");
       keyCreation.addEventListener("click", (e) => {
