@@ -1,10 +1,140 @@
-body{
-  position: absolute;
-  background: #000000;
-  width: 358px;
-  height: 700px;
+a, img, div{
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
+body{
+  position: absolute;
+  background: #0E0E10;
+  width: 358px;
+  height: 700px;
+  left: calc(50% - 358px/2);
+}
+
+#menurow{
+  /* Rectangle 24 */
+
+position: absolute;
+width: 318px;
+height: 57px;
+left: calc(50% - 318px/2 + 1px);
+top: 181px;
+
+background: #1F1F1F;
+border-radius: 11px;
+
+}
+
+#keys{
+  /* Rectangle 20 */
+
+position: absolute;
+width: 318px;
+height: 172px;
+left: calc(50% - 318px/2 + 1px);
+top: 253px;
+
+background: #1F1F1F;
+border-radius: 11px;
+}
+
+#mykeys{
+  /* Мои ключи: */
+
+position: absolute;
+width: 124px;
+height: 24px;
+left: 14px;
+top: 12px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 24px;
+
+color: #FFFFFF;
+}
+
+#createkey{
+  /* Rectangle 27 */
+
+position: absolute;
+width: 318px;
+height: 44px;
+left: calc(50% - 318px/2 + 1px);
+top: 636px;
+
+background: #78EA7D;
+border-radius: 11px;
+z-index: 1;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 24px;
+
+color: #000000;
+text-align: center;
+line-height: 44px;
+}
+
+#amountofkeys{
+  /* Кол-во ключей: 2 */
+
+position: absolute;
+width: 124px;
+height: 17px;
+left: 14px;
+top: 42px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 17px;
+/* identical to box height */
+
+color: #B9B9B9;
+
+
+}
+
+#menuimg{
+  /* Menu */
+
+position: absolute;
+width: 28px;
+height: 29px;
+left: 14px;
+top: 14px;
+
+}
+
+#menutext{
+  /* Меню */
+
+position: absolute;
+width: 124px;
+height: 19px;
+left: 57px;
+top: 19px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 19px;
+
+color: #FFFFFF;
+
+
+}
 
 #star1{
 position: absolute;
@@ -206,9 +336,28 @@ color: #78EA7D;
 
 }
 
+#priceof{
+  /* Стоимость 1 ключа 100₽/месяц */
+
+position: absolute;
+width: 222px;
+height: 17px;
+left: calc(50% - 222px/2);
+top: 611px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 17px;
+text-align: center;
+color: #B9B9B9;
+z-index:1;
+}
+
 #addfundsimg{
   /* Plus */
-pointer-events: none;
+pointer-events: auto;
 position: absolute;
 width: 28px;
 height: 28px;
